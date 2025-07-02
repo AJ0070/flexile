@@ -10,42 +10,84 @@ class WiseTransferUpdateJob
     profile_id = params.dig("data", "resource", "profile_id").to_s
     return if profile_id != WISE_PROFILE_ID && WiseCredential.where(profile_id:).none?
 
+    if params["event_type"] == "transfers#refund"
+      handle_refund(params)
+    else
+      handle_state_change(params)
+    end
+  end
+
+  private
+
+  def handle_refund(params)
+    transfer_id = params.dig("data", "resource", "transferId")
+    return if transfer_id.blank?
+
+    payment = find_payment(transfer_id)
+    return unless payment
+
+    update_payment_status(payment, Payment::FAILED, params)
+  end
+
+  def handle_state_change(params)
     transfer_id = params.dig("data", "resource", "id")
     return if transfer_id.blank?
 
-    current_state = params.dig("data", "current_state")
+    payment = find_payment(transfer_id)
+    return unless payment
 
-    payment = Payment.find_by(wise_transfer_id: transfer_id)
-    if payment.nil?
-      if (equity_buyback_payment = EquityBuybackPayment.wise.find_by(transfer_id:))
-        EquityBuybackPaymentTransferUpdate.new(equity_buyback_payment, params).process
-      elsif (dividend_payment = DividendPayment.wise.find_by(transfer_id:))
-        DividendPaymentTransferUpdate.new(dividend_payment, params).process
-      else
-        Rails.logger.info("No payment found for Wise Transfer webhook: #{params}")
-      end
-      return
-    end
-    invoice = payment.invoice
+    current_state = params.dig("data", "current_state")
     payment.update!(wise_transfer_status: current_state)
-    api_service = Wise::PayoutApi.new(wise_credential: payment.wise_credential)
 
     if payment.in_failed_state?
-      unless payment.marked_failed?
-        payment.update!(status: Payment::FAILED)
-        if payment.is_a?(Payment)
-          amount_cents = api_service.get_transfer(transfer_id:)["sourceValue"] * -100
-          payment.balance_transactions.create!(company: payment.company, amount_cents:, transaction_type: BalanceTransaction::PAYMENT_FAILED)
-        end
-      end
-      invoice.update!(status: Invoice::FAILED)
+      update_payment_status(payment, Payment::FAILED, params)
     elsif payment.in_processing_state?
-      invoice.update!(status: Invoice::PROCESSING)
+      if payment.is_a?(Payment)
+        payment.invoice.update!(status: Invoice::PROCESSING)
+      elsif payment.is_a?(DividendPayment)
+        DividendPaymentTransferUpdate.new(payment, params).process
+      end
     elsif current_state == Payments::Wise::OUTGOING_PAYMENT_SENT
-      amount = api_service.get_transfer(transfer_id:)["targetValue"]
-      estimate = Time.zone.parse(api_service.delivery_estimate(transfer_id:)["estimatedDeliveryDate"])
+      update_payment_status(payment, Payment::SUCCEEDED, params)
+    end
+  end
+
+  def find_payment(transfer_id)
+    payment = Payment.find_by(wise_transfer_id: transfer_id)
+    return payment if payment.present?
+
+    equity_buyback_payment = EquityBuybackPayment.wise.find_by(transfer_id: transfer_id)
+    return equity_buyback_payment if equity_buyback_payment.present?
+
+    DividendPayment.wise.find_by(transfer_id: transfer_id)
+  end
+
+  def update_payment_status(payment, status, params)
+    return if payment.status == status
+
+    api_service = Wise::PayoutApi.new(wise_credential: payment.wise_credential)
+    transfer_id = payment.is_a?(Payment) ? payment.wise_transfer_id : payment.transfer_id
+
+    if status == Payment::FAILED
+      payment.update!(status: Payment::FAILED)
+      if payment.is_a?(Payment)
+        payment.invoice.update!(status: Invoice::FAILED)
+        amount_cents = api_service.get_transfer(transfer_id: transfer_id)["sourceValue"] * -100
+        payment.balance_transactions.create!(company: payment.company, amount_cents: amount_cents, transaction_type: BalanceTransaction::PAYMENT_FAILED)
+      elsif payment.is_a?(EquityBuybackPayment)
+        EquityBuybackPaymentTransferUpdate.new(payment, params).process
+      elsif payment.is_a?(DividendPayment)
+        DividendPaymentTransferUpdate.new(payment, params).process
+      end
+    elsif status == Payment::SUCCEEDED
+      amount = api_service.get_transfer(transfer_id: transfer_id)["targetValue"]
+      estimate = Time.zone.parse(api_service.delivery_estimate(transfer_id: transfer_id)["estimatedDeliveryDate"])
       payment.update!(status: Payment::SUCCEEDED, wise_transfer_amount: amount, wise_transfer_estimate: estimate)
-      invoice.mark_as_paid!(timestamp: Time.zone.parse(params.dig("data", "occurred_at")), payment_id: payment.id)
+      if payment.is_a?(Payment)
+        payment.invoice.mark_as_paid!(timestamp: Time.zone.parse(params.dig("data", "occurred_at")), payment_id: payment.id)
+      elsif payment.is_a?(DividendPayment)
+        DividendPaymentTransferUpdate.new(payment, params).process
+      end
     end
   end
 end
