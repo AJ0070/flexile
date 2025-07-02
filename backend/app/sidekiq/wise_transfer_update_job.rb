@@ -37,7 +37,10 @@ class WiseTransferUpdateJob
     return unless payment
 
     current_state = params.dig("data", "current_state")
-    payment.update!(wise_transfer_status: current_state)
+
+    if payment.is_a?(Payment)
+      payment.update!(wise_transfer_status: current_state)
+    end
 
     if payment.in_failed_state?
       update_payment_status(payment, Payment::FAILED, params)
@@ -46,6 +49,8 @@ class WiseTransferUpdateJob
         payment.invoice.update!(status: Invoice::PROCESSING)
       elsif payment.is_a?(DividendPayment)
         DividendPaymentTransferUpdate.new(payment, params).process
+      elsif payment.is_a?(EquityBuybackPayment)
+        EquityBuybackPaymentTransferUpdate.new(payment, params).process
       end
     elsif current_state == Payments::Wise::OUTGOING_PAYMENT_SENT
       update_payment_status(payment, Payment::SUCCEEDED, params)
@@ -53,13 +58,9 @@ class WiseTransferUpdateJob
   end
 
   def find_payment(transfer_id)
-    payment = Payment.find_by(wise_transfer_id: transfer_id)
-    return payment if payment.present?
-
-    equity_buyback_payment = EquityBuybackPayment.wise.find_by(transfer_id: transfer_id)
-    return equity_buyback_payment if equity_buyback_payment.present?
-
-    DividendPayment.wise.find_by(transfer_id: transfer_id)
+    Payment.find_by(wise_transfer_id: transfer_id) ||
+      EquityBuybackPayment.wise.find_by(transfer_id:) ||
+      DividendPayment.wise.find_by(transfer_id:)
   end
 
   def update_payment_status(payment, status, params)
@@ -72,21 +73,23 @@ class WiseTransferUpdateJob
       payment.update!(status: Payment::FAILED)
       if payment.is_a?(Payment)
         payment.invoice.update!(status: Invoice::FAILED)
-        amount_cents = api_service.get_transfer(transfer_id: transfer_id)["sourceValue"] * -100
-        payment.balance_transactions.create!(company: payment.company, amount_cents: amount_cents, transaction_type: BalanceTransaction::PAYMENT_FAILED)
+        amount_cents = api_service.get_transfer(transfer_id:)["sourceValue"] * -100
+        payment.balance_transactions.create!(company: payment.company, amount_cents:, transaction_type: BalanceTransaction::PAYMENT_FAILED)
       elsif payment.is_a?(EquityBuybackPayment)
         EquityBuybackPaymentTransferUpdate.new(payment, params).process
       elsif payment.is_a?(DividendPayment)
         DividendPaymentTransferUpdate.new(payment, params).process
       end
     elsif status == Payment::SUCCEEDED
-      amount = api_service.get_transfer(transfer_id: transfer_id)["targetValue"]
-      estimate = Time.zone.parse(api_service.delivery_estimate(transfer_id: transfer_id)["estimatedDeliveryDate"])
-      payment.update!(status: Payment::SUCCEEDED, wise_transfer_amount: amount, wise_transfer_estimate: estimate)
       if payment.is_a?(Payment)
+        amount = api_service.get_transfer(transfer_id:)["targetValue"]
+        estimate = Time.zone.parse(api_service.delivery_estimate(transfer_id:)["estimatedDeliveryDate"])
+        payment.update!(status: Payment::SUCCEEDED, wise_transfer_amount: amount, wise_transfer_estimate: estimate)
         payment.invoice.mark_as_paid!(timestamp: Time.zone.parse(params.dig("data", "occurred_at")), payment_id: payment.id)
       elsif payment.is_a?(DividendPayment)
         DividendPaymentTransferUpdate.new(payment, params).process
+      elsif payment.is_a?(EquityBuybackPayment)
+        EquityBuybackPaymentTransferUpdate.new(payment, params).process
       end
     end
   end
