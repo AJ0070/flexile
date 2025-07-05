@@ -7,7 +7,12 @@ class Webhooks::WiseController < ApplicationController
   before_action :handle_test_notification
 
   def transfer_state_change
-    WiseTransferUpdateJob.perform_async(request.request_parameters.to_hash)
+    payload = request.request_parameters
+    if payload.dig("data", "current_state").in?(FAILURE_STATES)
+      HandleWisePayoutFailureService.call(payload.require("data"))
+    else
+      WiseTransferUpdateJob.perform_async(payload.to_hash)
+    end
     render json: { success: true }
   end
 
