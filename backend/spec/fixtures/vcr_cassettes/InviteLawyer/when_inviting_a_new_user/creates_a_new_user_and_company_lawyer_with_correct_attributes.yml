@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.clerk.com/v1/invitations
+    body:
+      encoding: UTF-8
+      string: '{"email_address":"lawyer@example.com","expires_in_days":365,"ignore_existing":true}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OpenAPI-Generator/2.0.0/ruby
+      Accept:
+      - application/json
+      Authorization:
+      - Bearer sk_test_4jPLIR81CgxSxoHUJWKPJH06TGqxEL1ht5aPzcR5KZ
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 22 Feb 2025 21:14:05 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 9161fbd658a090bb-VIE
+      Cf-Cache-Status:
+      - DYNAMIC
+      Clerk-Api-Version:
+      - '2021-02-05'
+      X-Cfworker:
+      - '1'
+      X-Clerk-Trace-Id:
+      - 61f8dd42b19f0708c3e22c346a25815e
+      X-Cloud-Trace-Context:
+      - 61f8dd42b19f0708c3e22c346a25815e
+      Set-Cookie:
+      - __cf_bm=7bEsT8MUJhb9xDzNHUsh7TQGHQQw3010KA3zaTx_lPE-1740258845-1.0.1.1-zcxKteKE3qnT8cTd1HSwTZOEjdHtTo4yA1akFfXztTHGrP_aukpSQ8oDOe9ITP2X31XDuZf0uK4DfY7lvXZgpw;
+        path=/; expires=Sat, 22-Feb-25 21:44:05 GMT; domain=.api.clerk.com; HttpOnly;
+        Secure; SameSite=None
+      Vary:
+      - Accept-Encoding
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"object":"invitation","id":"inv_2tPftXwwB5pIbOupItta7uZhYqn","email_address":"lawyer@example.com","public_metadata":{},"status":"pending","url":"https://eager-akita-70.clerk.accounts.dev/v1/tickets/accept?ticket=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJlaXMiOjMxNTM2MDAwLCJleHAiOjE3NzE3OTQ4NDUsImlpZCI6Imluc18ycjhhSkhwd3czZ1p2eVRBc0luTW5BU0JPS3YiLCJzaWQiOiJpbnZfMnRQZnRYd3dCNXBJYk91cEl0dGE3dVpoWXFuIiwic3QiOiJpbnZpdGF0aW9uIn0.AMfViMwDdmkFpLEhfYDlXSmV_s-fC0MD5PIP3PFu1fLypbIvAI8K2Y0IT26ToCCidSS0eJunDEvm-RYA08ZZw_rhPubPk94pGkLJHenD4DrGaJma1LrHnN_YO-RsZwP3itUxr3vz7pm9_FFBQASt7rATrv-dUY5847wUPwn28iAFPDy6Nj6ioKW67T0BT7qgU7eyy_Kzal6wXUZQiN9QGb_sXCvYveQiFMiowfL72mBreh7bL74NDfNmVpWZDfbQ5Nn25Kjhf6ZOw6Ddlh5OZGFrUfO3snH51dTwHwyRaPwTuaVlPf7eRr3GAs_LIq1E9xzouPsCujNpW96ritpfpw","expires_at":1771794845294,"created_at":1740258845294,"updated_at":1740258845294}'
+  recorded_at: Sat, 22 Feb 2025 21:14:05 GMT
+recorded_with: VCR 6.3.1

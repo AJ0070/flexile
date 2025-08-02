@@ -1,0 +1,7 @@
+<dl>
+  <dt>Hours logged</dt>
+  <dd><%= number_with_precision(hours, precision: 2, strip_insignificant_zeros: true) %></dd>
+
+  <dt>Amount to bill</dt>
+  <dd><%= number_to_currency(amount) %></dd>
+</dl>

@@ -1,0 +1,83 @@
+wise_balance_update_job:
+  cron: "*/15 * * * *" # Every 15 minutes
+  class: WiseBalanceUpdateJob
+  description: Updates the Wise Account balance
+
+wise_top_up_reminder_job:
+  cron: "0 22 * * *" # Every day at UTC 22:00
+  class: WiseTopUpReminderJob
+  description: Sends Slack message to remind us to top up Flexile's Wise account
+
+company_administrator_tax_details_reminder_job:
+  cron: "0 16 5 1 *" # the 5th of January at UTC 16:00
+  class: CompanyAdministratorTaxDetailsReminderJob
+  description: Sends reminder email to company admins to update missing details for their companies
+
+company_worker_tax_info_reminder_email_job:
+  cron: "0 16 10 1 *" # the 10th of January at UTC 16:00
+  class: CompanyWorkerTaxInfoReminderEmailJob
+  description: Sends reminder email to company workers to add/update their tax info
+
+tax_form_review_job:
+  cron: "0 10 31 1 *" # the 31st of January at UTC 10:00
+  class: TaxFormReviewJob
+  description: Sends reminder emails to review their tax forms
+
+delete_old_versions_records_job:
+  cron: "30 9 * * *" # UTC 09:30
+  class: DeleteOldVersionsRecordsJob
+  description: Deletes old records from the versions table
+
+check_tin_validity:
+  cron: "0 3 * * *" # Every day at UTC 03:00
+  class: CheckTinValidityJob
+  description: Queries the IRS API to check the validity of pending TINs
+
+transfer_from_stripe_to_wise_job:
+  cron: "0 */12 * * *" # 12 AM UTC and 12 PM UTC
+  description: Moves consolidated invoice payments money from Stripe to Wise
+  class: TransferFromStripeToWiseJob
+
+pay_all_dividends_job:
+  cron: "0 1 * * *" # Every day at UTC 01:00
+  description: Attempts to pay pending dividends
+  class: PayAllDividendsJob
+
+pay_all_equity_buybacks_job:
+  cron: "0 3 * * *" # Every day at UTC 03:00
+  description: Attempts to pay pending equity buyback payments
+  class: PayAllEquityBuybacksJob
+
+consolidated_invoice_csv_email_job:
+  cron: "0 16 1,15 * *" # The 1st & 15th days of every month at UTC 16:00
+  class: ConsolidatedInvoiceCsvEmailJob
+  description: Sends Steven invoice data for accounting
+  args:
+    - - "solson@earlygrowth.com"
+      - "raul@gumroad.com"
+
+dividend_payment_csv_email_job:
+  cron: "0 16 1,15 * *" # The 1st & 15th days of every month at UTC 16:00
+  class: DividendPaymentCsvEmailJob
+  description: Sends dividend payment data for accounting
+  args:
+    - - "solson@earlygrowth.com"
+      - "raul@gumroad.com"
+
+stripe_balance_top_up_job:
+  cron: "0 19 * * 1" # UTC 19:00 Monday
+  class: StripeBalanceTopUpJob
+  description: Top up Stripe balance if needed
+
+process_scheduled_vesting_for_equity_grants_job:
+  cron: "0 1 * * *" # Every day at UTC 01:00
+  class: ProcessScheduledVestingForEquityGrantsJob
+  description: Processes scheduled vesting events for active equity grants
+
+dividend_report_csv_email_job:
+  cron: "0 16 1 * *" # The 1st day of every month at UTC 16:00
+  class: DividendReportCsvEmailJob
+  description: Sends monthly dividend report data for accounting
+  args:
+    - - "solson@earlygrowth.com"
+      - "howard@antiwork.com"

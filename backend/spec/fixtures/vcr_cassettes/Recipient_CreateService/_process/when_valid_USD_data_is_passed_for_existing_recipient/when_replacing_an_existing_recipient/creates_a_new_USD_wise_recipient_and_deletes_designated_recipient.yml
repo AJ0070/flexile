@@ -1,0 +1,274 @@
+---
+http_interactions:
+  - request:
+      method: post
+      uri: https://api.sandbox.transferwise.tech/v1/accounts
+      body:
+        encoding: UTF-8
+        string:
+          '{"currency":"USD","type":"aba","details":{"legalType":"PRIVATE","abartn":"026009593","accountHolderName":"Da
+          Rod","accountNumber":"12345678","accountType":"CHECKING","address":{"country":"US","city":"Haleiwa","firstLine":"59-720
+          Kamehameha Hwy","state":"HI","postCode":"96712"}},"profile":"<WISE_PROFILE_ID>"}'
+      headers:
+        Authorization:
+          - Bearer 8e85a0b2-c1bc-4487-9fc9-e286fb9263d9
+        Content-Type:
+          - application/json
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+        Accept:
+          - "*/*"
+        User-Agent:
+          - Ruby
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Date:
+          - Thu, 12 Oct 2023 23:22:15 GMT
+        Content-Type:
+          - application/json;charset=UTF-8
+        Transfer-Encoding:
+          - chunked
+        Connection:
+          - keep-alive
+        X-Content-Type-Options:
+          - nosniff
+        X-Xss-Protection:
+          - 1; mode=block
+        Cache-Control:
+          - no-cache, no-store, max-age=0, must-revalidate
+        Expires:
+          - "0"
+        Pragma:
+          - no-cache
+        X-Frame-Options:
+          - DENY
+        X-Trace-Id:
+          - 34e6af485a32856c
+        X-Envoy-Upstream-Service-Time:
+          - "165"
+        X-Envoy-Attempt-Count:
+          - "1"
+        Vary:
+          - origin,access-control-request-method,access-control-request-headers,accept-encoding
+        Cf-Cache-Status:
+          - DYNAMIC
+        Set-Cookie:
+          - __cf_bm=ht1ymOxn9YCGfarxwmkxGEht6Z9bJVYZ3z.RDKdfXFI-1697152935-0-AQeQ3KAx0amQ+lSMIVnVCT86hp3AF2U3wUdqMOuJtgeNYlavZQc1Px7AmsWhRydCDFVKPTf2/+vv344O2ma3H+4=;
+            path=/; expires=Thu, 12-Oct-23 23:52:15 GMT; domain=.transferwise.tech; HttpOnly;
+            Secure; SameSite=None
+        Server:
+          - cloudflare
+        Cf-Ray:
+          - 815315787c67459c-LHR
+        Alt-Svc:
+          - h3=":443"; ma=86400
+      body:
+        encoding: ASCII-8BIT
+        string: '{"id":149064371,"business":<WISE_PROFILE_ID>,"profile":<WISE_PROFILE_ID>,"accountHolderName":"Da
+          Rod","currency":"USD","country":"US","type":"aba","details":{"address":{"country":"US","countryCode":"US","firstLine":"59-720
+          Kamehameha Hwy","postCode":"96712","city":"Haleiwa","state":"HI"},"email":null,"legalType":"PRIVATE","accountHolderName":null,"accountNumber":"12345678","sortCode":null,"abartn":"026009593","accountType":"CHECKING","bankgiroNumber":null,"ifscCode":null,"bsbCode":null,"institutionNumber":null,"transitNumber":null,"phoneNumber":null,"bankCode":null,"russiaRegion":null,"routingNumber":null,"branchCode":null,"cpf":null,"cardToken":null,"idType":null,"idNumber":null,"idCountryIso3":null,"idValidFrom":null,"idValidTo":null,"clabe":null,"swiftCode":null,"dateOfBirth":null,"clearingNumber":null,"bankName":null,"branchName":null,"businessNumber":null,"province":null,"city":null,"rut":null,"token":null,"cnpj":null,"payinReference":null,"pspReference":null,"orderId":null,"idDocumentType":null,"idDocumentNumber":null,"targetProfile":null,"targetUserId":null,"taxId":null,"job":null,"nationality":null,"interacAccount":null,"bban":null,"town":null,"postCode":null,"language":null,"billerCode":null,"customerReferenceNumber":null,"prefix":null,"relationship":null,"IBAN":null,"iban":null,"BIC":null,"bic":null},"user":5882096,"active":true,"ownedByCustomer":false}'
+    recorded_at: Thu, 12 Oct 2023 23:22:15 GMT
+  - request:
+      method: delete
+      uri: https://api.sandbox.transferwise.tech/v1/accounts/148624327
+      body:
+        encoding: US-ASCII
+        string: ""
+      headers:
+        Authorization:
+          - Bearer 8e85a0b2-c1bc-4487-9fc9-e286fb9263d9
+        Content-Type:
+          - application/json
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+        Accept:
+          - "*/*"
+        User-Agent:
+          - Ruby
+    response:
+      status:
+        code: 403
+        message: Forbidden
+      headers:
+        Date:
+          - Thu, 12 Oct 2023 23:22:16 GMT
+        Content-Type:
+          - application/json;charset=UTF-8
+        Transfer-Encoding:
+          - chunked
+        Connection:
+          - keep-alive
+        Expires:
+          - "0"
+        Pragma:
+          - no-cache
+        X-Trace-Id:
+          - 5b3331760aca19a1
+        X-Content-Type-Options:
+          - nosniff
+        X-Xss-Protection:
+          - 1; mode=block
+        X-Frame-Options:
+          - DENY
+        Cache-Control:
+          - no-cache, no-store, max-age=0, must-revalidate
+        X-Envoy-Upstream-Service-Time:
+          - "116"
+        X-Envoy-Attempt-Count:
+          - "1"
+        Vary:
+          - Origin,Access-Control-Request-Method,Access-Control-Request-Headers,accept-encoding
+        Cf-Cache-Status:
+          - DYNAMIC
+        Set-Cookie:
+          - __cf_bm=ZZT2z7zniyS1lrzy09uz5W1veIkT.jKVbBHvplY1dPA-1697152936-0-AWETfdF4NBjSMhP9lZ6HX8BlhrxP9/8KQgm51DN1qpZkCUH72FEzSetFNR/zzYV5RGjUDUDQvKdlAVTSrceifqs=;
+            path=/; expires=Thu, 12-Oct-23 23:52:16 GMT; domain=.transferwise.tech; HttpOnly;
+            Secure; SameSite=None
+        Server:
+          - cloudflare
+        Cf-Ray:
+          - 8153157a5b7123bb-LHR
+        Alt-Svc:
+          - h3=":443"; ma=86400
+      body:
+        encoding: ASCII-8BIT
+        string:
+          '{"timestamp":"2023-10-12T23:22:16.205492640Z","errors":[{"code":"RECIPIENT_MISSING","message":"[RECIPIENT_MISSING]
+          Recipient with such id is not found among your recipients."}]}'
+    recorded_at: Thu, 12 Oct 2023 23:22:16 GMT
+  - request:
+      method: get
+      uri: https://api.sandbox.transferwise.tech/v1/accounts/149064371
+      body:
+        encoding: US-ASCII
+        string: ""
+      headers:
+        Authorization:
+          - Bearer 8e85a0b2-c1bc-4487-9fc9-e286fb9263d9
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+        Accept:
+          - "*/*"
+        User-Agent:
+          - Ruby
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Date:
+          - Thu, 12 Oct 2023 23:22:16 GMT
+        Content-Type:
+          - application/json;charset=UTF-8
+        Transfer-Encoding:
+          - chunked
+        Connection:
+          - keep-alive
+        X-Trace-Id:
+          - a1c4143fa53e93c6
+        Cache-Control:
+          - no-cache, no-store, max-age=0, must-revalidate
+        Expires:
+          - "0"
+        Pragma:
+          - no-cache
+        X-Content-Type-Options:
+          - nosniff
+        X-Xss-Protection:
+          - 1; mode=block
+        X-Frame-Options:
+          - DENY
+        X-Envoy-Upstream-Service-Time:
+          - "65"
+        X-Envoy-Attempt-Count:
+          - "1"
+        Vary:
+          - origin,access-control-request-method,access-control-request-headers,accept-encoding
+        Cf-Cache-Status:
+          - DYNAMIC
+        Set-Cookie:
+          - __cf_bm=xggVz.dkBhgSLt6IwWSIL6yWzQC09MsYZ7.KbGxZzTA-1697152936-0-ATl+mpXjPi6A9wgI9Lo0ZgRnLa0Oh1Zp3d2XskJ21diqnSYnrs0bGnyUkWBpU07G80M6Jo1PMYRBkIWEsjT7SjU=;
+            path=/; expires=Thu, 12-Oct-23 23:52:16 GMT; domain=.transferwise.tech; HttpOnly;
+            Secure; SameSite=None
+        Server:
+          - cloudflare
+        Cf-Ray:
+          - 8153157c6b4cdd82-LHR
+        Alt-Svc:
+          - h3=":443"; ma=86400
+      body:
+        encoding: ASCII-8BIT
+        string: '{"id":149064371,"business":<WISE_PROFILE_ID>,"profile":<WISE_PROFILE_ID>,"accountHolderName":"Da
+          Rod","currency":"USD","country":"US","type":"aba","details":{"address":{"country":"US","countryCode":"US","firstLine":"59-720
+          Kamehameha Hwy","postCode":"96712","city":"Haleiwa","state":"HI"},"email":null,"legalType":"PRIVATE","accountHolderName":null,"accountNumber":"12345678","sortCode":null,"abartn":"026009593","accountType":"CHECKING","bankgiroNumber":null,"ifscCode":null,"bsbCode":null,"institutionNumber":null,"transitNumber":null,"phoneNumber":null,"bankCode":null,"russiaRegion":null,"routingNumber":null,"branchCode":null,"cpf":null,"cardToken":null,"idType":null,"idNumber":null,"idCountryIso3":null,"idValidFrom":null,"idValidTo":null,"clabe":null,"swiftCode":null,"dateOfBirth":null,"clearingNumber":null,"bankName":null,"branchName":null,"businessNumber":null,"province":null,"city":null,"rut":null,"token":null,"cnpj":null,"payinReference":null,"pspReference":null,"orderId":null,"idDocumentType":null,"idDocumentNumber":null,"targetProfile":null,"targetUserId":null,"taxId":null,"job":null,"nationality":null,"interacAccount":null,"bban":null,"town":null,"postCode":null,"language":null,"billerCode":null,"customerReferenceNumber":null,"prefix":null,"relationship":null,"IBAN":null,"iban":null,"BIC":null,"bic":null},"user":5882096,"active":true,"ownedByCustomer":false}'
+    recorded_at: Thu, 12 Oct 2023 23:22:16 GMT
+  - request:
+      method: get
+      uri: https://api.sandbox.transferwise.tech/v1/accounts/149064371
+      body:
+        encoding: US-ASCII
+        string: ""
+      headers:
+        Authorization:
+          - Bearer 8e85a0b2-c1bc-4487-9fc9-e286fb9263d9
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+        Accept:
+          - "*/*"
+        User-Agent:
+          - Ruby
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Date:
+          - Thu, 12 Oct 2023 23:22:16 GMT
+        Content-Type:
+          - application/json;charset=UTF-8
+        Transfer-Encoding:
+          - chunked
+        Connection:
+          - keep-alive
+        X-Trace-Id:
+          - 2863ef9c5f15e64b
+        X-Xss-Protection:
+          - 1; mode=block
+        X-Frame-Options:
+          - DENY
+        Cache-Control:
+          - no-cache, no-store, max-age=0, must-revalidate
+        Expires:
+          - "0"
+        Pragma:
+          - no-cache
+        X-Content-Type-Options:
+          - nosniff
+        X-Envoy-Upstream-Service-Time:
+          - "84"
+        X-Envoy-Attempt-Count:
+          - "1"
+        Vary:
+          - origin,access-control-request-method,access-control-request-headers,accept-encoding
+        Cf-Cache-Status:
+          - DYNAMIC
+        Set-Cookie:
+          - __cf_bm=Wem6xkMJ_VEIMqjedRriajTVxo4sAKUSls_5umq0fYM-1697152936-0-AQKlNq2ZK6fp2+IF0GL6SdkZA6L2kgBZ57j/yc/E+7VJBXV2JFsvOphzsBMzexXPylrDKL48J1CE/RkfjWoO5gU=;
+            path=/; expires=Thu, 12-Oct-23 23:52:16 GMT; domain=.transferwise.tech; HttpOnly;
+            Secure; SameSite=None
+        Server:
+          - cloudflare
+        Cf-Ray:
+          - 8153157f385d6334-LHR
+        Alt-Svc:
+          - h3=":443"; ma=86400
+      body:
+        encoding: ASCII-8BIT
+        string: '{"id":149064371,"business":<WISE_PROFILE_ID>,"profile":<WISE_PROFILE_ID>,"accountHolderName":"Da
+          Rod","currency":"USD","country":"US","type":"aba","details":{"address":{"country":"US","countryCode":"US","firstLine":"59-720
+          Kamehameha Hwy","postCode":"96712","city":"Haleiwa","state":"HI"},"email":null,"legalType":"PRIVATE","accountHolderName":null,"accountNumber":"12345678","sortCode":null,"abartn":"026009593","accountType":"CHECKING","bankgiroNumber":null,"ifscCode":null,"bsbCode":null,"institutionNumber":null,"transitNumber":null,"phoneNumber":null,"bankCode":null,"russiaRegion":null,"routingNumber":null,"branchCode":null,"cpf":null,"cardToken":null,"idType":null,"idNumber":null,"idCountryIso3":null,"idValidFrom":null,"idValidTo":null,"clabe":null,"swiftCode":null,"dateOfBirth":null,"clearingNumber":null,"bankName":null,"branchName":null,"businessNumber":null,"province":null,"city":null,"rut":null,"token":null,"cnpj":null,"payinReference":null,"pspReference":null,"orderId":null,"idDocumentType":null,"idDocumentNumber":null,"targetProfile":null,"targetUserId":null,"taxId":null,"job":null,"nationality":null,"interacAccount":null,"bban":null,"town":null,"postCode":null,"language":null,"billerCode":null,"customerReferenceNumber":null,"prefix":null,"relationship":null,"IBAN":null,"iban":null,"BIC":null,"bic":null},"user":5882096,"active":true,"ownedByCustomer":false}'
+    recorded_at: Thu, 12 Oct 2023 23:22:17 GMT
+recorded_with: VCR 6.2.0

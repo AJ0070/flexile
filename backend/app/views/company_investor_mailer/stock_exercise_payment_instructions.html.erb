@@ -1,0 +1,34 @@
+<h1>
+  You're on your way to exercising your options.
+</h1>
+<p>
+  Here's what's next:
+</p>
+
+<ol>
+  <li>
+    <strong>Submit your payment.</strong> Send <%= cents_format(@exercise.total_cost_cents, no_cents_if_whole: false) %> to <%= @company.display_name %> and ensure you cover any fees imposed by your bank.
+  </li>
+  <li>
+    <strong><%= @company.display_name %> processes your payment.</strong> It might take up to 5 business days.
+  </li>
+  <li>
+    <strong>Receive your stock certificate.</strong> Your shares will show up on Flexile, and you'll be ready to join
+    in on <%= @company.display_name %>'s liquidity events. That's all!
+  </li>
+</ol>
+
+<h2>Payment instructions</h2>
+
+<dl>
+  <dt>Total to pay</dt>
+  <dd><%= cents_format(@exercise.total_cost_cents, no_cents_if_whole: false) %></dd>
+
+  <% @account_details.each do |label, value| %>
+    <dt><%= label %></dt>
+    <dd><%= value %></dd>
+  <% end %>
+</dl>
+<p>
+  Got questions? Need a bit of guidance? We're happy to help! Just reply to this email.
+</p>

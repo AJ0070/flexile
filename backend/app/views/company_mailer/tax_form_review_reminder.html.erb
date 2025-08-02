@@ -1,0 +1,8 @@
+<h1>Your tax forms for <%= @tax_year %> are ready.</h1>
+<p>
+  We've prepared your <%= @tax_year %> tax forms for <%= @company.name %>, and they are now available in the
+  "Documents" section on Flexile.
+  We will be filing these forms with the IRS in the upcoming weeks.
+</p>
+
+<%= link_to "View tax forms", "#{PROTOCOL}://#{DOMAIN}/documents", class: "button" %>

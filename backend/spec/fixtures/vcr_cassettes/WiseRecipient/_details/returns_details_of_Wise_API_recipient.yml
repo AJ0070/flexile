@@ -1,0 +1,71 @@
+---
+http_interactions:
+  - request:
+      method: get
+      uri: https://api.sandbox.transferwise.tech/v1/accounts/148563324
+      body:
+        encoding: US-ASCII
+        string: ""
+      headers:
+        Authorization:
+          - Bearer 8e85a0b2-c1bc-4487-9fc9-e286fb9263d9
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+        Accept:
+          - "*/*"
+        User-Agent:
+          - Ruby
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Date:
+          - Sun, 09 Oct 2022 12:00:12 GMT
+        Content-Type:
+          - application/json;charset=UTF-8
+        Transfer-Encoding:
+          - chunked
+        Connection:
+          - keep-alive
+        X-Request-Id:
+          - 5759737d-d126-9028-aef4-9fe13f3d8fa8
+        X-Trace-Id:
+          - e45e3c0eeb97168d
+        X-Content-Type-Options:
+          - nosniff
+        X-Xss-Protection:
+          - 1; mode=block
+        Cache-Control:
+          - no-cache, no-store, max-age=0, must-revalidate
+        Pragma:
+          - no-cache
+        Expires:
+          - "0"
+        X-Frame-Options:
+          - DENY
+        X-Envoy-Upstream-Service-Time:
+          - "60"
+        X-Envoy-Attempt-Count:
+          - "1"
+        Vary:
+          - origin,access-control-request-method,access-control-request-headers,accept-encoding
+        Cf-Cache-Status:
+          - DYNAMIC
+        Set-Cookie:
+          - __cf_bm=U3.JkgEKO51c2UcXSZcUOkORS3o3a4ouZm.K0V5Do7c-1665316812-0-Ac+8dZjERGR+CsSpeFbu+6W9P8go7LOeoLRm631EQJGzLSvzMILe7lQCLa8C/qv9Hgt6NCi2qh6N7VmkuEg/5Nw=;
+            path=/; expires=Sun, 09-Oct-22 12:30:12 GMT; domain=.transferwise.tech; HttpOnly;
+            Secure; SameSite=None
+        Server:
+          - cloudflare
+        Cf-Ray:
+          - 7576f45c3cfd86c8-MAD
+        Alt-Svc:
+          - h3=":443"; ma=86400, h3-29=":443"; ma=86400
+      body:
+        encoding: ASCII-8BIT
+        string: '{"id":148563324,"business":<WISE_PROFILE_ID>,"profile":<WISE_PROFILE_ID>,"accountHolderName":"John
+          Banker","currency":"USD","country":"US","type":"aba","details":{"address":{"country":"US","countryCode":"US","firstLine":"1234
+          Orange Street","postCode":"32308","city":"Tallahassee","state":"HI"},"email":"sharang@example.com","legalType":"PRIVATE","accountHolderName":null,"accountNumber":"87654321","sortCode":null,"abartn":"026009593","accountType":"SAVINGS","bankgiroNumber":null,"ifscCode":null,"bsbCode":null,"institutionNumber":null,"transitNumber":null,"phoneNumber":null,"bankCode":null,"russiaRegion":null,"routingNumber":null,"branchCode":null,"cpf":null,"cardToken":null,"idType":null,"idNumber":null,"idCountryIso3":null,"idValidFrom":null,"idValidTo":null,"clabe":null,"swiftCode":null,"dateOfBirth":null,"clearingNumber":null,"bankName":null,"branchName":null,"businessNumber":null,"province":null,"city":null,"rut":null,"token":null,"cnpj":null,"payinReference":null,"pspReference":null,"orderId":null,"idDocumentType":null,"idDocumentNumber":null,"targetProfile":null,"targetUserId":null,"taxId":null,"job":null,"nationality":null,"interacAccount":null,"bban":null,"town":null,"postCode":null,"language":null,"billerCode":null,"customerReferenceNumber":null,"prefix":null,"IBAN":null,"iban":null,"BIC":null,"bic":null},"user":5882096,"active":false,"ownedByCustomer":false}'
+    recorded_at: Sun, 09 Oct 2022 12:00:12 GMT
+recorded_with: VCR 6.1.0

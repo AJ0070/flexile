@@ -1,0 +1,256 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.stripe.com/v1/setup_intents/seti_1LS2aCFSsGLfTpetJF5ZbTzr?expand%5B%5D=payment_method
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Stripe/v1 RubyBindings/11.6.0
+      Authorization:
+      - Bearer sk_test_51LBic8FSsGLfTpetzIURf8ybimlbadTOyvetEmam8qFXUpT52LDkEquZoGFbyuEiJaGSFfNjSKSAMPLE
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Stripe-Version:
+      - '2024-04-10'
+      X-Stripe-Client-User-Agent:
+      - '{"bindings_version":"11.6.0","lang":"ruby","lang_version":"3.3.2 p78 (2024-05-30)","platform":"arm64-darwin23","engine":"ruby","publisher":"stripe","uname":"Darwin
+        Helens-MBP-M1 23.4.0 Darwin Kernel Version 23.4.0: Fri Mar 15 00:10:42 PDT
+        2024; root:xnu-10063.101.17~1/RELEASE_ARM64_T6000 arm64","hostname":"Helens-MBP-M1"}'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 17 Jun 2024 23:36:35 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '2030'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET,HEAD,PUT,PATCH,POST,DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Request-Id, Stripe-Manage-Version, Stripe-Should-Retry, X-Stripe-External-Auth-Required,
+        X-Stripe-Privileged-Session-Required
+      Access-Control-Max-Age:
+      - '300'
+      Cache-Control:
+      - no-cache, no-store
+      Content-Security-Policy:
+      - report-uri https://q.stripe.com/csp-report?p=v1%2Fsetup_intents%2F%3Aintent;
+        block-all-mixed-content; default-src 'none'; base-uri 'none'; form-action
+        'none'; frame-ancestors 'none'; img-src 'self'; script-src 'self' 'report-sample';
+        style-src 'self'
+      Cross-Origin-Opener-Policy-Report-Only:
+      - same-origin; report-to="coop"
+      Report-To:
+      - '{"group":"coop","max_age":8640,"endpoints":[{"url":"https://q.stripe.com/coop-report?s=payins-bapi-srv"}],"include_subdomains":true}'
+      Reporting-Endpoints:
+      - coop="https://q.stripe.com/coop-report?s=payins-bapi-srv"
+      Request-Id:
+      - req_cZ3KimrbzkpCBj
+      Stripe-Version:
+      - '2024-04-10'
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Stripe-Priority-Routing-Enabled:
+      - 'true'
+      X-Stripe-Routing-Context-Priority-Tier:
+      - api-testmode
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "id": "seti_1LS2aCFSsGLfTpetJF5ZbTzr",
+          "object": "setup_intent",
+          "application": null,
+          "automatic_payment_methods": null,
+          "cancellation_reason": null,
+          "client_secret": "seti_1LS2aCFSsGLfTpetJF5ZbTzr_secret_MANKZoxPk7FuMFb5jshwnLTQqBpWYu8",
+          "created": 1659375552,
+          "customer": "cus_M2QFeoOFttyzTx",
+          "description": null,
+          "flow_directions": null,
+          "last_setup_error": null,
+          "latest_attempt": "setatt_1LS2bAFSsGLfTpetdQeunp7j",
+          "livemode": false,
+          "mandate": "mandate_1LS2bBFSsGLfTpetzyxTIQ8Q",
+          "metadata": {},
+          "next_action": null,
+          "on_behalf_of": null,
+          "payment_method": {
+            "id": "pm_1LS2bAFSsGLfTpetCH8rj0EY",
+            "object": "payment_method",
+            "allow_redisplay": "unspecified",
+            "billing_details": {
+              "address": {
+                "city": null,
+                "country": null,
+                "line1": null,
+                "line2": null,
+                "postal_code": null,
+                "state": null
+              },
+              "email": "sharang.d+test_email@gmail.com",
+              "name": "Sahil Example",
+              "phone": null
+            },
+            "created": 1659375612,
+            "customer": "cus_M2QFeoOFttyzTx",
+            "livemode": false,
+            "metadata": {},
+            "type": "us_bank_account",
+            "us_bank_account": {
+              "account_holder_type": "individual",
+              "account_type": "checking",
+              "bank_name": "STRIPE TEST BANK",
+              "financial_connections_account": null,
+              "fingerprint": "fyuVQhio0NPi5cGK",
+              "last4": "6789",
+              "networks": {
+                "preferred": "ach",
+                "supported": [
+                  "ach"
+                ]
+              },
+              "routing_number": "110000000",
+              "status_details": {}
+            }
+          },
+          "payment_method_configuration_details": null,
+          "payment_method_options": {
+            "us_bank_account": {
+              "financial_connections": {
+                "permissions": [
+                  "payment_method",
+                  "balances"
+                ],
+                "prefetch": []
+              },
+              "verification_method": "automatic"
+            }
+          },
+          "payment_method_types": [
+            "us_bank_account"
+          ],
+          "single_use_mandate": null,
+          "status": "succeeded",
+          "usage": "off_session"
+        }
+  recorded_at: Mon, 17 Jun 2024 23:36:35 GMT
+- request:
+    method: post
+    uri: https://api.stripe.com/v1/payment_intents
+    body:
+      encoding: UTF-8
+      string: payment_method_types[0]=us_bank_account&payment_method=pm_1LS2bAFSsGLfTpetCH8rj0EY&customer=cus_M2QFeoOFttyzTx&confirm=true&amount=300000000&currency=USD&expand[0]=latest_charge&capture_method=automatic
+    headers:
+      User-Agent:
+      - Stripe/v1 RubyBindings/11.6.0
+      Authorization:
+      - Bearer sk_test_51LBic8FSsGLfTpetzIURf8ybimlbadTOyvetEmam8qFXUpT52LDkEquZoGFbyuEiJaGSFfNjSKSAMPLE
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Stripe-Client-Telemetry:
+      - '{"last_request_metrics":{"request_id":"req_cZ3KimrbzkpCBj","request_duration_ms":301}}'
+      Stripe-Version:
+      - '2024-04-10'
+      X-Stripe-Client-User-Agent:
+      - '{"bindings_version":"11.6.0","lang":"ruby","lang_version":"3.3.2 p78 (2024-05-30)","platform":"arm64-darwin23","engine":"ruby","publisher":"stripe","uname":"Darwin
+        Helens-MBP-M1 23.4.0 Darwin Kernel Version 23.4.0: Fri Mar 15 00:10:42 PDT
+        2024; root:xnu-10063.101.17~1/RELEASE_ARM64_T6000 arm64","hostname":"Helens-MBP-M1"}'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 17 Jun 2024 23:36:35 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '315'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET,HEAD,PUT,PATCH,POST,DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Request-Id, Stripe-Manage-Version, Stripe-Should-Retry, X-Stripe-External-Auth-Required,
+        X-Stripe-Privileged-Session-Required
+      Access-Control-Max-Age:
+      - '300'
+      Cache-Control:
+      - no-cache, no-store
+      Content-Security-Policy:
+      - report-uri https://q.stripe.com/csp-report?p=v1%2Fpayment_intents; block-all-mixed-content;
+        default-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none';
+        img-src 'self'; script-src 'self' 'report-sample'; style-src 'self'
+      Cross-Origin-Opener-Policy-Report-Only:
+      - same-origin; report-to="coop"
+      Idempotency-Key:
+      - f24f36d3-d107-411e-8450-95a4b86b7d97
+      Original-Request:
+      - req_3TwxhjhWj2fgya
+      Report-To:
+      - '{"group":"coop","max_age":8640,"endpoints":[{"url":"https://q.stripe.com/coop-report?s=payins-bapi-srv"}],"include_subdomains":true}'
+      Reporting-Endpoints:
+      - coop="https://q.stripe.com/coop-report?s=payins-bapi-srv"
+      Request-Id:
+      - req_3TwxhjhWj2fgya
+      Stripe-Should-Retry:
+      - 'false'
+      Stripe-Version:
+      - '2024-04-10'
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Stripe-Priority-Routing-Enabled:
+      - 'true'
+      X-Stripe-Routing-Context-Priority-Tier:
+      - api-testmode
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "error": {
+            "code": "amount_too_large",
+            "doc_url": "https://stripe.com/docs/error-codes/amount-too-large",
+            "message": "Amount must be no more than $999,999.99",
+            "request_log_url": "https://dashboard.stripe.com/test/logs/req_3TwxhjhWj2fgya?t=1718667395",
+            "type": "invalid_request_error"
+          }
+        }
+  recorded_at: Mon, 17 Jun 2024 23:36:35 GMT
+recorded_with: VCR 6.2.0

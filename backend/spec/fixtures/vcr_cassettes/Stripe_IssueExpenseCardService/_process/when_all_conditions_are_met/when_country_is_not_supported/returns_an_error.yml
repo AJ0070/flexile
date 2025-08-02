@@ -1,0 +1,323 @@
+---
+http_interactions:
+  - request:
+      method: get
+      uri: https://api.stripe.com/v1/issuing/cardholders?email=joao@gumroad.com&limit=1&status=active
+      body:
+        encoding: US-ASCII
+        string: ""
+      headers:
+        User-Agent:
+          - Stripe/v1 RubyBindings/12.4.0
+        Authorization:
+          - Bearer sk_test_51LBic8FSsGLfTpetzIURf8ybimlbadTOyvetEmam8qFXUpT52LDkEquZoGFbyuEiJaGSFfNjSKSAMPLE
+        Content-Type:
+          - application/x-www-form-urlencoded
+        Stripe-Version:
+          - "2024-04-10"
+        X-Stripe-Client-User-Agent:
+          - '{"bindings_version":"12.4.0","lang":"ruby","lang_version":"3.3.4 p94 (2024-07-09)","platform":"arm64-darwin23","engine":"ruby","publisher":"stripe","uname":"Darwin
+            Raphaels-MacBook-Pro.local 23.5.0 Darwin Kernel Version 23.5.0: Wed May  1
+            20:12:58 PDT 2024; root:xnu-10063.121.3~5/RELEASE_ARM64_T6000 arm64","hostname":"Raphaels-MacBook-Pro.local"}'
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+        Accept:
+          - "*/*"
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Server:
+          - nginx
+        Date:
+          - Thu, 01 Aug 2024 19:25:40 GMT
+        Content-Type:
+          - application/json
+        Content-Length:
+          - "93"
+        Connection:
+          - keep-alive
+        Access-Control-Allow-Credentials:
+          - "true"
+        Access-Control-Allow-Methods:
+          - GET,HEAD,PUT,PATCH,POST,DELETE
+        Access-Control-Allow-Origin:
+          - "*"
+        Access-Control-Expose-Headers:
+          - Request-Id, Stripe-Manage-Version, Stripe-Should-Retry, X-Stripe-External-Auth-Required,
+            X-Stripe-Privileged-Session-Required
+        Access-Control-Max-Age:
+          - "300"
+        Cache-Control:
+          - no-cache, no-store
+        Content-Security-Policy:
+          - report-uri https://q.stripe.com/csp-report?p=v1%2Fissuing%2Fcardholders; block-all-mixed-content;
+            default-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none';
+            img-src 'self'; script-src 'self' 'report-sample'; style-src 'self'
+        Cross-Origin-Opener-Policy-Report-Only:
+          - same-origin; report-to="coop"
+        Report-To:
+          - '{"group":"coop","max_age":8640,"endpoints":[{"url":"https://q.stripe.com/coop-report?s=mono-bapi-srv"}],"include_subdomains":true}'
+        Reporting-Endpoints:
+          - coop="https://q.stripe.com/coop-report?s=mono-bapi-srv"
+        Request-Id:
+          - req_QjPrghfhvzaNuY
+        Stripe-Version:
+          - "2024-04-10"
+        Vary:
+          - Origin
+        X-Content-Type-Options:
+          - nosniff
+        X-Stripe-Priority-Routing-Enabled:
+          - "true"
+        X-Stripe-Routing-Context-Priority-Tier:
+          - api-testmode
+        Strict-Transport-Security:
+          - max-age=63072000; includeSubDomains; preload
+      body:
+        encoding: UTF-8
+        string: |-
+          {
+            "object": "list",
+            "data": [],
+            "has_more": false,
+            "url": "/v1/issuing/cardholders"
+          }
+    recorded_at: Thu, 01 Aug 2024 19:25:40 GMT
+  - request:
+      method: post
+      uri: https://api.stripe.com/v1/issuing/cardholders
+      body:
+        encoding: UTF-8
+        string: type=individual&name=Mr.+Carlo+Corkery&email=joao%40gumroad.com&status=active&individual[first_name]=Mr.+Carlo&individual[last_name]=Corkery&individual[card_issuing][user_terms_acceptance][date]=1722540352&individual[card_issuing][user_terms_acceptance][ip]=217.167.68.252&individual[card_issuing][user_terms_acceptance][user_agent]=Mozilla%2F5.0+%28compatible%3B+MSIE+9.0%3B+AOL+9.7%3B+AOLBuild+4343.19%3B+Windows+NT+6.1%3B+WOW64%3B+Trident%2F5.0%3B+FunWebProducts%29&billing[address][line1]=1st+Street&billing[address][city]=New+York&billing[address][state]=NY&billing[address][postal_code]=10004&billing[address][country]=BR
+      headers:
+        User-Agent:
+          - Stripe/v1 RubyBindings/12.4.0
+        Authorization:
+          - Bearer sk_test_51LBic8FSsGLfTpetzIURf8ybimlbadTOyvetEmam8qFXUpT52LDkEquZoGFbyuEiJaGSFfNjSKSAMPLE
+        Content-Type:
+          - application/x-www-form-urlencoded
+        X-Stripe-Client-Telemetry:
+          - '{"last_request_metrics":{"request_id":"req_QjPrghfhvzaNuY","request_duration_ms":606}}'
+        Stripe-Version:
+          - "2024-04-10"
+        X-Stripe-Client-User-Agent:
+          - '{"bindings_version":"12.4.0","lang":"ruby","lang_version":"3.3.4 p94 (2024-07-09)","platform":"arm64-darwin23","engine":"ruby","publisher":"stripe","uname":"Darwin
+            Raphaels-MacBook-Pro.local 23.5.0 Darwin Kernel Version 23.5.0: Wed May  1
+            20:12:58 PDT 2024; root:xnu-10063.121.3~5/RELEASE_ARM64_T6000 arm64","hostname":"Raphaels-MacBook-Pro.local"}'
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+        Accept:
+          - "*/*"
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Server:
+          - nginx
+        Date:
+          - Thu, 01 Aug 2024 19:25:53 GMT
+        Content-Type:
+          - application/json
+        Content-Length:
+          - "1290"
+        Connection:
+          - keep-alive
+        Access-Control-Allow-Credentials:
+          - "true"
+        Access-Control-Allow-Methods:
+          - GET,HEAD,PUT,PATCH,POST,DELETE
+        Access-Control-Allow-Origin:
+          - "*"
+        Access-Control-Expose-Headers:
+          - Request-Id, Stripe-Manage-Version, Stripe-Should-Retry, X-Stripe-External-Auth-Required,
+            X-Stripe-Privileged-Session-Required
+        Access-Control-Max-Age:
+          - "300"
+        Cache-Control:
+          - no-cache, no-store
+        Content-Security-Policy:
+          - report-uri https://q.stripe.com/csp-report?p=v1%2Fissuing%2Fcardholders; block-all-mixed-content;
+            default-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none';
+            img-src 'self'; script-src 'self' 'report-sample'; style-src 'self'
+        Cross-Origin-Opener-Policy-Report-Only:
+          - same-origin; report-to="coop"
+        Idempotency-Key:
+          - 198cdef1-a4e3-4b97-ab52-84b5e15eeb57
+        Original-Request:
+          - req_EEqHypo55h6ruh
+        Report-To:
+          - '{"group":"coop","max_age":8640,"endpoints":[{"url":"https://q.stripe.com/coop-report?s=mono-bapi-srv"}],"include_subdomains":true}'
+        Reporting-Endpoints:
+          - coop="https://q.stripe.com/coop-report?s=mono-bapi-srv"
+        Request-Id:
+          - req_EEqHypo55h6ruh
+        Stripe-Should-Retry:
+          - "false"
+        Stripe-Version:
+          - "2024-04-10"
+        Vary:
+          - Origin
+        X-Content-Type-Options:
+          - nosniff
+        X-Stripe-Priority-Routing-Enabled:
+          - "true"
+        X-Stripe-Routing-Context-Priority-Tier:
+          - api-testmode
+        Strict-Transport-Security:
+          - max-age=63072000; includeSubDomains; preload
+      body:
+        encoding: UTF-8
+        string: |-
+          {
+            "id": "ich_1Pj4dIFSsGLfTpet8jFoovKm",
+            "object": "issuing.cardholder",
+            "billing": {
+              "address": {
+                "city": "New York",
+                "country": "BR",
+                "line1": "1st Street",
+                "line2": null,
+                "postal_code": "10004",
+                "state": "NY"
+              }
+            },
+            "company": null,
+            "created": 1722540352,
+            "email": "joao@gumroad.com",
+            "individual": {
+              "card_issuing": {
+                "user_terms_acceptance": {
+                  "date": 1722540352,
+                  "ip": "217.167.68.252",
+                  "user_agent": "Mozilla/5.0 (compatible; MSIE 9.0; AOL 9.7; AOLBuild 4343.19; Windows NT 6.1; WOW64; Trident/5.0; FunWebProducts)"
+                }
+              },
+              "dob": null,
+              "first_name": "Mr. Carlo",
+              "last_name": "Corkery",
+              "verification": {
+                "document": {
+                  "back": null,
+                  "front": null
+                }
+              }
+            },
+            "livemode": false,
+            "metadata": {},
+            "name": "Mr. Carlo Corkery",
+            "phone_number": null,
+            "preferred_locales": [],
+            "requirements": {
+              "disabled_reason": "under_review",
+              "past_due": []
+            },
+            "spending_controls": {
+              "allowed_categories": [],
+              "allowed_merchant_countries": [],
+              "blocked_categories": [],
+              "blocked_merchant_countries": [],
+              "spending_limits": [],
+              "spending_limits_currency": null
+            },
+            "status": "active",
+            "type": "individual"
+          }
+    recorded_at: Thu, 01 Aug 2024 19:25:53 GMT
+  - request:
+      method: post
+      uri: https://api.stripe.com/v1/issuing/cards
+      body:
+        encoding: UTF-8
+        string: cardholder=ich_1Pj4dIFSsGLfTpet8jFoovKm&currency=usd&type=virtual&status=active&spending_controls[spending_limits][0][amount]=10000&spending_controls[spending_limits][0][interval]=monthly&metadata[company_worker_id]=45
+      headers:
+        User-Agent:
+          - Stripe/v1 RubyBindings/12.4.0
+        Authorization:
+          - Bearer sk_test_51LBic8FSsGLfTpetzIURf8ybimlbadTOyvetEmam8qFXUpT52LDkEquZoGFbyuEiJaGSFfNjSKSAMPLE
+        Content-Type:
+          - application/x-www-form-urlencoded
+        X-Stripe-Client-Telemetry:
+          - '{"last_request_metrics":{"request_id":"req_EEqHypo55h6ruh","request_duration_ms":694}}'
+        Stripe-Version:
+          - "2024-04-10"
+        X-Stripe-Client-User-Agent:
+          - '{"bindings_version":"12.4.0","lang":"ruby","lang_version":"3.3.4 p94 (2024-07-09)","platform":"arm64-darwin23","engine":"ruby","publisher":"stripe","uname":"Darwin
+            Raphaels-MacBook-Pro.local 23.5.0 Darwin Kernel Version 23.5.0: Wed May  1
+            20:12:58 PDT 2024; root:xnu-10063.121.3~5/RELEASE_ARM64_T6000 arm64","hostname":"Raphaels-MacBook-Pro.local"}'
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+        Accept:
+          - "*/*"
+    response:
+      status:
+        code: 400
+        message: Bad Request
+      headers:
+        Server:
+          - nginx
+        Date:
+          - Thu, 01 Aug 2024 19:25:53 GMT
+        Content-Type:
+          - application/json
+        Content-Length:
+          - "228"
+        Connection:
+          - keep-alive
+        Access-Control-Allow-Credentials:
+          - "true"
+        Access-Control-Allow-Methods:
+          - GET,HEAD,PUT,PATCH,POST,DELETE
+        Access-Control-Allow-Origin:
+          - "*"
+        Access-Control-Expose-Headers:
+          - Request-Id, Stripe-Manage-Version, Stripe-Should-Retry, X-Stripe-External-Auth-Required,
+            X-Stripe-Privileged-Session-Required
+        Access-Control-Max-Age:
+          - "300"
+        Cache-Control:
+          - no-cache, no-store
+        Content-Security-Policy:
+          - report-uri https://q.stripe.com/csp-report?p=v1%2Fissuing%2Fcards; block-all-mixed-content;
+            default-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none';
+            img-src 'self'; script-src 'self' 'report-sample'; style-src 'self'
+        Cross-Origin-Opener-Policy-Report-Only:
+          - same-origin; report-to="coop"
+        Idempotency-Key:
+          - ee071a24-e9a8-4444-b9d4-5eb8d9f4e86c
+        Original-Request:
+          - req_faZdNQRess8Xuy
+        Report-To:
+          - '{"group":"coop","max_age":8640,"endpoints":[{"url":"https://q.stripe.com/coop-report?s=mono-bapi-srv"}],"include_subdomains":true}'
+        Reporting-Endpoints:
+          - coop="https://q.stripe.com/coop-report?s=mono-bapi-srv"
+        Request-Id:
+          - req_faZdNQRess8Xuy
+        Stripe-Should-Retry:
+          - "false"
+        Stripe-Version:
+          - "2024-04-10"
+        Vary:
+          - Origin
+        X-Content-Type-Options:
+          - nosniff
+        X-Stripe-Priority-Routing-Enabled:
+          - "true"
+        X-Stripe-Routing-Context-Priority-Tier:
+          - api-testmode
+        Strict-Transport-Security:
+          - max-age=63072000; includeSubDomains; preload
+      body:
+        encoding: UTF-8
+        string: |
+          {
+            "error": {
+              "message": "Cardholder cannot have a billing address country of BR.",
+              "request_log_url": "https://dashboard.stripe.com/test/logs/req_faZdNQRess8Xuy?t=1722540353",
+              "type": "invalid_request_error"
+            }
+          }
+    recorded_at: Thu, 01 Aug 2024 19:25:53 GMT
+recorded_with: VCR 6.2.0

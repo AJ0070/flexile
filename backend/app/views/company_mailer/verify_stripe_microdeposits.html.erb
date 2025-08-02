@@ -1,0 +1,26 @@
+<h1>Your bank account verification is pending</h1>
+
+<p>To avoid delays in processing payments to your contractors, please complete the verification process.</p>
+
+<h2>How to verify:</h2>
+
+<% if @via_descriptor_code %>
+  <ul>
+    <li>Check your bank statement for a $0.01 deposit from Stripe on <%= @arrival_date %><%= @bank_account_last_four ? ", in your account ending in **#{@bank_account_last_four}" : "" %>.</li>
+    <li>Find the 6-digit code starting with 'SM' in the deposit description.</li>
+    <li>Enter this code in your settings to complete verification.</li>
+  </ul>
+
+  <p>If the code isn't visible yet, it should appear in 1-2 business days. If you need any help, just reply to this email.</p>
+<% else %>
+  <ul>
+    <li>Check your bank statement for two deposits from Stripe on <%= @arrival_date %><%= @bank_account_last_four ? ", in your account ending in **#{@bank_account_last_four}" : "" %>. The transactions' description will read "ACCTVERIFY".</li>
+    <li>Enter these deposit amounts in your settings to complete verification.</li>
+  </ul>
+
+  <p>If the deposits aren't visible yet, they should appear in 1-2 business days. If you need any help, just reply to this email.</p>
+<% end %>
+
+<%= link_to "Verify your bank account",
+            "#{PROTOCOL}://#{DOMAIN}/settings/administrator?open-modal=microdeposits",
+            class: "button" %>

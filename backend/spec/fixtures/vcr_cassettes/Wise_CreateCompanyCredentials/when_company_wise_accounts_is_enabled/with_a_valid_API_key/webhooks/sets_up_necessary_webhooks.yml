@@ -1,0 +1,209 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.sandbox.transferwise.tech/v2/profiles
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer 864388ea-fb3a-4682-9528-2cf16ece406c
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 24 Mar 2023 13:03:36 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Request-Id:
+      - c7af99d6-2fbc-9d7b-a642-0b5ecb6195fc
+      X-Trace-Id:
+      - '000000000000000019cba06501cef7d6'
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Frame-Options:
+      - DENY
+      X-Envoy-Upstream-Service-Time:
+      - '74'
+      X-Envoy-Attempt-Count:
+      - '1'
+      Vary:
+      - origin,access-control-request-method,access-control-request-headers,accept-encoding
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=09cxX9QBAii84mTa7diIiHsOI0D_Nemk3ZM3p1WYCzk-1679663016-0-ASgwfUBeB4mkL+THO6IYPa8evizvF8IVC2Lvw8hnxikvSFF/s2CP5UNK/9tWye6dcm1XGVBrzXXOEZ3Dc+0ZmSw=;
+        path=/; expires=Fri, 24-Mar-23 13:33:36 GMT; domain=.transferwise.tech; HttpOnly;
+        Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 7acf1d7aadab438a-EWR
+      Alt-Svc:
+      - h3=":443"; ma=86400, h3-29=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"type":"PERSONAL","id":16656728,"userId":6145016,"type":"PERSONAL","address":{"addressFirstLine":"56
+        Shoreditch High Street","city":"London","countryIso2Code":"GB","countryIso3Code":"gbr","postCode":"E16JJ","stateCode":null},"email":"","createdAt":"2022-11-21T15:49:46.000Z","updatedAt":"2022-11-21T15:49:46.000Z","obfuscated":false,"currentState":"VISIBLE","firstName":"Helen","lastName":"Hood","dateOfBirth":"1981-11-20","phoneNumber":"+14133203613","secondaryAddresses":[],"fullName":"Helen
+        Hood"},{"type":"BUSINESS","id":16656729,"userId":6145016,"type":"BUSINESS","address":{"addressFirstLine":"56
+        Shoreditch High Street","city":"London","countryIso2Code":"GB","countryIso3Code":"gbr","postCode":"E16JJ","stateCode":null},"email":"","createdAt":"2022-11-21T15:49:49.000Z","updatedAt":"2022-11-21T15:49:49.000Z","obfuscated":false,"currentState":"VISIBLE","businessName":"Acme,
+        Inc.","registrationNumber":"07209813","descriptionOfBusiness":"IT_SERVICES","companyType":"LIMITED","companyRole":"OWNER","operationalAddresses":[],"fullName":"Acme,
+        Inc."}]'
+  recorded_at: Fri, 24 Mar 2023 13:03:36 GMT
+- request:
+    method: post
+    uri: https://api.sandbox.transferwise.tech/v1/accounts
+    body:
+      encoding: UTF-8
+      string: '{"profile":"16656729","accountHolderName":"Gumroad, Inc.","currency":"USD","type":"aba","details":{"legalType":"BUSINESS","abartn":"<GUMROAD_BANK_ROUTING_NUMBER>","accountNumber":<GUMROAD_BANK_ACCOUNT_NUMBER>,"accountType":"CHECKING","address":{"country":"US","state":"CA","city":"San
+        Francisco","postCode":"94104","firstLine":"548 Market St #41309"}}}'
+    headers:
+      Authorization:
+      - Bearer 864388ea-fb3a-4682-9528-2cf16ece406c
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 24 Mar 2023 13:03:36 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Frame-Options:
+      - DENY
+      X-Trace-Id:
+      - 000000000000000050ed6d3ce54d6296
+      X-Envoy-Upstream-Service-Time:
+      - '181'
+      X-Envoy-Attempt-Count:
+      - '1'
+      Vary:
+      - origin,access-control-request-method,access-control-request-headers,accept-encoding
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=T0zGMSRaKWRV1G.5pdIv_XZCAHJIgO2Rh8w60X5KLHk-1679663016-0-AZLI5NmdNbRZ1k8zFJsK2rlPjO3rYskJD7AVdUQHcpQ6QjJtfRGx2Cy/Y1FLarrdwVKI6PbopIXI2glT+xJhN/g=;
+        path=/; expires=Fri, 24-Mar-23 13:33:36 GMT; domain=.transferwise.tech; HttpOnly;
+        Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 7acf1d7caa674373-EWR
+      Alt-Svc:
+      - h3=":443"; ma=86400, h3-29=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":148780255,"business":16656729,"profile":16656729,"accountHolderName":"Gumroad,
+        Inc.","currency":"USD","country":"US","type":"aba","details":{"address":{"country":"US","countryCode":"US","firstLine":"548
+        Market St #41309","postCode":"94104","city":"San Francisco","state":"CA"},"email":null,"legalType":"BUSINESS","accountHolderName":null,"accountNumber":"<GUMROAD_BANK_ACCOUNT_NUMBER>","sortCode":null,"abartn":"<GUMROAD_BANK_ROUTING_NUMBER>","accountType":"CHECKING","bankgiroNumber":null,"ifscCode":null,"bsbCode":null,"institutionNumber":null,"transitNumber":null,"phoneNumber":null,"bankCode":null,"russiaRegion":null,"routingNumber":null,"branchCode":null,"cpf":null,"cardToken":null,"idType":null,"idNumber":null,"idCountryIso3":null,"idValidFrom":null,"idValidTo":null,"clabe":null,"swiftCode":null,"dateOfBirth":null,"clearingNumber":null,"bankName":null,"branchName":null,"businessNumber":null,"province":null,"city":null,"rut":null,"token":null,"cnpj":null,"payinReference":null,"pspReference":null,"orderId":null,"idDocumentType":null,"idDocumentNumber":null,"targetProfile":null,"targetUserId":null,"taxId":null,"job":null,"nationality":null,"interacAccount":null,"bban":null,"town":null,"postCode":null,"language":null,"billerCode":null,"customerReferenceNumber":null,"prefix":null,"IBAN":null,"iban":null,"BIC":null,"bic":null},"user":6145016,"active":true,"ownedByCustomer":false}'
+  recorded_at: Fri, 24 Mar 2023 13:03:36 GMT
+- request:
+    method: delete
+    uri: https://api.sandbox.transferwise.tech/v1/accounts/148780255
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer 864388ea-fb3a-4682-9528-2cf16ece406c
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 24 Mar 2023 13:03:37 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+      X-Request-Id:
+      - 8f3c6ad4-42dd-93b7-bc3e-4639fc41b7d6
+      X-Trace-Id:
+      - '00000000000000009fc3a2cb59de0dc3'
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Frame-Options:
+      - DENY
+      X-Envoy-Upstream-Service-Time:
+      - '133'
+      X-Envoy-Attempt-Count:
+      - '1'
+      Vary:
+      - Origin,Access-Control-Request-Method,Access-Control-Request-Headers
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=hbqSp25RgolWOya74CFl.wssrYy3g7ez9Zz96WlBu9w-1679663017-0-AY/7ppR8anCU5G8nXDmlWbXjtoTv/bYderBFlEbrdrCrm7NjHXZw7/RajJ9vMWTPqXM0DLoKDIZmJCRdQi9qwcI=;
+        path=/; expires=Fri, 24-Mar-23 13:33:37 GMT; domain=.transferwise.tech; HttpOnly;
+        Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 7acf1d7f2cc4422e-EWR
+      Alt-Svc:
+      - h3=":443"; ma=86400, h3-29=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Fri, 24 Mar 2023 13:03:37 GMT
+recorded_with: VCR 6.1.0

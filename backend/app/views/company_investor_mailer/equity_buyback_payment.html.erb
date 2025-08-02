@@ -1,0 +1,42 @@
+<h1>
+  <%= @company.display_name %> has sent you <%= cents_format(@total_cents, no_cents_if_whole: false) %>!
+</h1>
+<% if @equity_buyback_payment.wise_transfer_estimate.present? %>
+  <p>The money will be in your account by <%= @equity_buyback_payment.wise_transfer_estimate.strftime("%A, %B %-d") %>.</p>
+<% end %>
+<dl>
+  <dt>Payment date</dt>
+  <dd>
+    <%= @payment_date.to_fs(:long) %>
+  </dd>
+
+  <dt>Payment method</dt>
+  <dd>
+    Account ending in ****<%= @equity_buyback_payment.recipient_last4 %>
+  </dd>
+
+  <dt>Issuer</dt>
+  <dd>
+    <%= @company.name %>
+  </dd>
+
+  <% @equity_buybacks.each do |equity_buyback| %>
+    <dt>Equity buyback on <%= equity_buyback.equity_buyback_round.issued_at.to_date.to_fs(:medium) %></dt>
+    <dd>
+      <%= cents_format(equity_buyback.total_amount_cents, no_cents_if_whole: false) %>
+    </dd>
+  <% end %>
+</dl>
+<hr>
+<dl>
+  <dt>Total payment</dt>
+  <dd>
+    <%= cents_format(@total_cents, no_cents_if_whole: false) %>
+    <% if @equity_buyback_payment.conversion_rate.present? && @equity_buyback_payment.conversion_rate != 1 %>
+      <%= "(#{Money.from_amount(@equity_buyback_payment.transfer_amount, @equity_buyback_payment.transfer_currency).format(with_currency: true, symbol: false, no_cents_if_whole: false)})" %>
+    <% end %>
+  </dd>
+</dl>
+<p>
+  If you have any questions or need assistance regarding the distribution process, please reply to this email.
+</p>

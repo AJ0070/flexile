@@ -1,0 +1,67 @@
+---
+http_interactions:
+  - request:
+      method: get
+      uri: https://api.sandbox.transferwise.tech/v1/rates?source=USD&target=GBP
+      body:
+        encoding: US-ASCII
+        string: ""
+      headers:
+        Authorization:
+          - Bearer 8e85a0b2-c1bc-4487-9fc9-e286fb9263d9
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+        Accept:
+          - "*/*"
+        User-Agent:
+          - Ruby
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Date:
+          - Sun, 04 Jun 2023 18:20:12 GMT
+        Content-Type:
+          - application/json;charset=UTF-8
+        Transfer-Encoding:
+          - chunked
+        Connection:
+          - keep-alive
+        X-Xss-Protection:
+          - 1; mode=block
+        X-Frame-Options:
+          - DENY
+        X-Trace-Id:
+          - 73d54ff08903f50e
+        Expires:
+          - "0"
+        Pragma:
+          - no-cache
+        Cache-Control:
+          - no-cache, no-store, max-age=0, must-revalidate
+        X-Content-Type-Options:
+          - nosniff
+        X-Envoy-Upstream-Service-Time:
+          - "26"
+        X-Envoy-Attempt-Count:
+          - "1"
+        Vary:
+          - Origin,Access-Control-Request-Method,Access-Control-Request-Headers,accept-encoding
+        Cf-Cache-Status:
+          - DYNAMIC
+        Set-Cookie:
+          - __cf_bm=YA5JTZrFSobSiWq4RYQtqIl8v2FN8.LJu2lLyIDSiNY-1685902812-0-AVGW+YVXRqqcrDWv594VnMc/KZ7eVs/G+J9v3V8Rb1IPO1THlfikxu6xEjdIABK2R3NfsKvs9D3FlUOUiNbHbnE=;
+            path=/; expires=Sun, 04-Jun-23 18:50:12 GMT; domain=.transferwise.tech; HttpOnly;
+            Secure; SameSite=None
+        Server:
+          - cloudflare
+        Cf-Ray:
+          - 7d22303f3a621927-EWR
+        Alt-Svc:
+          - h3=":443"; ma=86400
+      body:
+        encoding: ASCII-8BIT
+        string: '[{"rate":0.803116,"source":"USD","target":"GBP","time":"2023-06-04T18:19:26+0000"}]'
+    recorded_at: Sun, 04 Jun 2023 18:20:12 GMT
+recorded_with: VCR 6.1.0

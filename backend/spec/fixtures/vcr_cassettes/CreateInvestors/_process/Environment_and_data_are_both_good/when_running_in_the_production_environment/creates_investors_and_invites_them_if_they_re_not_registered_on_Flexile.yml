@@ -1,0 +1,327 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.clerk.com/v1/invitations
+    body:
+      encoding: UTF-8
+      string: '{"email_address":"john@example.com","expires_in_days":365,"ignore_existing":true}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OpenAPI-Generator/2.0.0/ruby
+      Accept:
+      - application/json
+      Authorization:
+      - Bearer sk_test_4jPLIR81CgxSxoHUJWKPJH06TGqxEL1ht5aPzcR5KZ
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 22 Feb 2025 20:36:15 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 9161c46c08ff5bb5-VIE
+      Cf-Cache-Status:
+      - DYNAMIC
+      Clerk-Api-Version:
+      - '2021-02-05'
+      X-Cfworker:
+      - '1'
+      X-Clerk-Trace-Id:
+      - c1c067ba7f1600ba6381a6e453a63153
+      X-Cloud-Trace-Context:
+      - c1c067ba7f1600ba6381a6e453a63153
+      Set-Cookie:
+      - __cf_bm=3yJuFXUo1s..hYBzyPTXmTJq0pxB2geQYg0F6p2MZOg-1740256575-1.0.1.1-X7eGq7zvwhg9W6zuEN2gmS1ej9v24hJqZUCcPMhOV8LmtcfjnVVAbP9wfI.0h9HqTSLE.Q1wvItPH87.v08QMw;
+        path=/; expires=Sat, 22-Feb-25 21:06:15 GMT; domain=.api.clerk.com; HttpOnly;
+        Secure; SameSite=None
+      Vary:
+      - Accept-Encoding
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"object":"invitation","id":"inv_2tPbIKpJmzeQ40oomOOufoZ9faW","email_address":"john@example.com","public_metadata":{},"status":"pending","url":"https://eager-akita-70.clerk.accounts.dev/v1/tickets/accept?ticket=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJlaXMiOjMxNTM2MDAwLCJleHAiOjE3NzE3OTI1NzUsImlpZCI6Imluc18ycjhhSkhwd3czZ1p2eVRBc0luTW5BU0JPS3YiLCJzaWQiOiJpbnZfMnRQYklLcEptemVRNDBvb21PT3Vmb1o5ZmFXIiwic3QiOiJpbnZpdGF0aW9uIn0.SIgSJT0UzUMf2q4fWGqtT6N0sac35_ZO9Bj1Zr8-8o9RFnlt1bYG20PPDaJiXy_NqWIrI_CjwKDmPIH-vc4Ruqko9r-DgWyY3BnD2qw6DuirCydm0vZoLlVnyA93W7Amc2IYsky7hDauz34_ftMqhn-0Z9PTPI4vCvRYzexodYA--VjY2-iZFAdkeXz9VG7VGymjxHHBJstJEY3bylza7_qQhzj1Bdz5afoH8sI7jTa6W1ouDergbT9mdf9JsHvyhnqFI-Oco64f-OcZ4yE0JCxIF6R6_OGBwwZ7I5eOwlAmb3Ok-LUTk3tqxrVNHuvOSqFtdPtD1aF2ofMdBRTL9A","expires_at":1771792575658,"created_at":1740256575658,"updated_at":1740256575658}'
+  recorded_at: Sat, 22 Feb 2025 20:36:15 GMT
+- request:
+    method: post
+    uri: https://api.clerk.com/v1/users
+    body:
+      encoding: UTF-8
+      string: '{"email_address":["john@example.com"],"first_name":"John","last_name":"Smith","created_at":"2025-02-22T20:36:15Z","legal_accepted_at":"2025-02-22T20:36:15Z","skip_password_requirement":true}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OpenAPI-Generator/2.0.0/ruby
+      Accept:
+      - application/json
+      Authorization:
+      - Bearer sk_test_4jPLIR81CgxSxoHUJWKPJH06TGqxEL1ht5aPzcR5KZ
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 22 Feb 2025 20:36:16 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 9161c46f29dfc291-VIE
+      Cf-Cache-Status:
+      - DYNAMIC
+      Clerk-Api-Version:
+      - '2021-02-05'
+      X-Cfworker:
+      - '1'
+      X-Clerk-Trace-Id:
+      - fb1ddae7b5e851f6afe1dff4186ff0dc
+      X-Cloud-Trace-Context:
+      - fb1ddae7b5e851f6afe1dff4186ff0dc
+      Set-Cookie:
+      - __cf_bm=6Yqs9Hup3qeAodHTFhEUTIfWGUBN_114A48LQif5phg-1740256576-1.0.1.1-FVk3xQttGQw1uHLmfgIYBPZEcTQmVjfy69Khn96TOoYh3dhUeRsGm7Poa.f3BbIZnY8EzuellyiuUePJfqWt9w;
+        path=/; expires=Sat, 22-Feb-25 21:06:16 GMT; domain=.api.clerk.com; HttpOnly;
+        Secure; SameSite=None
+      Vary:
+      - Accept-Encoding
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"user_2tPbIOqHxyrof7mKPVxg5uvodVV","object":"user","username":null,"first_name":"John","last_name":"Smith","image_url":"https://img.clerk.com/eyJ0eXBlIjoiZGVmYXVsdCIsImlpZCI6Imluc18ycjhhSkhwd3czZ1p2eVRBc0luTW5BU0JPS3YiLCJyaWQiOiJ1c2VyXzJ0UGJJT3FIeHlyb2Y3bUtQVnhnNXV2b2RWViIsImluaXRpYWxzIjoiSlMifQ","has_image":false,"primary_email_address_id":"idn_2tPbIJ8ZYlU0YdHqAQvfh2us75K","primary_phone_number_id":null,"primary_web3_wallet_id":null,"password_enabled":false,"two_factor_enabled":false,"totp_enabled":false,"backup_code_enabled":false,"email_addresses":[{"id":"idn_2tPbIJ8ZYlU0YdHqAQvfh2us75K","object":"email_address","email_address":"john@example.com","reserved":false,"verification":{"status":"verified","strategy":"admin","attempts":null,"expire_at":null},"linked_to":[],"matches_sso_connection":false,"created_at":1740256575970,"updated_at":1740256575970}],"phone_numbers":[],"web3_wallets":[],"passkeys":[],"external_accounts":[],"saml_accounts":[],"enterprise_accounts":[],"public_metadata":{},"private_metadata":{},"unsafe_metadata":{},"external_id":null,"last_sign_in_at":null,"banned":false,"locked":false,"lockout_expires_in_seconds":null,"verification_attempts_remaining":100,"created_at":1740256575000,"updated_at":1740256575972,"delete_self_enabled":true,"create_organization_enabled":true,"last_active_at":null,"mfa_enabled_at":null,"mfa_disabled_at":null,"legal_accepted_at":1740256575000,"profile_image_url":"https://www.gravatar.com/avatar?d=mp"}'
+  recorded_at: Sat, 22 Feb 2025 20:36:16 GMT
+- request:
+    method: post
+    uri: https://api.clerk.com/v1/invitations
+    body:
+      encoding: UTF-8
+      string: '{"email_address":"jane@example.org","expires_in_days":365,"ignore_existing":true}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OpenAPI-Generator/2.0.0/ruby
+      Accept:
+      - application/json
+      Authorization:
+      - Bearer sk_test_4jPLIR81CgxSxoHUJWKPJH06TGqxEL1ht5aPzcR5KZ
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 22 Feb 2025 20:36:16 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 9161c4708a8c0b0f-VIE
+      Cf-Cache-Status:
+      - DYNAMIC
+      Clerk-Api-Version:
+      - '2021-02-05'
+      X-Cfworker:
+      - '1'
+      X-Clerk-Trace-Id:
+      - 4c6932abffe74b336e7c88b03188cef7
+      X-Cloud-Trace-Context:
+      - 4c6932abffe74b336e7c88b03188cef7
+      Set-Cookie:
+      - __cf_bm=3d0ZaPZcPaS3j_JZZi0vvqHV48XHYzjmNv_3XEvozTg-1740256576-1.0.1.1-spNZ5vjXmHUe0pgnKsQflFtHnQrHrOcXgfgOUBcO0Y6TzaQmF0GItNTkYwU.iSojSwGiQymSg3JYa9lTWmxBTQ;
+        path=/; expires=Sat, 22-Feb-25 21:06:16 GMT; domain=.api.clerk.com; HttpOnly;
+        Secure; SameSite=None
+      Vary:
+      - Accept-Encoding
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"object":"invitation","id":"inv_2tPbIUptKQYKvbIAjrZd1NDQxNJ","email_address":"jane@example.org","public_metadata":{},"status":"pending","url":"https://eager-akita-70.clerk.accounts.dev/v1/tickets/accept?ticket=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJlaXMiOjMxNTM2MDAwLCJleHAiOjE3NzE3OTI1NzYsImlpZCI6Imluc18ycjhhSkhwd3czZ1p2eVRBc0luTW5BU0JPS3YiLCJzaWQiOiJpbnZfMnRQYklVcHRLUVlLdmJJQWpyWmQxTkRReE5KIiwic3QiOiJpbnZpdGF0aW9uIn0.nXL4hshEyd3ZusT5FAQtYqCcNt5uT4BL0vdig6_ZJodkEg4Z3RiXAcMl9tDZPGIA8ALaMzuE2onxVzZw5ODY0jZVV_00kJfJU17agYFbZv3XYKKL3PMg0dsn9EEjeyM76mdw1jdVT-k6SJJPVonwmsehuhcPTAfzPq-u1hgVtK6rva-JSmoziaWeSmHD5i5hF52ww7qo5DLqWOWprh5OeiHdRNrAVW6We_ZPr5JpGyTItQHdClt9nhEleaUD_55a3k4Tps1vFOV7r2UglxugKWrBVCSzbLI9CXztDkL1AETxb7mRR4it222nXZu1mtQLsxjO4ebhO6FPLRcPtOsIqw","expires_at":1771792576210,"created_at":1740256576210,"updated_at":1740256576210}'
+  recorded_at: Sat, 22 Feb 2025 20:36:16 GMT
+- request:
+    method: post
+    uri: https://api.clerk.com/v1/users
+    body:
+      encoding: UTF-8
+      string: '{"email_address":["jane@example.org"],"first_name":"Jane","last_name":"Doe","created_at":"2025-02-22T20:36:16Z","legal_accepted_at":"2025-02-22T20:36:16Z","skip_password_requirement":true}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OpenAPI-Generator/2.0.0/ruby
+      Accept:
+      - application/json
+      Authorization:
+      - Bearer sk_test_4jPLIR81CgxSxoHUJWKPJH06TGqxEL1ht5aPzcR5KZ
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 22 Feb 2025 20:36:16 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 9161c4721a835ba9-VIE
+      Cf-Cache-Status:
+      - DYNAMIC
+      Clerk-Api-Version:
+      - '2021-02-05'
+      X-Cfworker:
+      - '1'
+      X-Clerk-Trace-Id:
+      - 39ca669f911cb26abde7ebfe13a2f900
+      X-Cloud-Trace-Context:
+      - 39ca669f911cb26abde7ebfe13a2f900
+      Set-Cookie:
+      - __cf_bm=TOkjrMYg_Lrm4kloL.NsEI8gzt8AKE5WmeVCDVVtpbM-1740256576-1.0.1.1-OlGzjuh8.tjeH1Y1iPNRGTYN5nFYEmHlT79kPpRmFgwHwqY7glLscVxUG0aZ8Xk.01z5yZOKfD5lEm.DdgGGxA;
+        path=/; expires=Sat, 22-Feb-25 21:06:16 GMT; domain=.api.clerk.com; HttpOnly;
+        Secure; SameSite=None
+      Vary:
+      - Accept-Encoding
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"user_2tPbIVgP91SDNMeejLH2y83Rq7J","object":"user","username":null,"first_name":"Jane","last_name":"Doe","image_url":"https://img.clerk.com/eyJ0eXBlIjoiZGVmYXVsdCIsImlpZCI6Imluc18ycjhhSkhwd3czZ1p2eVRBc0luTW5BU0JPS3YiLCJyaWQiOiJ1c2VyXzJ0UGJJVmdQOTFTRE5NZWVqTEgyeTgzUnE3SiIsImluaXRpYWxzIjoiSkQifQ","has_image":false,"primary_email_address_id":"idn_2tPbIWiGGuDZ69bcjdq7sP7Xj4p","primary_phone_number_id":null,"primary_web3_wallet_id":null,"password_enabled":false,"two_factor_enabled":false,"totp_enabled":false,"backup_code_enabled":false,"email_addresses":[{"id":"idn_2tPbIWiGGuDZ69bcjdq7sP7Xj4p","object":"email_address","email_address":"jane@example.org","reserved":false,"verification":{"status":"verified","strategy":"admin","attempts":null,"expire_at":null},"linked_to":[],"matches_sso_connection":false,"created_at":1740256576475,"updated_at":1740256576475}],"phone_numbers":[],"web3_wallets":[],"passkeys":[],"external_accounts":[],"saml_accounts":[],"enterprise_accounts":[],"public_metadata":{},"private_metadata":{},"unsafe_metadata":{},"external_id":null,"last_sign_in_at":null,"banned":false,"locked":false,"lockout_expires_in_seconds":null,"verification_attempts_remaining":100,"created_at":1740256576000,"updated_at":1740256576477,"delete_self_enabled":true,"create_organization_enabled":true,"last_active_at":null,"mfa_enabled_at":null,"mfa_disabled_at":null,"legal_accepted_at":1740256576000,"profile_image_url":"https://www.gravatar.com/avatar?d=mp"}'
+  recorded_at: Sat, 22 Feb 2025 20:36:16 GMT
+- request:
+    method: post
+    uri: https://api.clerk.com/v1/invitations
+    body:
+      encoding: UTF-8
+      string: '{"email_address":"hi@example.net","expires_in_days":365,"ignore_existing":true}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OpenAPI-Generator/2.0.0/ruby
+      Accept:
+      - application/json
+      Authorization:
+      - Bearer sk_test_4jPLIR81CgxSxoHUJWKPJH06TGqxEL1ht5aPzcR5KZ
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 22 Feb 2025 20:36:16 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 9161c473bc92c2eb-VIE
+      Cf-Cache-Status:
+      - DYNAMIC
+      Clerk-Api-Version:
+      - '2021-02-05'
+      X-Cfworker:
+      - '1'
+      X-Clerk-Trace-Id:
+      - adbd70aa9d08b3370373b3677813c610
+      X-Cloud-Trace-Context:
+      - adbd70aa9d08b3370373b3677813c610
+      Set-Cookie:
+      - __cf_bm=Hew5WIwXEINHB.NFWF9lFhCezb59nTx153JorUikyM0-1740256576-1.0.1.1-gzmLLMfpCETWRZLsGTrSB93Ey.VpB7ihlrfymIQfNI98HRuHb6p04Fh49nRyuKSGkigSzqwTAah.YxRNTwT_4A;
+        path=/; expires=Sat, 22-Feb-25 21:06:16 GMT; domain=.api.clerk.com; HttpOnly;
+        Secure; SameSite=None
+      Vary:
+      - Accept-Encoding
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"object":"invitation","id":"inv_2tPbIS5vn1qrzPZHmJANlhNforY","email_address":"hi@example.net","public_metadata":{},"status":"pending","url":"https://eager-akita-70.clerk.accounts.dev/v1/tickets/accept?ticket=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJlaXMiOjMxNTM2MDAwLCJleHAiOjE3NzE3OTI1NzYsImlpZCI6Imluc18ycjhhSkhwd3czZ1p2eVRBc0luTW5BU0JPS3YiLCJzaWQiOiJpbnZfMnRQYklTNXZuMXFyelBaSG1KQU5saE5mb3JZIiwic3QiOiJpbnZpdGF0aW9uIn0.U0ya8bYOWgalI6Yi9DYud7JM00xFt-zLuQn9NaIYRlLRSZ3aG6awJI7D7GlxBI4TE6KdierVdbWjIxQ03nOvR2dTyf8QDxsCL5Ij2chMkHvj2QLsJZGzzCF_AYk_uca9rzG627GvKOxNbeX_pAobO6TlTUqZUsDvGWzE-0hCrI3EDhr2cgGSl2q1tBqeFNef8oRQFZWe0VzqFQv7YqhV1RowQ8eymYwc_1E1Ilopq5tnW3Dy73foENUD2e5mNpGrJmcNHxFRIMRZ7GGTA1_LH1IQCFYEm2zUcJikp2AkdP-IsGtcJS4f1LBnlqX2VfsVy7LAqnjGV5SAtsRDGwdvig","expires_at":1771792576718,"created_at":1740256576718,"updated_at":1740256576718}'
+  recorded_at: Sat, 22 Feb 2025 20:36:16 GMT
+- request:
+    method: post
+    uri: https://api.clerk.com/v1/users
+    body:
+      encoding: UTF-8
+      string: '{"email_address":["hi@example.net"],"first_name":"Boss","last_name":"Man","created_at":"2025-02-22T20:36:16Z","legal_accepted_at":"2025-02-22T20:36:16Z","skip_password_requirement":true}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OpenAPI-Generator/2.0.0/ruby
+      Accept:
+      - application/json
+      Authorization:
+      - Bearer sk_test_4jPLIR81CgxSxoHUJWKPJH06TGqxEL1ht5aPzcR5KZ
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 22 Feb 2025 20:36:17 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 9161c4754c19c2fc-VIE
+      Cf-Cache-Status:
+      - DYNAMIC
+      Clerk-Api-Version:
+      - '2021-02-05'
+      X-Cfworker:
+      - '1'
+      X-Clerk-Trace-Id:
+      - 404e407b1c297156c7157160cec8033e
+      X-Cloud-Trace-Context:
+      - 404e407b1c297156c7157160cec8033e
+      Set-Cookie:
+      - __cf_bm=pdkR0aGmOoJjHE9HbI.N_gAkxTbQM92Waq5Gy2RvNTM-1740256577-1.0.1.1-hmGGam8CXYEr27KvLVXwFYHRUp4Ql04aMLVVjWLFtR9.iaNxYniQQzmw6eMFtoEdWKOyVgmskqnLzqtidmdcUQ;
+        path=/; expires=Sat, 22-Feb-25 21:06:17 GMT; domain=.api.clerk.com; HttpOnly;
+        Secure; SameSite=None
+      Vary:
+      - Accept-Encoding
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"user_2tPbIThHGNr7VvpwGhh6xcaKheo","object":"user","username":null,"first_name":"Boss","last_name":"Man","image_url":"https://img.clerk.com/eyJ0eXBlIjoiZGVmYXVsdCIsImlpZCI6Imluc18ycjhhSkhwd3czZ1p2eVRBc0luTW5BU0JPS3YiLCJyaWQiOiJ1c2VyXzJ0UGJJVGhIR05yN1Z2cHdHaGg2eGNhS2hlbyIsImluaXRpYWxzIjoiQk0ifQ","has_image":false,"primary_email_address_id":"idn_2tPbIQ1PfbHIFhev5RxVE44D614","primary_phone_number_id":null,"primary_web3_wallet_id":null,"password_enabled":false,"two_factor_enabled":false,"totp_enabled":false,"backup_code_enabled":false,"email_addresses":[{"id":"idn_2tPbIQ1PfbHIFhev5RxVE44D614","object":"email_address","email_address":"hi@example.net","reserved":false,"verification":{"status":"verified","strategy":"admin","attempts":null,"expire_at":null},"linked_to":[],"matches_sso_connection":false,"created_at":1740256576982,"updated_at":1740256576982}],"phone_numbers":[],"web3_wallets":[],"passkeys":[],"external_accounts":[],"saml_accounts":[],"enterprise_accounts":[],"public_metadata":{},"private_metadata":{},"unsafe_metadata":{},"external_id":null,"last_sign_in_at":null,"banned":false,"locked":false,"lockout_expires_in_seconds":null,"verification_attempts_remaining":100,"created_at":1740256576000,"updated_at":1740256576984,"delete_self_enabled":true,"create_organization_enabled":true,"last_active_at":null,"mfa_enabled_at":null,"mfa_disabled_at":null,"legal_accepted_at":1740256576000,"profile_image_url":"https://www.gravatar.com/avatar?d=mp"}'
+  recorded_at: Sat, 22 Feb 2025 20:36:17 GMT
+recorded_with: VCR 6.3.1

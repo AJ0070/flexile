@@ -1,0 +1,140 @@
+---
+http_interactions:
+  - request:
+      method: post
+      uri: https://api.sandbox.transferwise.tech/v1/accounts
+      body:
+        encoding: UTF-8
+        string:
+          '{"currency":"USD","type":"aba","details":{"legalType":"PRIVATE","abartn":"026009593","accountHolderName":"Spec
+          Man","accountNumber":"12345678","accountType":"CHECKING","address":{"country":"US","city":"New
+          York","firstLine":"767 5th Avenue","state":"NY","postCode":"10153"}},"profile":"<WISE_PROFILE_ID>"}'
+      headers:
+        Authorization:
+          - Bearer 8e85a0b2-c1bc-4487-9fc9-e286fb9263d9
+        Content-Type:
+          - application/json
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+        Accept:
+          - "*/*"
+        User-Agent:
+          - Ruby
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Date:
+          - Sat, 24 Aug 2024 10:32:38 GMT
+        Content-Type:
+          - application/json;charset=UTF-8
+        Transfer-Encoding:
+          - chunked
+        Connection:
+          - keep-alive
+        X-Content-Type-Options:
+          - nosniff
+        Expires:
+          - "0"
+        X-Xss-Protection:
+          - "0"
+        X-Frame-Options:
+          - DENY
+        Cache-Control:
+          - no-cache, no-store, max-age=0, must-revalidate
+        Pragma:
+          - no-cache
+        X-Trace-Id:
+          - 95aba32b30ad212b
+        X-Envoy-Upstream-Service-Time:
+          - "94"
+        X-Envoy-Attempt-Count:
+          - "1"
+        Vary:
+          - origin,access-control-request-method,access-control-request-headers,accept-encoding
+        Cf-Cache-Status:
+          - DYNAMIC
+        Set-Cookie:
+          - __cf_bm=Ae8n7Wc3on5IiheNd.kejPrBtmt64PLSfcx7mqIFoL0-1724495558-1.0.1.1-T.GlhQYpr7Kl9zgY5LLQI1vBRRpxnESEoPNlm1QctNVhgzx8wRGpvzHSP6ME33O5dd0Tl4f291GuNiFyDDt8Sg;
+            path=/; expires=Sat, 24-Aug-24 11:02:38 GMT; domain=.transferwise.tech; HttpOnly;
+            Secure; SameSite=None
+        Server:
+          - cloudflare
+        Cf-Ray:
+          - 8b82adf5ddb4a806-DEL
+        Alt-Svc:
+          - h3=":443"; ma=86400
+      body:
+        encoding: ASCII-8BIT
+        string: '{"id":480168878,"business":<WISE_PROFILE_ID>,"profile":<WISE_PROFILE_ID>,"accountHolderName":"Spec
+          Man","currency":"USD","country":"US","type":"aba","details":{"address":{"country":"US","countryCode":"US","firstLine":"767
+          5th Avenue","postCode":"10153","city":"New York","state":"NY"},"email":null,"legalType":"PRIVATE","accountHolderName":null,"accountNumber":"12345678","sortCode":null,"abartn":"026009593","accountType":"CHECKING","bankgiroNumber":null,"ifscCode":null,"bsbCode":null,"institutionNumber":null,"transitNumber":null,"phoneNumber":null,"bankCode":null,"russiaRegion":null,"routingNumber":null,"branchCode":null,"cpf":null,"cardToken":null,"idType":null,"idNumber":null,"idCountryIso3":null,"idValidFrom":null,"idValidTo":null,"clabe":null,"swiftCode":null,"dateOfBirth":null,"clearingNumber":null,"bankName":null,"branchName":null,"businessNumber":null,"province":null,"city":null,"rut":null,"token":null,"cnpj":null,"payinReference":null,"pspReference":null,"orderId":null,"idDocumentType":null,"idDocumentNumber":null,"identificationNumber":null,"targetProfile":null,"targetUserId":null,"taxId":null,"job":null,"nationality":null,"interacAccount":null,"bban":null,"town":null,"postCode":null,"language":null,"billerCode":null,"customerReferenceNumber":null,"prefix":null,"relationship":null,"IBAN":null,"iban":null,"bic":null,"BIC":null},"user":5882096,"active":true,"ownedByCustomer":false}'
+    recorded_at: Sat, 24 Aug 2024 10:32:38 GMT
+  - request:
+      method: get
+      uri: https://api.sandbox.transferwise.tech/v1/accounts/480168878
+      body:
+        encoding: US-ASCII
+        string: ""
+      headers:
+        Authorization:
+          - Bearer 8e85a0b2-c1bc-4487-9fc9-e286fb9263d9
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+        Accept:
+          - "*/*"
+        User-Agent:
+          - Ruby
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Date:
+          - Sat, 24 Aug 2024 10:32:38 GMT
+        Content-Type:
+          - application/json;charset=UTF-8
+        Transfer-Encoding:
+          - chunked
+        Connection:
+          - keep-alive
+        X-Content-Type-Options:
+          - nosniff
+        Expires:
+          - "0"
+        X-Xss-Protection:
+          - "0"
+        X-Frame-Options:
+          - DENY
+        Cache-Control:
+          - no-cache, no-store, max-age=0, must-revalidate
+        Pragma:
+          - no-cache
+        X-Trace-Id:
+          - 6331906838bbff4c
+        X-Envoy-Upstream-Service-Time:
+          - "41"
+        X-Envoy-Attempt-Count:
+          - "1"
+        Vary:
+          - origin,access-control-request-method,access-control-request-headers,accept-encoding
+        Cf-Cache-Status:
+          - DYNAMIC
+        Set-Cookie:
+          - __cf_bm=HSk_3a7M7UvVxhwHsr65j1Mw5uxK9H8ZRHoaM5HdYl8-1724495558-1.0.1.1-KjPFOM5a.hr2Cp3BmxmPtNTG79f30hJgqICnwEdJWyN0RRsGhqgSsmn.QNemeIDUSZ8A417ONLTjaXlFAWafXQ;
+            path=/; expires=Sat, 24-Aug-24 11:02:38 GMT; domain=.transferwise.tech; HttpOnly;
+            Secure; SameSite=None
+        Server:
+          - cloudflare
+        Cf-Ray:
+          - 8b82adf8381ba769-DEL
+        Alt-Svc:
+          - h3=":443"; ma=86400
+      body:
+        encoding: ASCII-8BIT
+        string: '{"id":480168878,"business":<WISE_PROFILE_ID>,"profile":<WISE_PROFILE_ID>,"accountHolderName":"Spec
+          Man","currency":"USD","country":"US","type":"aba","details":{"address":{"country":"US","countryCode":"US","firstLine":"767
+          5th Avenue","postCode":"10153","city":"New York","state":"NY"},"email":null,"legalType":"PRIVATE","accountHolderName":null,"accountNumber":"12345678","sortCode":null,"abartn":"026009593","accountType":"CHECKING","bankgiroNumber":null,"ifscCode":null,"bsbCode":null,"institutionNumber":null,"transitNumber":null,"phoneNumber":null,"bankCode":null,"russiaRegion":null,"routingNumber":null,"branchCode":null,"cpf":null,"cardToken":null,"idType":null,"idNumber":null,"idCountryIso3":null,"idValidFrom":null,"idValidTo":null,"clabe":null,"swiftCode":null,"dateOfBirth":null,"clearingNumber":null,"bankName":null,"branchName":null,"businessNumber":null,"province":null,"city":null,"rut":null,"token":null,"cnpj":null,"payinReference":null,"pspReference":null,"orderId":null,"idDocumentType":null,"idDocumentNumber":null,"identificationNumber":null,"targetProfile":null,"targetUserId":null,"taxId":null,"job":null,"nationality":null,"interacAccount":null,"bban":null,"town":null,"postCode":null,"language":null,"billerCode":null,"customerReferenceNumber":null,"prefix":null,"relationship":null,"IBAN":null,"iban":null,"bic":null,"BIC":null},"user":5882096,"active":true,"ownedByCustomer":false}'
+    recorded_at: Sat, 24 Aug 2024 10:32:38 GMT
+recorded_with: VCR 6.2.0

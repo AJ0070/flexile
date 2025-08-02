@@ -1,0 +1,336 @@
+---
+http_interactions:
+  - request:
+      method: get
+      uri: https://api.stripe.com/v1/issuing/cardholders?email=john@gumroad.com&limit=1&status=active
+      body:
+        encoding: US-ASCII
+        string: ""
+      headers:
+        User-Agent:
+          - Stripe/v1 RubyBindings/12.4.0
+        Authorization:
+          - Bearer sk_test_51LBic8FSsGLfTpetzIURf8ybimlbadTOyvetEmam8qFXUpT52LDkEquZoGFbyuEiJaGSFfNjSKSAMPLE
+        Content-Type:
+          - application/x-www-form-urlencoded
+        X-Stripe-Client-Telemetry:
+          - '{"last_request_metrics":{"request_id":"req_QYRNsW2y5xzd2x","request_duration_ms":300}}'
+        Stripe-Version:
+          - "2024-04-10"
+        X-Stripe-Client-User-Agent:
+          - '{"bindings_version":"12.4.0","lang":"ruby","lang_version":"3.3.4 p94 (2024-07-09)","platform":"arm64-darwin23","engine":"ruby","publisher":"stripe","uname":"Darwin
+            Raphaels-MacBook-Pro.local 23.5.0 Darwin Kernel Version 23.5.0: Wed May  1
+            20:12:58 PDT 2024; root:xnu-10063.121.3~5/RELEASE_ARM64_T6000 arm64","hostname":"Raphaels-MacBook-Pro.local"}'
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+        Accept:
+          - "*/*"
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Server:
+          - nginx
+        Date:
+          - Thu, 01 Aug 2024 02:37:53 GMT
+        Content-Type:
+          - application/json
+        Content-Length:
+          - "1578"
+        Connection:
+          - keep-alive
+        Access-Control-Allow-Credentials:
+          - "true"
+        Access-Control-Allow-Methods:
+          - GET,HEAD,PUT,PATCH,POST,DELETE
+        Access-Control-Allow-Origin:
+          - "*"
+        Access-Control-Expose-Headers:
+          - Request-Id, Stripe-Manage-Version, Stripe-Should-Retry, X-Stripe-External-Auth-Required,
+            X-Stripe-Privileged-Session-Required
+        Access-Control-Max-Age:
+          - "300"
+        Cache-Control:
+          - no-cache, no-store
+        Content-Security-Policy:
+          - report-uri https://q.stripe.com/csp-report?p=v1%2Fissuing%2Fcardholders; block-all-mixed-content;
+            default-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none';
+            img-src 'self'; script-src 'self' 'report-sample'; style-src 'self'
+        Cross-Origin-Opener-Policy-Report-Only:
+          - same-origin; report-to="coop"
+        Report-To:
+          - '{"group":"coop","max_age":8640,"endpoints":[{"url":"https://q.stripe.com/coop-report?s=mono-bapi-srv"}],"include_subdomains":true}'
+        Reporting-Endpoints:
+          - coop="https://q.stripe.com/coop-report?s=mono-bapi-srv"
+        Request-Id:
+          - req_nQOZTm5AHd2PqX
+        Stripe-Version:
+          - "2024-04-10"
+        Vary:
+          - Origin
+        X-Content-Type-Options:
+          - nosniff
+        X-Stripe-Priority-Routing-Enabled:
+          - "true"
+        X-Stripe-Routing-Context-Priority-Tier:
+          - api-testmode
+        Strict-Transport-Security:
+          - max-age=63072000; includeSubDomains; preload
+      body:
+        encoding: UTF-8
+        string: |-
+          {
+            "object": "list",
+            "data": [
+              {
+                "id": "ich_1PiiOsFSsGLfTpetrEIRlhGi",
+                "object": "issuing.cardholder",
+                "billing": {
+                  "address": {
+                    "city": "New York",
+                    "country": "US",
+                    "line1": "1st Street",
+                    "line2": null,
+                    "postal_code": "10004",
+                    "state": "NY"
+                  }
+                },
+                "company": null,
+                "created": 1722454890,
+                "email": "john@gumroad.com",
+                "individual": {
+                  "card_issuing": {
+                    "user_terms_acceptance": {
+                      "date": 1722454890,
+                      "ip": "127.0.0.1",
+                      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
+                    }
+                  },
+                  "dob": null,
+                  "first_name": "Erin",
+                  "last_name": "Purdy",
+                  "verification": {
+                    "document": {
+                      "back": null,
+                      "front": null
+                    }
+                  }
+                },
+                "livemode": false,
+                "metadata": {},
+                "name": "Erin Purdy",
+                "phone_number": null,
+                "preferred_locales": [],
+                "requirements": {
+                  "disabled_reason": null,
+                  "past_due": []
+                },
+                "spending_controls": {
+                  "allowed_categories": [],
+                  "allowed_merchant_countries": [],
+                  "blocked_categories": [],
+                  "blocked_merchant_countries": [],
+                  "spending_limits": [],
+                  "spending_limits_currency": null
+                },
+                "status": "active",
+                "type": "individual"
+              }
+            ],
+            "has_more": false,
+            "url": "/v1/issuing/cardholders"
+          }
+    recorded_at: Thu, 01 Aug 2024 02:37:53 GMT
+  - request:
+      method: post
+      uri: https://api.stripe.com/v1/issuing/cards
+      body:
+        encoding: UTF-8
+        string: cardholder=ich_1PiiOsFSsGLfTpetrEIRlhGi&currency=usd&type=virtual&status=active&spending_controls[spending_limits][0][amount]=10000&spending_controls[spending_limits][0][interval]=monthly&metadata[company_worker_id]=187
+      headers:
+        User-Agent:
+          - Stripe/v1 RubyBindings/12.4.0
+        Authorization:
+          - Bearer sk_test_51LBic8FSsGLfTpetzIURf8ybimlbadTOyvetEmam8qFXUpT52LDkEquZoGFbyuEiJaGSFfNjSKSAMPLE
+        Content-Type:
+          - application/x-www-form-urlencoded
+        X-Stripe-Client-Telemetry:
+          - '{"last_request_metrics":{"request_id":"req_nQOZTm5AHd2PqX","request_duration_ms":625}}'
+        Stripe-Version:
+          - "2024-04-10"
+        X-Stripe-Client-User-Agent:
+          - '{"bindings_version":"12.4.0","lang":"ruby","lang_version":"3.3.4 p94 (2024-07-09)","platform":"arm64-darwin23","engine":"ruby","publisher":"stripe","uname":"Darwin
+            Raphaels-MacBook-Pro.local 23.5.0 Darwin Kernel Version 23.5.0: Wed May  1
+            20:12:58 PDT 2024; root:xnu-10063.121.3~5/RELEASE_ARM64_T6000 arm64","hostname":"Raphaels-MacBook-Pro.local"}'
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+        Accept:
+          - "*/*"
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Server:
+          - nginx
+        Date:
+          - Thu, 01 Aug 2024 02:37:54 GMT
+        Content-Type:
+          - application/json
+        Content-Length:
+          - "2499"
+        Connection:
+          - keep-alive
+        Access-Control-Allow-Credentials:
+          - "true"
+        Access-Control-Allow-Methods:
+          - GET,HEAD,PUT,PATCH,POST,DELETE
+        Access-Control-Allow-Origin:
+          - "*"
+        Access-Control-Expose-Headers:
+          - Request-Id, Stripe-Manage-Version, Stripe-Should-Retry, X-Stripe-External-Auth-Required,
+            X-Stripe-Privileged-Session-Required
+        Access-Control-Max-Age:
+          - "300"
+        Cache-Control:
+          - no-cache, no-store
+        Content-Security-Policy:
+          - report-uri https://q.stripe.com/csp-report?p=v1%2Fissuing%2Fcards; block-all-mixed-content;
+            default-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none';
+            img-src 'self'; script-src 'self' 'report-sample'; style-src 'self'
+        Cross-Origin-Opener-Policy-Report-Only:
+          - same-origin; report-to="coop"
+        Idempotency-Key:
+          - ce366b73-0775-4284-824c-8a476d05dbf7
+        Original-Request:
+          - req_R19rO1UUCW4aht
+        Report-To:
+          - '{"group":"coop","max_age":8640,"endpoints":[{"url":"https://q.stripe.com/coop-report?s=mono-bapi-srv"}],"include_subdomains":true}'
+        Reporting-Endpoints:
+          - coop="https://q.stripe.com/coop-report?s=mono-bapi-srv"
+        Request-Id:
+          - req_R19rO1UUCW4aht
+        Stripe-Should-Retry:
+          - "false"
+        Stripe-Version:
+          - "2024-04-10"
+        Vary:
+          - Origin
+        X-Content-Type-Options:
+          - nosniff
+        X-Stripe-Priority-Routing-Enabled:
+          - "true"
+        X-Stripe-Routing-Context-Priority-Tier:
+          - api-testmode
+        Strict-Transport-Security:
+          - max-age=63072000; includeSubDomains; preload
+      body:
+        encoding: UTF-8
+        string: |-
+          {
+            "id": "ic_1PiotpFSsGLfTpethGsD0SrA",
+            "object": "issuing.card",
+            "brand": "Visa",
+            "cancellation_reason": null,
+            "cardholder": {
+              "id": "ich_1PiiOsFSsGLfTpetrEIRlhGi",
+              "object": "issuing.cardholder",
+              "billing": {
+                "address": {
+                  "city": "New York",
+                  "country": "US",
+                  "line1": "1st Street",
+                  "line2": null,
+                  "postal_code": "10004",
+                  "state": "NY"
+                }
+              },
+              "company": null,
+              "created": 1722454890,
+              "email": "john@gumroad.com",
+              "individual": {
+                "card_issuing": {
+                  "user_terms_acceptance": {
+                    "date": 1722454890,
+                    "ip": "127.0.0.1",
+                    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
+                  }
+                },
+                "dob": null,
+                "first_name": "Erin",
+                "last_name": "Purdy",
+                "verification": {
+                  "document": {
+                    "back": null,
+                    "front": null
+                  }
+                }
+              },
+              "livemode": false,
+              "metadata": {},
+              "name": "Erin Purdy",
+              "phone_number": null,
+              "preferred_locales": [],
+              "requirements": {
+                "disabled_reason": null,
+                "past_due": []
+              },
+              "spending_controls": {
+                "allowed_categories": [],
+                "allowed_merchant_countries": [],
+                "blocked_categories": [],
+                "blocked_merchant_countries": [],
+                "spending_limits": [],
+                "spending_limits_currency": null
+              },
+              "status": "active",
+              "type": "individual"
+            },
+            "created": 1722479873,
+            "currency": "usd",
+            "exp_month": 7,
+            "exp_year": 2027,
+            "last4": "0369",
+            "livemode": false,
+            "metadata": {
+              "company_worker_id": "187"
+            },
+            "migrate_tokens_from": null,
+            "personalization_design": null,
+            "pin": null,
+            "replaced_by": null,
+            "replacement_for": null,
+            "replacement_reason": null,
+            "second_line": null,
+            "shipping": null,
+            "spending_controls": {
+              "allowed_categories": null,
+              "allowed_merchant_countries": null,
+              "blocked_categories": null,
+              "blocked_merchant_countries": null,
+              "spending_limits": [
+                {
+                  "amount": 10000,
+                  "categories": [],
+                  "interval": "monthly"
+                }
+              ],
+              "spending_limits_currency": "usd"
+            },
+            "status": "active",
+            "type": "virtual",
+            "wallets": {
+              "apple_pay": {
+                "eligible": true,
+                "ineligible_reason": null
+              },
+              "google_pay": {
+                "eligible": true,
+                "ineligible_reason": null
+              },
+              "primary_account_identifier": null
+            }
+          }
+    recorded_at: Thu, 01 Aug 2024 02:37:53 GMT
+recorded_with: VCR 6.2.0

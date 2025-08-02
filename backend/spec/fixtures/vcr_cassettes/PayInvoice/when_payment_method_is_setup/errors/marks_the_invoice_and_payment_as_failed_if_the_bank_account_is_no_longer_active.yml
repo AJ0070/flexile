@@ -1,0 +1,270 @@
+---
+http_interactions:
+  - request:
+      method: post
+      uri: https://api.sandbox.transferwise.tech/v1/accounts
+      body:
+        encoding: UTF-8
+        string:
+          '{"currency":"GBP","type":"sort_code","details":{"legalType":"PRIVATE","email":"someone@somewhere.com","accountHolderName":"someone
+          somewhere","sortCode":231470,"accountNumber":28821822,"address":{"country":"GB","city":"London","firstLine":"112
+          2nd street","postCode":"SW1P 3"}},"profile":"<WISE_PROFILE_ID>"}'
+      headers:
+        Authorization:
+          - Bearer 8e85a0b2-c1bc-4487-9fc9-e286fb9263d9
+        Content-Type:
+          - application/json
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+        Accept:
+          - "*/*"
+        User-Agent:
+          - Ruby
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Date:
+          - Fri, 23 Aug 2024 15:41:57 GMT
+        Content-Type:
+          - application/json;charset=UTF-8
+        Transfer-Encoding:
+          - chunked
+        Connection:
+          - keep-alive
+        Cache-Control:
+          - no-cache, no-store, max-age=0, must-revalidate
+        Pragma:
+          - no-cache
+        Expires:
+          - "0"
+        X-Content-Type-Options:
+          - nosniff
+        X-Xss-Protection:
+          - "0"
+        X-Frame-Options:
+          - DENY
+        X-Trace-Id:
+          - d92919a628e248db
+        X-Envoy-Upstream-Service-Time:
+          - "126"
+        X-Envoy-Attempt-Count:
+          - "1"
+        Vary:
+          - origin,access-control-request-method,access-control-request-headers,accept-encoding
+        Cf-Cache-Status:
+          - DYNAMIC
+        Set-Cookie:
+          - __cf_bm=59fjEb7pyZRkNSGq.lz.H3c4.6bEmaAwRgiPZK6nFPs-1724427717-1.0.1.1-6H0dlJ84ofLnyoJ9mEaQXytGeZwgID7ifKhvckhKfFvdxVAjQnH1UeRdCf3JJIVIuR8s40ZpirK9vIePSZW1fw;
+            path=/; expires=Fri, 23-Aug-24 16:11:57 GMT; domain=.transferwise.tech; HttpOnly;
+            Secure; SameSite=None
+        Server:
+          - cloudflare
+        Cf-Ray:
+          - 8b7c35b0bb3da7b8-DEL
+        Alt-Svc:
+          - h3=":443"; ma=86400
+      body:
+        encoding: ASCII-8BIT
+        string: '{"id":148360632,"business":<WISE_PROFILE_ID>,"profile":<WISE_PROFILE_ID>,"accountHolderName":"someone
+          somewhere","currency":"GBP","country":"GB","type":"sort_code","details":{"address":{"country":"GB","countryCode":"GB","firstLine":"112
+          2nd street","postCode":"SW1P 3","city":"London","state":null},"email":"someone@somewhere.com","legalType":"PRIVATE","accountHolderName":null,"accountNumber":"28821822","sortCode":"231470","abartn":null,"accountType":null,"bankgiroNumber":null,"ifscCode":null,"bsbCode":null,"institutionNumber":null,"transitNumber":null,"phoneNumber":null,"bankCode":null,"russiaRegion":null,"routingNumber":null,"branchCode":null,"cpf":null,"cardToken":null,"idType":null,"idNumber":null,"idCountryIso3":null,"idValidFrom":null,"idValidTo":null,"clabe":null,"swiftCode":null,"dateOfBirth":null,"clearingNumber":null,"bankName":null,"branchName":null,"businessNumber":null,"province":null,"city":null,"rut":null,"token":null,"cnpj":null,"payinReference":null,"pspReference":null,"orderId":null,"idDocumentType":null,"idDocumentNumber":null,"identificationNumber":null,"targetProfile":null,"targetUserId":null,"taxId":null,"job":null,"nationality":null,"interacAccount":null,"bban":null,"town":null,"postCode":null,"language":null,"billerCode":null,"customerReferenceNumber":null,"prefix":null,"relationship":null,"IBAN":null,"iban":null,"bic":null,"BIC":null},"user":5882096,"active":true,"ownedByCustomer":false}'
+    recorded_at: Fri, 23 Aug 2024 15:41:57 GMT
+  - request:
+      method: get
+      uri: https://api.sandbox.transferwise.tech/v1/rates?source=USD&target=GBP
+      body:
+        encoding: US-ASCII
+        string: ""
+      headers:
+        Authorization:
+          - Bearer 8e85a0b2-c1bc-4487-9fc9-e286fb9263d9
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+        Accept:
+          - "*/*"
+        User-Agent:
+          - Ruby
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Date:
+          - Fri, 23 Aug 2024 15:41:58 GMT
+        Content-Type:
+          - application/json;charset=UTF-8
+        Transfer-Encoding:
+          - chunked
+        Connection:
+          - keep-alive
+        X-Frame-Options:
+          - DENY
+        Cache-Control:
+          - no-cache, no-store, max-age=0, must-revalidate
+        Pragma:
+          - no-cache
+        Expires:
+          - "0"
+        X-Content-Type-Options:
+          - nosniff
+        X-Xss-Protection:
+          - "0"
+        X-Trace-Id:
+          - 9c4ef57491a99a50
+        Access-Control-Allow-Origin:
+          - "*"
+        X-Envoy-Upstream-Service-Time:
+          - "16"
+        X-Envoy-Attempt-Count:
+          - "1"
+        Vary:
+          - origin,access-control-request-method,access-control-request-headers,accept-encoding
+        Cf-Cache-Status:
+          - DYNAMIC
+        Set-Cookie:
+          - __cf_bm=gtI0E9s4NfzBRS6iNdySn5t3ThSHvz.9Y0_GPsiQJYA-1724427718-1.0.1.1-_bqzrrf2ExiQgQbZns7hftjespzPRzyl71f3heXIAOgWFT.jAIcVNtm82CMYThux9rewPVsqd6jdHbkyc1z8Gw;
+            path=/; expires=Fri, 23-Aug-24 16:11:58 GMT; domain=.transferwise.tech; HttpOnly;
+            Secure; SameSite=None
+        Server:
+          - cloudflare
+        Cf-Ray:
+          - 8b7c35b4c998a766-DEL
+        Alt-Svc:
+          - h3=":443"; ma=86400
+      body:
+        encoding: ASCII-8BIT
+        string: '[{"rate":0.756644,"source":"USD","target":"GBP","time":"2024-08-23T15:41:15+0000"}]'
+    recorded_at: Fri, 23 Aug 2024 15:41:58 GMT
+  - request:
+      method: get
+      uri: https://api.sandbox.transferwise.tech/v4/profiles/<WISE_PROFILE_ID>/balances?types=STANDARD
+      body:
+        encoding: US-ASCII
+        string: ""
+      headers:
+        Authorization:
+          - Bearer 8e85a0b2-c1bc-4487-9fc9-e286fb9263d9
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+        Accept:
+          - "*/*"
+        User-Agent:
+          - Ruby
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Date:
+          - Fri, 23 Aug 2024 15:41:58 GMT
+        Content-Type:
+          - application/json;charset=UTF-8
+        Transfer-Encoding:
+          - chunked
+        Connection:
+          - keep-alive
+        X-Frame-Options:
+          - DENY
+        Expires:
+          - "0"
+        Cache-Control:
+          - no-cache, no-store, max-age=0, must-revalidate
+        Pragma:
+          - no-cache
+        X-Content-Type-Options:
+          - nosniff
+        X-Xss-Protection:
+          - "0"
+        X-Trace-Id:
+          - 26ae69133f354a32
+        X-Envoy-Upstream-Service-Time:
+          - "164"
+        X-Envoy-Attempt-Count:
+          - "1"
+        Vary:
+          - origin,access-control-request-method,access-control-request-headers,accept-encoding
+        Cf-Cache-Status:
+          - DYNAMIC
+        Set-Cookie:
+          - __cf_bm=4_NjcFKl5MMrqsh8boixG5MN.HWm1qPKsqbY4odNrbk-1724427718-1.0.1.1-8MPz2tpvNIsIPuHW.bwl18a2Uxn5vMJkQShKditwM4t7dzp9yNuWYgMtP1Wpy5lWfNWXuv6lgTurrXTzM87DOQ;
+            path=/; expires=Fri, 23-Aug-24 16:11:58 GMT; domain=.transferwise.tech; HttpOnly;
+            Secure; SameSite=None
+        Server:
+          - cloudflare
+        Cf-Ray:
+          - 8b7c35b66be4a6db-DEL
+        Alt-Svc:
+          - h3=":443"; ma=86400
+      body:
+        encoding: ASCII-8BIT
+        string: '[{"id":97347,"currency":"USD","amount":{"value":2828741.73,"currency":"USD"},"reservedAmount":{"value":0.00,"currency":"USD"},"cashAmount":{"value":2828741.73,"currency":"USD"},"totalWorth":{"value":2828741.73,"currency":"USD"},"type":"STANDARD","name":null,"icon":null,"investmentState":"NOT_INVESTED","creationTime":"2022-02-02T12:57:43.446840Z","modificationTime":"2024-07-26T12:57:12.039747Z","visible":true,"primary":true,"groupId":null,"recipientId":null},{"id":97348,"currency":"AUD","amount":{"value":4000000.00,"currency":"AUD"},"reservedAmount":{"value":0.00,"currency":"AUD"},"cashAmount":{"value":4000000.00,"currency":"AUD"},"totalWorth":{"value":4000000.00,"currency":"AUD"},"type":"STANDARD","name":null,"icon":null,"investmentState":"NOT_INVESTED","creationTime":"2022-02-02T12:57:43.512910Z","modificationTime":"2022-02-02T12:57:43.542188Z","visible":true,"primary":true,"groupId":null,"recipientId":null},{"id":97346,"currency":"EUR","amount":{"value":2000000.00,"currency":"EUR"},"reservedAmount":{"value":0.00,"currency":"EUR"},"cashAmount":{"value":2000000.00,"currency":"EUR"},"totalWorth":{"value":2000000.00,"currency":"EUR"},"type":"STANDARD","name":null,"icon":null,"investmentState":"NOT_INVESTED","creationTime":"2022-02-02T12:57:43.380531Z","modificationTime":"2022-02-02T12:57:43.407841Z","visible":true,"primary":true,"groupId":null,"recipientId":null},{"id":97345,"currency":"GBP","amount":{"value":1000000.00,"currency":"GBP"},"reservedAmount":{"value":0.00,"currency":"GBP"},"cashAmount":{"value":1000000.00,"currency":"GBP"},"totalWorth":{"value":1000000.00,"currency":"GBP"},"type":"STANDARD","name":null,"icon":null,"investmentState":"NOT_INVESTED","creationTime":"2022-02-02T12:57:43.286853Z","modificationTime":"2022-02-02T12:57:43.341693Z","visible":true,"primary":true,"groupId":null,"recipientId":null}]'
+    recorded_at: Fri, 23 Aug 2024 15:41:58 GMT
+  - request:
+      method: get
+      uri: https://api.sandbox.transferwise.tech/v1/rates?source=USD&target=GBP
+      body:
+        encoding: US-ASCII
+        string: ""
+      headers:
+        Authorization:
+          - Bearer 8e85a0b2-c1bc-4487-9fc9-e286fb9263d9
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+        Accept:
+          - "*/*"
+        User-Agent:
+          - Ruby
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Date:
+          - Fri, 23 Aug 2024 15:41:59 GMT
+        Content-Type:
+          - application/json;charset=UTF-8
+        Transfer-Encoding:
+          - chunked
+        Connection:
+          - keep-alive
+        X-Frame-Options:
+          - DENY
+        Cache-Control:
+          - no-cache, no-store, max-age=0, must-revalidate
+        Pragma:
+          - no-cache
+        Expires:
+          - "0"
+        X-Content-Type-Options:
+          - nosniff
+        X-Xss-Protection:
+          - "0"
+        X-Trace-Id:
+          - c831643e31e95e86
+        Access-Control-Allow-Origin:
+          - "*"
+        X-Envoy-Upstream-Service-Time:
+          - "16"
+        X-Envoy-Attempt-Count:
+          - "1"
+        Vary:
+          - origin,access-control-request-method,access-control-request-headers,accept-encoding
+        Cf-Cache-Status:
+          - DYNAMIC
+        Set-Cookie:
+          - __cf_bm=BPQoAJOiEIEw9mnjHQUWwP8oziXopnYOFrV_4ZdL1sQ-1724427719-1.0.1.1-Yb.j_3LeXBnYvOYiBkLTcuTrmGtyN2HRXsLLZP2Ty.9XbgiIvjEpiStiKIsbVYTC8FLmplsupqa4m0oOtClmTw;
+            path=/; expires=Fri, 23-Aug-24 16:11:59 GMT; domain=.transferwise.tech; HttpOnly;
+            Secure; SameSite=None
+        Server:
+          - cloudflare
+        Cf-Ray:
+          - 8b7c35b8fec0a6b9-DEL
+        Alt-Svc:
+          - h3=":443"; ma=86400
+      body:
+        encoding: ASCII-8BIT
+        string: '[{"rate":0.756644,"source":"USD","target":"GBP","time":"2024-08-23T15:41:15+0000"}]'
+    recorded_at: Fri, 23 Aug 2024 15:41:59 GMT
+recorded_with: VCR 6.2.0

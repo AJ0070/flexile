@@ -1,0 +1,26 @@
+<h1>
+  We need your help updating <%= @company.display_name %>'s tax info.
+</h1>
+
+<% if @both_missing %>
+  <p>
+    We're in the process of preparing your tax forms and noticed these key details missing:
+  </p>
+  <ol>
+    <li>EIN</li>
+    <li>Phone number</li>
+  </ol>
+  <p>
+    <strong>Please take a moment to add these details and confirm that all your other information is correct.</strong>
+  </p>
+<% else %>
+  <p>
+    As we get your tax forms ready, we realized <strong>your company's <%= @missing[:long] %> is missing</strong>.
+    Please take a moment to add <%= @company.display_name %>'s <%= @missing[:short] %> and ensure that all your
+    other information is accurate.
+  </p>
+<% end %>
+
+<%= link_to "Update tax information",
+            "#{PROTOCOL}://#{DOMAIN}/settings/administrator/details",
+            class: "button" %>

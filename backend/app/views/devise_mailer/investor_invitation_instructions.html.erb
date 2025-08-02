@@ -1,0 +1,21 @@
+<% company = @resource.invited_by.company_administrators.first&.company %>
+<% investor = @resource.company_investors.find_by(company_id: company.id) %>
+<h1>
+  <%= company.name %>
+  is using Flexile to issue distributions on your investment.
+</h1>
+<p>
+  By signing up to Flexile, you can start earning distributions on your investment in
+  <%= company.display_name %>.
+  It only takes a few minutes to create an account.
+</p>
+<dl>
+  <dt>Investment amount</dt>
+  <dd><%= cents_format(investor.investment_amount_in_cents, no_cents_if_whole: false) %></dd>
+  <dt>Expected distribution date</dt>
+  <dd><%= @dividend_date.to_fs(:long) %></dd>
+</dl>
+<%= link_to "Create your account", @resource.create_clerk_invitation, class: "button" %>
+<p>
+  If you have any questions or concerns, please reply to this email. We'll assist you in setting up your account.
+</p>

@@ -1,0 +1,74 @@
+---
+http_interactions:
+  - request:
+      method: post
+      uri: https://api.sandbox.transferwise.tech/v1/accounts
+      body:
+        encoding: UTF-8
+        string:
+          '{"currency":"USD","type":"aba","details":{"legalType":"PRIVATE","abartn":"026009593","accountHolderName":"Da
+          R","accountNumber":"12345678","accountType":"CHECKING","address":{"country":"US","city":"Haleiwa","firstLine":"59-720
+          Kamehameha Hwy","state":"HI","postCode":"96712"}},"profile":"<WISE_PROFILE_ID>"}'
+      headers:
+        Authorization:
+          - Bearer 8e85a0b2-c1bc-4487-9fc9-e286fb9263d9
+        Content-Type:
+          - application/json
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+        Accept:
+          - "*/*"
+        User-Agent:
+          - Ruby
+    response:
+      status:
+        code: 422
+        message: Unprocessable Entity
+      headers:
+        Date:
+          - Thu, 12 Oct 2023 12:02:07 GMT
+        Content-Type:
+          - application/json;charset=UTF-8
+        Transfer-Encoding:
+          - chunked
+        Connection:
+          - keep-alive
+        X-Content-Type-Options:
+          - nosniff
+        X-Xss-Protection:
+          - 1; mode=block
+        Cache-Control:
+          - no-cache, no-store, max-age=0, must-revalidate
+        Expires:
+          - "0"
+        Pragma:
+          - no-cache
+        X-Frame-Options:
+          - DENY
+        X-Trace-Id:
+          - e12ec7778542b4e3
+        X-Envoy-Upstream-Service-Time:
+          - "70"
+        X-Envoy-Attempt-Count:
+          - "1"
+        Vary:
+          - origin,access-control-request-method,access-control-request-headers,accept-encoding
+        Cf-Cache-Status:
+          - DYNAMIC
+        Set-Cookie:
+          - __cf_bm=EjyEQmCiEy_m957e1xodLO5OqsGtB8gdHed1NdCyQWE-1697112127-0-AaRNq63qP9MTogbBXqGJjE0F8z/8DllKCNiw7hD5vEl1q0BpAfb5oYX+BJ5RealyXL771j7VtlyZ00TvcndTLwY=;
+            path=/; expires=Thu, 12-Oct-23 12:32:07 GMT; domain=.transferwise.tech; HttpOnly;
+            Secure; SameSite=None
+        Server:
+          - cloudflare
+        Cf-Ray:
+          - 814f312ebf7a88af-LHR
+        Alt-Svc:
+          - h3=":443"; ma=86400
+      body:
+        encoding: ASCII-8BIT
+        string: '{"timestamp":"2023-10-12T12:02:07.891314316Z","errors":[{"code":"NOT_VALID","message":"Please
+          enter the recipients first and last name.","path":"accountHolderName","arguments":["accountHolderName","Da
+          R"]}]}'
+    recorded_at: Thu, 12 Oct 2023 12:02:07 GMT
+recorded_with: VCR 6.2.0

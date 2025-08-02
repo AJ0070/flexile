@@ -1,0 +1,219 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.clerk.com/v1/invitations
+    body:
+      encoding: UTF-8
+      string: '{"email_address":"sharang.d+1@gmail.com","expires_in_days":365,"ignore_existing":true}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OpenAPI-Generator/2.0.0/ruby
+      Accept:
+      - application/json
+      Authorization:
+      - Bearer sk_test_4jPLIR81CgxSxoHUJWKPJH06TGqxEL1ht5aPzcR5KZ
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 22 Feb 2025 20:32:35 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 9161bf0ceefd5b5d-VIE
+      Cf-Cache-Status:
+      - DYNAMIC
+      Clerk-Api-Version:
+      - '2021-02-05'
+      X-Cfworker:
+      - '1'
+      X-Clerk-Trace-Id:
+      - b79b1d8098b40ee8e6afe897833da463
+      X-Cloud-Trace-Context:
+      - b79b1d8098b40ee8e6afe897833da463
+      Set-Cookie:
+      - __cf_bm=_nZ.5zR33JASfy9Qooilir7s0YEg3uOC_iz0V0CKRxM-1740256355-1.0.1.1-2gHpkO5reV1VvFvM3_O1XMikE9NLKq375DjZ330zMO4NJzRTrDNqp0MGyUsUBwGkaV7Q_qcDgYt1nPrVbanI.w;
+        path=/; expires=Sat, 22-Feb-25 21:02:35 GMT; domain=.api.clerk.com; HttpOnly;
+        Secure; SameSite=None
+      Vary:
+      - Accept-Encoding
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"object":"invitation","id":"inv_2tPaqjt7N6p0kHXzPI15uzNpDhT","email_address":"sharang.d+1@gmail.com","public_metadata":{},"status":"pending","url":"https://eager-akita-70.clerk.accounts.dev/v1/tickets/accept?ticket=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJlaXMiOjMxNTM2MDAwLCJleHAiOjE3NzE3OTIzNTUsImlpZCI6Imluc18ycjhhSkhwd3czZ1p2eVRBc0luTW5BU0JPS3YiLCJzaWQiOiJpbnZfMnRQYXFqdDdONnAwa0hYelBJMTV1ek5wRGhUIiwic3QiOiJpbnZpdGF0aW9uIn0.TXVJJRGsm-hSsmCNo7672k0eVnk_174PLD0J71vxOJxL7fQdzbZ1KD7ititzm8dgV9OzygW6QM_5gsmQiIQRMSM8TI9SWK63bq8YWlzVIxmGzG2SqU1IqYwljazZmq_hsdc063tHBKXKEKKeSPVD2ZWyS8dISSBNs9CBv8j_TNxJEY7foumwMUz1nbR6-mCttHTgNZeHsSo2EzXkc4RIHHlT1z5QOzZQoFY0rhAhi3kT84t2GcpMDLS9O-UNsadkd6NGz4FC8Z_FWl3JkU5cw1RhnBOUDVgvpzP0JWRYGk7KbmOG1FLP0mXayxwgE6tAqqp38tC7KZHcPRQpVMfP3w","expires_at":1771792355522,"created_at":1740256355522,"updated_at":1740256355522}'
+  recorded_at: Sat, 22 Feb 2025 20:32:35 GMT
+- request:
+    method: post
+    uri: https://api.clerk.com/v1/invitations
+    body:
+      encoding: UTF-8
+      string: '{"email_address":"sharang.d+2@gmail.com","expires_in_days":365,"ignore_existing":true}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OpenAPI-Generator/2.0.0/ruby
+      Accept:
+      - application/json
+      Authorization:
+      - Bearer sk_test_4jPLIR81CgxSxoHUJWKPJH06TGqxEL1ht5aPzcR5KZ
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 22 Feb 2025 20:32:35 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 9161bf0edd763260-VIE
+      Cf-Cache-Status:
+      - DYNAMIC
+      Clerk-Api-Version:
+      - '2021-02-05'
+      X-Cfworker:
+      - '1'
+      X-Clerk-Trace-Id:
+      - 9ba773825f24c02600c2e9ebdd754cfd
+      X-Cloud-Trace-Context:
+      - 9ba773825f24c02600c2e9ebdd754cfd
+      Set-Cookie:
+      - __cf_bm=71bQjH845jyE2WAJ30tmAJMgqV1mbvs.R.B.SPttLVE-1740256355-1.0.1.1-c9acGsr_WHLx1NY8wE18VpI060esyZ1CL7AwX0AJGCkpXfIOah27h_49HungYYCrit1s21t7OMhquIehseaaYg;
+        path=/; expires=Sat, 22-Feb-25 21:02:35 GMT; domain=.api.clerk.com; HttpOnly;
+        Secure; SameSite=None
+      Vary:
+      - Accept-Encoding
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"object":"invitation","id":"inv_2tPaqkj449zaankuTfPP96unrCL","email_address":"sharang.d+2@gmail.com","public_metadata":{},"status":"pending","url":"https://eager-akita-70.clerk.accounts.dev/v1/tickets/accept?ticket=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJlaXMiOjMxNTM2MDAwLCJleHAiOjE3NzE3OTIzNTUsImlpZCI6Imluc18ycjhhSkhwd3czZ1p2eVRBc0luTW5BU0JPS3YiLCJzaWQiOiJpbnZfMnRQYXFrajQ0OXphYW5rdVRmUFA5NnVuckNMIiwic3QiOiJpbnZpdGF0aW9uIn0.ZVY2KN8v6nLQ6tnuv7dy9a0XTjGDIjcVd-qgH-aDtalPLbYlRMrTkpXVDt_VSPdnaVBGJ1qCgoay9ysteyjaBoluzBwlyRpnGJ1ilm31_Lp2oQ4DaYXxKMUGGDWS6jPFXh2pYtkdjnG0oD_shdLwTQhdI69RNiC7lR-2m8Sbzy29oVS_vBJNCicKwPj5cJRMI2c5saIeTy-c5GL2nAoSA_lmrsPagp-1A60rtMs8YvzEbd_vN6lRbvoysd-RpMO-oLdL9DdfYtFPdrSwQtAqMFEMiRvrLmMBh4NNbbyJct6dFD139LAgorvDLUXme3RdoXKjsibkLpvPo_sC8aGMTg","expires_at":1771792355782,"created_at":1740256355782,"updated_at":1740256355782}'
+  recorded_at: Sat, 22 Feb 2025 20:32:35 GMT
+- request:
+    method: post
+    uri: https://api.clerk.com/v1/invitations
+    body:
+      encoding: UTF-8
+      string: '{"email_address":"sharang.d+3@gmail.com","expires_in_days":365,"ignore_existing":true}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OpenAPI-Generator/2.0.0/ruby
+      Accept:
+      - application/json
+      Authorization:
+      - Bearer sk_test_4jPLIR81CgxSxoHUJWKPJH06TGqxEL1ht5aPzcR5KZ
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 22 Feb 2025 20:32:36 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 9161bf10997ac2be-VIE
+      Cf-Cache-Status:
+      - DYNAMIC
+      Clerk-Api-Version:
+      - '2021-02-05'
+      X-Cfworker:
+      - '1'
+      X-Clerk-Trace-Id:
+      - 04eba0bc648f8b744e051274b081a2fb
+      X-Cloud-Trace-Context:
+      - 04eba0bc648f8b744e051274b081a2fb
+      Set-Cookie:
+      - __cf_bm=4dzG3cEx9z4Vceou6nZYFBSREZyN0FTofXWPD9WA1hE-1740256356-1.0.1.1-2Vlc49Fmqa3ORrn_1_zW4S2ZZEKSDOvDmgcnXPQ_HOWtSXU7q.orTUQdpcm9k7BblvwUcZf4qvfDT5hD5znYLw;
+        path=/; expires=Sat, 22-Feb-25 21:02:36 GMT; domain=.api.clerk.com; HttpOnly;
+        Secure; SameSite=None
+      Vary:
+      - Accept-Encoding
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"object":"invitation","id":"inv_2tPaqpNAJCBM1VWIE7fj9FgFnA2","email_address":"sharang.d+3@gmail.com","public_metadata":{},"status":"pending","url":"https://eager-akita-70.clerk.accounts.dev/v1/tickets/accept?ticket=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJlaXMiOjMxNTM2MDAwLCJleHAiOjE3NzE3OTIzNTYsImlpZCI6Imluc18ycjhhSkhwd3czZ1p2eVRBc0luTW5BU0JPS3YiLCJzaWQiOiJpbnZfMnRQYXFwTkFKQ0JNMVZXSUU3Zmo5RmdGbkEyIiwic3QiOiJpbnZpdGF0aW9uIn0.kppjmCxYhVaM81osOo6G9neyWtUYUardSM1vOm9mFtX2FqZgG9aGvCF2H5sjwcvSyFYnUW1qEqrNp_RGvPTBoQ--L3yiIPOMuHD8YIEdPM_3ZakTraLYc-gxWknM3Jt8ANEkctuBeAdaU-XzwH-eWH15Qx4T-u5N_gb72qW9TZ6X0fpE89ow2e8lgOsnlWVNnIJNwfDwsU51hlnGAdPgczOHz8mdWO6_bEtbAESZr1l3XxH03_d_PRmPO6_q0sFrIj0KXfYniSpd3sZiIS5G3WwX5jdjTaJ-ZLKB6o4Aey6X48Osi_ioZ53xrrw7YgdZp5eegRnogYExovXWIt88uQ","expires_at":1771792356091,"created_at":1740256356091,"updated_at":1740256356091}'
+  recorded_at: Sat, 22 Feb 2025 20:32:36 GMT
+- request:
+    method: post
+    uri: https://api.clerk.com/v1/invitations
+    body:
+      encoding: UTF-8
+      string: '{"email_address":"sharang.d+4@gmail.com","expires_in_days":365,"ignore_existing":true}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OpenAPI-Generator/2.0.0/ruby
+      Accept:
+      - application/json
+      Authorization:
+      - Bearer sk_test_4jPLIR81CgxSxoHUJWKPJH06TGqxEL1ht5aPzcR5KZ
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 22 Feb 2025 20:32:36 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 9161bf126c2dc2ac-VIE
+      Cf-Cache-Status:
+      - DYNAMIC
+      Clerk-Api-Version:
+      - '2021-02-05'
+      X-Cfworker:
+      - '1'
+      X-Clerk-Trace-Id:
+      - e89afeb289ad38809ac060cc7fb9e245
+      X-Cloud-Trace-Context:
+      - e89afeb289ad38809ac060cc7fb9e245
+      Set-Cookie:
+      - __cf_bm=1jD6sZZrb06eQ_zXNK3xH7yaXE4sIO8fVD6dYNxTang-1740256356-1.0.1.1-qA3L1ls6bR1LGJpbigRnxm9xAPoB8a7qq54haR2boYAV8Gap1XTv_SXj4PEWFXmSbzVpdVzB_BvDuYwFYjS56w;
+        path=/; expires=Sat, 22-Feb-25 21:02:36 GMT; domain=.api.clerk.com; HttpOnly;
+        Secure; SameSite=None
+      Vary:
+      - Accept-Encoding
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"object":"invitation","id":"inv_2tPaqqMyNHt1J8RH4DeIOuJdYVW","email_address":"sharang.d+4@gmail.com","public_metadata":{},"status":"pending","url":"https://eager-akita-70.clerk.accounts.dev/v1/tickets/accept?ticket=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJlaXMiOjMxNTM2MDAwLCJleHAiOjE3NzE3OTIzNTYsImlpZCI6Imluc18ycjhhSkhwd3czZ1p2eVRBc0luTW5BU0JPS3YiLCJzaWQiOiJpbnZfMnRQYXFxTXlOSHQxSjhSSDREZUlPdUpkWVZXIiwic3QiOiJpbnZpdGF0aW9uIn0.U4vLao73wuPNnyT66F1-sTRLiiOCkl1nMIh3J-SWQ4P-KDckL_LaIo3vfa6MmHY-Kh1Qzri1TZUg7FZJb5FYf34878rBxOJlErkodsTyLBvsFYnPC70uaNjgXJTEA69PLY4wOwssMAgxeA_bsp_j1tiVrdF9iVVdmorcb5EO_SJ0VcPWJ_inyKy3D9ww_P6NQ6Idz19E5-wHM0N_oK2dnyCB4e6P9QgIYQh9upVJ0eY-3dV1QW9XCVe5AMKAY5XsmYQThktUERbyU5p7fUAgSdW1uRxgKaQrXQCYxcLAGu-8D5rnllU_4LH5iGqfF66LVgzx8mvO_UemWxnrtKP5rw","expires_at":1771792356323,"created_at":1740256356323,"updated_at":1740256356323}'
+  recorded_at: Sat, 22 Feb 2025 20:32:36 GMT
+recorded_with: VCR 6.3.1

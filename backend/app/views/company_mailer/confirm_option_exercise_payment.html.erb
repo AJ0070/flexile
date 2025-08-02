@@ -1,0 +1,12 @@
+<h1>
+  <%= @user.legal_name %> is exercising <%= number_with_delimiter(@number_of_options) %> options.
+</h1>
+<p>
+  You'll receive a payment of <%= cents_format(@exercise.total_cost_cents, no_cents_if_whole: false) %>
+  from <%= @user.name %> in your bank account ending in <%= @bank_account_last_four %>.
+</p>
+<p>Once you confirm the payment, <%= @user.name %> will receive the stock <%= "certificate".pluralize(@exercise.equity_grant_exercise_requests.count) %>.</p>
+
+<%= link_to "Confirm payment",
+            "#{PROTOCOL}://#{DOMAIN}/people/#{@user.external_id}?#{URI.encode_www_form({ tab: "exercises" })}",
+            class: "button" %>

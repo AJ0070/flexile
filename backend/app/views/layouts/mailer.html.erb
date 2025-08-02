@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="initial-scale = 1.0" width="device-width">
+    <title>Flexile</title>
+    <%= stylesheet_link_tag "email" %>
+  </head>
+  <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
+    <style data-premailer="ignore"></style>
+    <div class="main">
+      <%= yield %>
+    </div>
+    <footer>
+      <%= yield(:footer) %>
+      548 Market Street, San Francisco, CA 94104-5401
+    </footer>
+  </body>
+</html>

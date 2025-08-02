@@ -1,0 +1,32 @@
+# Temporary files
+tmp
+*.tsbuildinfo
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+# Environment and configuration
+.env*
+!.env.test
+.env*.local
+.vercel
+.tool-versions
+
+# Dependencies
+/node_modules
+/.puppeteer
+/certificates
+
+# Rails credentials
+/backend/config/master.key
+/backend/config/credentials.yml.enc
+/backend/config/credentials/*.yml.enc
+/backend/config/credentials/*.key
+
+# Dividend round files
+/frontend/public/*.xlsx
+
+# IDE
+.vscode
+.idea

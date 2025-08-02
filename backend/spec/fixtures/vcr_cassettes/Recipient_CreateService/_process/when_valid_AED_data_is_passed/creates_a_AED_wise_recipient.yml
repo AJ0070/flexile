@@ -1,0 +1,206 @@
+---
+http_interactions:
+  - request:
+      method: post
+      uri: https://api.sandbox.transferwise.tech/v1/accounts
+      body:
+        encoding: UTF-8
+        string:
+          '{"currency":"AED","type":"emirates","details":{"legalType":"PRIVATE","email":"aeduser@gmail.com","accountHolderName":"Da
+          Rod","IBAN":"AE070331234567890123456","address":{"city":"Dubai","firstLine":"West
+          street","postCode":"111111","country":"AE"}},"profile":"<WISE_PROFILE_ID>"}'
+      headers:
+        Authorization:
+          - Bearer 8e85a0b2-c1bc-4487-9fc9-e286fb9263d9
+        Content-Type:
+          - application/json
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+        Accept:
+          - "*/*"
+        User-Agent:
+          - Ruby
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Date:
+          - Thu, 12 Oct 2023 15:12:24 GMT
+        Content-Type:
+          - application/json;charset=UTF-8
+        Transfer-Encoding:
+          - chunked
+        Connection:
+          - keep-alive
+        Expires:
+          - "0"
+        Pragma:
+          - no-cache
+        X-Content-Type-Options:
+          - nosniff
+        X-Xss-Protection:
+          - 1; mode=block
+        X-Frame-Options:
+          - DENY
+        Cache-Control:
+          - no-cache, no-store, max-age=0, must-revalidate
+        X-Trace-Id:
+          - c0b3fbf741791795
+        X-Envoy-Upstream-Service-Time:
+          - "164"
+        X-Envoy-Attempt-Count:
+          - "1"
+        Vary:
+          - origin,access-control-request-method,access-control-request-headers,accept-encoding
+        Cf-Cache-Status:
+          - DYNAMIC
+        Set-Cookie:
+          - __cf_bm=_tlec_YUKOd.KUOPOcqmXhVR3kCs_d3uGli22GS0Ph4-1697123544-0-AeVa4QAkUNhUBjr7oPhOx7kSiqgNN+n1EBWZS949sWTLCporhDApnchXf7VYuRTkhChhwdzCh1TFZxVL5j0TyGc=;
+            path=/; expires=Thu, 12-Oct-23 15:42:24 GMT; domain=.transferwise.tech; HttpOnly;
+            Secure; SameSite=None
+        Server:
+          - cloudflare
+        Cf-Ray:
+          - 815047e618f93da8-LHR
+        Alt-Svc:
+          - h3=":443"; ma=86400
+      body:
+        encoding: ASCII-8BIT
+        string: '{"id":148624328,"business":<WISE_PROFILE_ID>,"profile":<WISE_PROFILE_ID>,"accountHolderName":"Da
+          Rod","currency":"AED","country":"AE","type":"emirates","details":{"address":{"country":"AE","countryCode":"AE","firstLine":"West
+          street","postCode":"111111","city":"Dubai","state":null},"email":"aeduser@gmail.com","legalType":"PRIVATE","accountHolderName":null,"accountNumber":null,"sortCode":null,"abartn":null,"accountType":null,"bankgiroNumber":null,"ifscCode":null,"bsbCode":null,"institutionNumber":null,"transitNumber":null,"phoneNumber":null,"bankCode":null,"russiaRegion":null,"routingNumber":null,"branchCode":null,"cpf":null,"cardToken":null,"idType":null,"idNumber":null,"idCountryIso3":null,"idValidFrom":null,"idValidTo":null,"clabe":null,"swiftCode":null,"dateOfBirth":null,"clearingNumber":null,"bankName":null,"branchName":null,"businessNumber":null,"province":null,"city":null,"rut":null,"token":null,"cnpj":null,"payinReference":null,"pspReference":null,"orderId":null,"idDocumentType":null,"idDocumentNumber":null,"targetProfile":null,"targetUserId":null,"taxId":null,"job":null,"nationality":null,"interacAccount":null,"bban":null,"town":null,"postCode":null,"language":null,"billerCode":null,"customerReferenceNumber":null,"prefix":null,"relationship":null,"IBAN":"AE070331234567890123456","iban":"AE070331234567890123456","BIC":null,"bic":null},"user":5882096,"active":true,"ownedByCustomer":false}'
+    recorded_at: Thu, 12 Oct 2023 15:12:24 GMT
+  - request:
+      method: get
+      uri: https://api.sandbox.transferwise.tech/v1/accounts/148624328
+      body:
+        encoding: US-ASCII
+        string: ""
+      headers:
+        Authorization:
+          - Bearer 8e85a0b2-c1bc-4487-9fc9-e286fb9263d9
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+        Accept:
+          - "*/*"
+        User-Agent:
+          - Ruby
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Date:
+          - Thu, 12 Oct 2023 15:12:24 GMT
+        Content-Type:
+          - application/json;charset=UTF-8
+        Transfer-Encoding:
+          - chunked
+        Connection:
+          - keep-alive
+        Expires:
+          - "0"
+        Pragma:
+          - no-cache
+        X-Content-Type-Options:
+          - nosniff
+        X-Xss-Protection:
+          - 1; mode=block
+        X-Frame-Options:
+          - DENY
+        X-Trace-Id:
+          - c996536dce3e8b2b
+        Cache-Control:
+          - no-cache, no-store, max-age=0, must-revalidate
+        X-Envoy-Upstream-Service-Time:
+          - "59"
+        X-Envoy-Attempt-Count:
+          - "1"
+        Vary:
+          - origin,access-control-request-method,access-control-request-headers,accept-encoding
+        Cf-Cache-Status:
+          - DYNAMIC
+        Set-Cookie:
+          - __cf_bm=4P9iAEKK6kti.42k_4KVDccqfbW1n4gd3arF5nUMH0Q-1697123544-0-AQlCnrRHZ7KX2sPVihSvkyfBeUQROcuNUA6uDly1HQb3ZRupIjbH9hvvwaDZNmAals/nLids3ZvxVjdEgxe9lC8=;
+            path=/; expires=Thu, 12-Oct-23 15:42:24 GMT; domain=.transferwise.tech; HttpOnly;
+            Secure; SameSite=None
+        Server:
+          - cloudflare
+        Cf-Ray:
+          - 815047e8eed96408-LHR
+        Alt-Svc:
+          - h3=":443"; ma=86400
+      body:
+        encoding: ASCII-8BIT
+        string: '{"id":148624328,"business":<WISE_PROFILE_ID>,"profile":<WISE_PROFILE_ID>,"accountHolderName":"Da
+          Rod","currency":"AED","country":"AE","type":"emirates","details":{"address":{"country":"AE","countryCode":"AE","firstLine":"West
+          street","postCode":"111111","city":"Dubai","state":null},"email":"aeduser@gmail.com","legalType":"PRIVATE","accountHolderName":null,"accountNumber":null,"sortCode":null,"abartn":null,"accountType":null,"bankgiroNumber":null,"ifscCode":null,"bsbCode":null,"institutionNumber":null,"transitNumber":null,"phoneNumber":null,"bankCode":null,"russiaRegion":null,"routingNumber":null,"branchCode":null,"cpf":null,"cardToken":null,"idType":null,"idNumber":null,"idCountryIso3":null,"idValidFrom":null,"idValidTo":null,"clabe":null,"swiftCode":null,"dateOfBirth":null,"clearingNumber":null,"bankName":null,"branchName":null,"businessNumber":null,"province":null,"city":null,"rut":null,"token":null,"cnpj":null,"payinReference":null,"pspReference":null,"orderId":null,"idDocumentType":null,"idDocumentNumber":null,"targetProfile":null,"targetUserId":null,"taxId":null,"job":null,"nationality":null,"interacAccount":null,"bban":null,"town":null,"postCode":null,"language":null,"billerCode":null,"customerReferenceNumber":null,"prefix":null,"relationship":null,"IBAN":"AE070331234567890123456","iban":"AE070331234567890123456","BIC":null,"bic":null},"user":5882096,"active":true,"ownedByCustomer":false}'
+    recorded_at: Thu, 12 Oct 2023 15:12:24 GMT
+  - request:
+      method: get
+      uri: https://api.sandbox.transferwise.tech/v1/accounts/148624328
+      body:
+        encoding: US-ASCII
+        string: ""
+      headers:
+        Authorization:
+          - Bearer 8e85a0b2-c1bc-4487-9fc9-e286fb9263d9
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+        Accept:
+          - "*/*"
+        User-Agent:
+          - Ruby
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Date:
+          - Thu, 12 Oct 2023 15:12:24 GMT
+        Content-Type:
+          - application/json;charset=UTF-8
+        Transfer-Encoding:
+          - chunked
+        Connection:
+          - keep-alive
+        Expires:
+          - "0"
+        Pragma:
+          - no-cache
+        X-Trace-Id:
+          - 4a596c0b3ba6a623
+        X-Content-Type-Options:
+          - nosniff
+        X-Xss-Protection:
+          - 1; mode=block
+        X-Frame-Options:
+          - DENY
+        Cache-Control:
+          - no-cache, no-store, max-age=0, must-revalidate
+        X-Envoy-Upstream-Service-Time:
+          - "78"
+        X-Envoy-Attempt-Count:
+          - "1"
+        Vary:
+          - origin,access-control-request-method,access-control-request-headers,accept-encoding
+        Cf-Cache-Status:
+          - DYNAMIC
+        Set-Cookie:
+          - __cf_bm=3MUy5JNqcbXjsntAwFhLlcvU2AUIZxPDcZJHla169.s-1697123544-0-AWbjUyfZ0VPrd7WrHixUmzj+3o2n4H0bVx/jt2FtyyMFw09fyjn+fKaF1oxbSIQqo2KUq2Mc8qlxKz0bQdJ1C6U=;
+            path=/; expires=Thu, 12-Oct-23 15:42:24 GMT; domain=.transferwise.tech; HttpOnly;
+            Secure; SameSite=None
+        Server:
+          - cloudflare
+        Cf-Ray:
+          - 815047ea1ede240d-LHR
+        Alt-Svc:
+          - h3=":443"; ma=86400
+      body:
+        encoding: ASCII-8BIT
+        string: '{"id":148624328,"business":<WISE_PROFILE_ID>,"profile":<WISE_PROFILE_ID>,"accountHolderName":"Da
+          Rod","currency":"AED","country":"AE","type":"emirates","details":{"address":{"country":"AE","countryCode":"AE","firstLine":"West
+          street","postCode":"111111","city":"Dubai","state":null},"email":"aeduser@gmail.com","legalType":"PRIVATE","accountHolderName":null,"accountNumber":null,"sortCode":null,"abartn":null,"accountType":null,"bankgiroNumber":null,"ifscCode":null,"bsbCode":null,"institutionNumber":null,"transitNumber":null,"phoneNumber":null,"bankCode":null,"russiaRegion":null,"routingNumber":null,"branchCode":null,"cpf":null,"cardToken":null,"idType":null,"idNumber":null,"idCountryIso3":null,"idValidFrom":null,"idValidTo":null,"clabe":null,"swiftCode":null,"dateOfBirth":null,"clearingNumber":null,"bankName":null,"branchName":null,"businessNumber":null,"province":null,"city":null,"rut":null,"token":null,"cnpj":null,"payinReference":null,"pspReference":null,"orderId":null,"idDocumentType":null,"idDocumentNumber":null,"targetProfile":null,"targetUserId":null,"taxId":null,"job":null,"nationality":null,"interacAccount":null,"bban":null,"town":null,"postCode":null,"language":null,"billerCode":null,"customerReferenceNumber":null,"prefix":null,"relationship":null,"IBAN":"AE070331234567890123456","iban":"AE070331234567890123456","BIC":null,"bic":null},"user":5882096,"active":true,"ownedByCustomer":false}'
+    recorded_at: Thu, 12 Oct 2023 15:12:24 GMT
+recorded_with: VCR 6.2.0

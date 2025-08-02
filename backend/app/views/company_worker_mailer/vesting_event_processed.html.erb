@@ -1,0 +1,27 @@
+<h1>Some of your stock options have vested</h1>
+
+<p>A portion of your stock options has vested.</p>
+
+<p>Here are the details:</p>
+
+<dl>
+  <dt>Option grant</dt>
+  <dd><%= @equity_grant.period_started_at.year %> Stock Option Grant</dd>
+  <dt>Number of options vested recently</dt>
+  <dd><%= number_with_delimiter(@vesting_event.vested_shares) %></dd>
+  <dt>Vesting date</dt>
+  <dd><%= @vesting_event.vesting_date.strftime("%B %d, %Y") %></dd>
+  <dt>Number of options granted</dt>
+  <dd><%= number_with_delimiter(@equity_grant.number_of_shares) %></dd>
+  <dt>Number of options vested so far</dt>
+  <dd><%= number_with_delimiter(@equity_grant.vested_shares) %></dd>
+  <dt>Number of options yet to vest</dt>
+  <dd><%= number_with_delimiter(@equity_grant.unvested_shares) %></dd>
+  <dt>Exercise price</dt>
+  <dd><%= money_format(@equity_grant.exercise_price_usd) %> per share</dd>
+</dl>
+
+<p>
+  To view more details or exercise your vested options, visit your
+  <%= link_to "Equity dashboard", "#{PROTOCOL}://#{DOMAIN}/equity/grants" %>.
+</p>

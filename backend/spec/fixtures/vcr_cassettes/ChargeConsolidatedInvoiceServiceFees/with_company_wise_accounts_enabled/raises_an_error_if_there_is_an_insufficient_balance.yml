@@ -1,0 +1,342 @@
+---
+http_interactions:
+  - request:
+      method: get
+      uri: https://api.sandbox.transferwise.tech/v2/profiles
+      body:
+        encoding: US-ASCII
+        string: ""
+      headers:
+        Authorization:
+          - Bearer 8e85a0b2-c1bc-4487-9fc9-e286fb9263d9
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+        Accept:
+          - "*/*"
+        User-Agent:
+          - Ruby
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Date:
+          - Fri, 21 Jul 2023 21:46:46 GMT
+        Content-Type:
+          - application/json
+        Transfer-Encoding:
+          - chunked
+        Connection:
+          - keep-alive
+        X-Trace-Id:
+          - 42070173c1b648fd
+        X-Content-Type-Options:
+          - nosniff
+        X-Xss-Protection:
+          - 1; mode=block
+        Cache-Control:
+          - no-cache, no-store, max-age=0, must-revalidate
+        Expires:
+          - "0"
+        Pragma:
+          - no-cache
+        X-Frame-Options:
+          - DENY
+        X-Envoy-Upstream-Service-Time:
+          - "35"
+        X-Envoy-Attempt-Count:
+          - "1"
+        Vary:
+          - origin,access-control-request-method,access-control-request-headers,accept-encoding
+        Cf-Cache-Status:
+          - DYNAMIC
+        Set-Cookie:
+          - __cf_bm=xjZyY7TcBWr5NtZaREYbz8R5tiYMFflInCWXeh1C5eA-1689976006-0-AYbVrRMVh+B86Ao8rg/sTx75lFPzl49phpc1cZVJ1BfpPw+QHkmhjlOzlpR0q+9tKujjT9CcsGmjJIIHcyNsIqU=;
+            path=/; expires=Fri, 21-Jul-23 22:16:46 GMT; domain=.transferwise.tech; HttpOnly;
+            Secure; SameSite=None
+        Server:
+          - cloudflare
+        Cf-Ray:
+          - 7ea6a3754ef443a7-EWR
+        Alt-Svc:
+          - h3=":443"; ma=86400
+      body:
+        encoding: ASCII-8BIT
+        string: '[{"type":"PERSONAL","id":16356035,"userId":5882096,"type":"PERSONAL","address":{"addressFirstLine":"56
+          Shoreditch High Street","city":"London","countryIso2Code":"GB","countryIso3Code":"gbr","postCode":"E16JJ","stateCode":null},"email":"","createdAt":"2022-02-02T12:57:37.000Z","updatedAt":"2022-02-02T12:57:37.000Z","obfuscated":false,"currentState":"VISIBLE","firstName":"Sharang","lastName":"Dashputre","dateOfBirth":"1943-02-22","phoneNumber":"+919766666666","secondaryAddresses":[],"fullName":"Sharang
+          Dashputre"},{"type":"BUSINESS","id":<WISE_PROFILE_ID>,"userId":5882096,"type":"BUSINESS","address":{"addressFirstLine":"56
+          Shoreditch High Street","city":"London","countryIso2Code":"GB","countryIso3Code":"gbr","postCode":"E16JJ","stateCode":null},"email":"","createdAt":"2022-02-02T12:57:40.000Z","updatedAt":"2022-02-02T12:57:40.000Z","obfuscated":false,"currentState":"VISIBLE","businessName":"Sharang
+          Dashputre Business","registrationNumber":"07209813","descriptionOfBusiness":"IT_SERVICES","companyType":"LIMITED","companyRole":"OWNER","operationalAddresses":[],"fullName":"Sharang
+          Dashputre Business"}]'
+    recorded_at: Fri, 21 Jul 2023 21:46:46 GMT
+  - request:
+      method: post
+      uri: https://api.sandbox.transferwise.tech/v1/accounts
+      body:
+        encoding: UTF-8
+        string:
+          '{"profile":"<WISE_PROFILE_ID>","accountHolderName":"Gumroad, Inc.","currency":"USD","type":"aba","details":{"legalType":"BUSINESS","abartn":"<GUMROAD_BANK_ROUTING_NUMBER>","accountNumber":<GUMROAD_BANK_ACCOUNT_NUMBER>,"accountType":"CHECKING","address":{"country":"US","state":"CA","city":"San
+          Francisco","postCode":"94104","firstLine":"548 Market St #41309"}}}'
+      headers:
+        Authorization:
+          - Bearer 8e85a0b2-c1bc-4487-9fc9-e286fb9263d9
+        Content-Type:
+          - application/json
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+        Accept:
+          - "*/*"
+        User-Agent:
+          - Ruby
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Date:
+          - Fri, 21 Jul 2023 21:46:46 GMT
+        Content-Type:
+          - application/json;charset=UTF-8
+        Transfer-Encoding:
+          - chunked
+        Connection:
+          - keep-alive
+        Cache-Control:
+          - no-cache, no-store, max-age=0, must-revalidate
+        Pragma:
+          - no-cache
+        Expires:
+          - "0"
+        X-Content-Type-Options:
+          - nosniff
+        X-Xss-Protection:
+          - 1; mode=block
+        X-Frame-Options:
+          - DENY
+        X-Trace-Id:
+          - 1a9df6e5b43ffea7
+        X-Envoy-Upstream-Service-Time:
+          - "69"
+        X-Envoy-Attempt-Count:
+          - "1"
+        Vary:
+          - origin,access-control-request-method,access-control-request-headers,accept-encoding
+        Cf-Cache-Status:
+          - DYNAMIC
+        Set-Cookie:
+          - __cf_bm=OeXYMG0npf81uU5IIxLrhOsSGevQVmS_rePT0Gk.7HU-1689976006-0-AbktY1wYG16K+Ee+2YiAHmOUsBYS4UPWFhYRLOSB9sA03H1pWWsvaoFywBN8XPMUFV8sQn06DcN4f7icLI1UMpE=;
+            path=/; expires=Fri, 21-Jul-23 22:16:46 GMT; domain=.transferwise.tech; HttpOnly;
+            Secure; SameSite=None
+        Server:
+          - cloudflare
+        Cf-Ray:
+          - 7ea6a3781d0b4407-EWR
+        Alt-Svc:
+          - h3=":443"; ma=86400
+      body:
+        encoding: ASCII-8BIT
+        string: '{"id":148957443,"business":<WISE_PROFILE_ID>,"profile":<WISE_PROFILE_ID>,"accountHolderName":"Gumroad,
+          Inc.","currency":"USD","country":"US","type":"aba","details":{"address":{"country":"US","countryCode":"US","firstLine":"548
+          Market St #41309","postCode":"94104","city":"San Francisco","state":"CA"},"email":null,"legalType":"BUSINESS","accountHolderName":null,"accountNumber":"<GUMROAD_BANK_ACCOUNT_NUMBER>","sortCode":null,"abartn":"<GUMROAD_BANK_ROUTING_NUMBER>","accountType":"CHECKING","bankgiroNumber":null,"ifscCode":null,"bsbCode":null,"institutionNumber":null,"transitNumber":null,"phoneNumber":null,"bankCode":null,"russiaRegion":null,"routingNumber":null,"branchCode":null,"cpf":null,"cardToken":null,"idType":null,"idNumber":null,"idCountryIso3":null,"idValidFrom":null,"idValidTo":null,"clabe":null,"swiftCode":null,"dateOfBirth":null,"clearingNumber":null,"bankName":null,"branchName":null,"businessNumber":null,"province":null,"city":null,"rut":null,"token":null,"cnpj":null,"payinReference":null,"pspReference":null,"orderId":null,"idDocumentType":null,"idDocumentNumber":null,"targetProfile":null,"targetUserId":null,"taxId":null,"job":null,"nationality":null,"interacAccount":null,"bban":null,"town":null,"postCode":null,"language":null,"billerCode":null,"customerReferenceNumber":null,"prefix":null,"relationship":null,"IBAN":null,"iban":null,"BIC":null,"bic":null},"user":5882096,"active":true,"ownedByCustomer":false}'
+    recorded_at: Fri, 21 Jul 2023 21:46:46 GMT
+  - request:
+      method: get
+      uri: https://api.sandbox.transferwise.tech/v3/profiles/<WISE_PROFILE_ID>/subscriptions
+      body:
+        encoding: US-ASCII
+        string: ""
+      headers:
+        Authorization:
+          - Bearer 8e85a0b2-c1bc-4487-9fc9-e286fb9263d9
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+        Accept:
+          - "*/*"
+        User-Agent:
+          - Ruby
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Date:
+          - Fri, 21 Jul 2023 21:46:47 GMT
+        Content-Type:
+          - application/json
+        Transfer-Encoding:
+          - chunked
+        Connection:
+          - keep-alive
+        Cache-Control:
+          - no-cache, no-store, max-age=0, must-revalidate
+        Pragma:
+          - no-cache
+        Expires:
+          - "0"
+        X-Content-Type-Options:
+          - nosniff
+        X-Xss-Protection:
+          - 1; mode=block
+        X-Frame-Options:
+          - DENY
+        X-Trace-Id:
+          - 28794f33250d1799
+        X-Envoy-Upstream-Service-Time:
+          - "37"
+        X-Envoy-Attempt-Count:
+          - "1"
+        Vary:
+          - origin,access-control-request-method,access-control-request-headers,accept-encoding
+        Cf-Cache-Status:
+          - DYNAMIC
+        Set-Cookie:
+          - __cf_bm=YHQCYynuXulN9zyNpBModBBfTSFJ5u6iawr4tFzIbA8-1689976007-0-AcDnocji2Pmc8Ao2PbRLV/6fdZUCkvgxB/+Z3/BVRTOQH2Ybz2Zh29c+i2rkPG4LZ2UrPqyV9KdDJfia4G4np9s=;
+            path=/; expires=Fri, 21-Jul-23 22:16:47 GMT; domain=.transferwise.tech; HttpOnly;
+            Secure; SameSite=None
+        Server:
+          - cloudflare
+        Cf-Ray:
+          - 7ea6a37afe00425d-EWR
+        Alt-Svc:
+          - h3=":443"; ma=86400
+      body:
+        encoding: ASCII-8BIT
+        string:
+          '[{"id":"27e30dfc-06be-45d9-87c1-4d534fcfda60","name":"Flexile - balances#credit","delivery":{"version":"2.0.0","url":"https://flexile-pipe-fix-hmr-fcsxmsnnj.herokuapp.com/webhooks/wise/balance_credit"},"trigger_on":"balances#credit","created_by":{"type":"user","id":"5882096"},"created_at":"2023-04-20T03:24:51Z","scope":{"domain":"profile","id":"<WISE_PROFILE_ID>"},"request_headers":[],"enabled":true},{"id":"e8e51db3-cf68-4854-85f5-acc8823dff11","name":"Webhook
+          2","delivery":{"version":"2.0.0","url":"https://c47a-40-129-123-99.ngrok-free.app/webhooks/wise/transfer_state_change"},"trigger_on":"transfers#state-change","created_by":{"type":"user","id":"5882096"},"created_at":"2023-07-21T00:19:36Z","scope":{"domain":"profile","id":"<WISE_PROFILE_ID>"},"request_headers":[],"enabled":true}]'
+    recorded_at: Fri, 21 Jul 2023 21:46:46 GMT
+  - request:
+      method: post
+      uri: https://api.sandbox.transferwise.tech/v3/profiles/<WISE_PROFILE_ID>/subscriptions
+      body:
+        encoding: UTF-8
+        string: '{"name":"Flexile - transfers#state-change","trigger_on":"transfers#state-change","delivery":{"version":"2.0.0","url":"http://localhost:31337/webhooks/wise/transfer_state_change"}}'
+      headers:
+        Authorization:
+          - Bearer 8e85a0b2-c1bc-4487-9fc9-e286fb9263d9
+        Content-Type:
+          - application/json
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+        Accept:
+          - "*/*"
+        User-Agent:
+          - Ruby
+    response:
+      status:
+        code: 400
+        message: Bad Request
+      headers:
+        Date:
+          - Fri, 21 Jul 2023 21:46:47 GMT
+        Content-Type:
+          - application/json
+        Transfer-Encoding:
+          - chunked
+        Connection:
+          - keep-alive
+        X-Content-Type-Options:
+          - nosniff
+        X-Xss-Protection:
+          - 1; mode=block
+        X-Frame-Options:
+          - DENY
+        Cache-Control:
+          - no-cache, no-store, max-age=0, must-revalidate
+        Expires:
+          - "0"
+        Pragma:
+          - no-cache
+        X-Trace-Id:
+          - 785ed747372169a4
+        X-Envoy-Upstream-Service-Time:
+          - "24"
+        X-Envoy-Attempt-Count:
+          - "1"
+        Vary:
+          - origin,access-control-request-method,access-control-request-headers,accept-encoding
+        Cf-Cache-Status:
+          - DYNAMIC
+        Set-Cookie:
+          - __cf_bm=5g1cpYU7EyT1Rrkze9t1OnZsDhhPb8nHeOCo3q005Oc-1689976007-0-AfHgcCSgWls7GFTyoP1/v/4RJR+CEXElJc6XT5MXJ73Fv+ZbXQGz53ltHlzYpB/ohUowI9EVB/vC79J/SChtIhc=;
+            path=/; expires=Fri, 21-Jul-23 22:16:47 GMT; domain=.transferwise.tech; HttpOnly;
+            Secure; SameSite=None
+        Server:
+          - cloudflare
+        Cf-Ray:
+          - 7ea6a37d1ad10f37-EWR
+        Alt-Svc:
+          - h3=":443"; ma=86400
+      body:
+        encoding: ASCII-8BIT
+        string: '{"code":"invalid","message":"Invalid request","arguments":["delivery.url:
+          Invalid delivery URL"]}'
+    recorded_at: Fri, 21 Jul 2023 21:46:47 GMT
+  - request:
+      method: post
+      uri: https://api.sandbox.transferwise.tech/v3/profiles/<WISE_PROFILE_ID>/subscriptions
+      body:
+        encoding: UTF-8
+        string: '{"name":"Flexile - balances#credit","trigger_on":"balances#credit","delivery":{"version":"2.0.0","url":"http://localhost:31337/webhooks/wise/balance_credit"}}'
+      headers:
+        Authorization:
+          - Bearer 8e85a0b2-c1bc-4487-9fc9-e286fb9263d9
+        Content-Type:
+          - application/json
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+        Accept:
+          - "*/*"
+        User-Agent:
+          - Ruby
+    response:
+      status:
+        code: 400
+        message: Bad Request
+      headers:
+        Date:
+          - Fri, 21 Jul 2023 21:46:47 GMT
+        Content-Type:
+          - application/json
+        Transfer-Encoding:
+          - chunked
+        Connection:
+          - keep-alive
+        Cache-Control:
+          - no-cache, no-store, max-age=0, must-revalidate
+        Pragma:
+          - no-cache
+        Expires:
+          - "0"
+        X-Content-Type-Options:
+          - nosniff
+        X-Xss-Protection:
+          - 1; mode=block
+        X-Frame-Options:
+          - DENY
+        X-Trace-Id:
+          - 908eaeb930139e8b
+        X-Envoy-Upstream-Service-Time:
+          - "26"
+        X-Envoy-Attempt-Count:
+          - "1"
+        Vary:
+          - origin,access-control-request-method,access-control-request-headers,accept-encoding
+        Cf-Cache-Status:
+          - DYNAMIC
+        Set-Cookie:
+          - __cf_bm=rUrrZ.COi5h83nX.abMrAVkKCSqR9MEFhug4hYma6V4-1689976007-0-AQe5DNvB4GbM8af42D1Kp8NE3yAFMfhbN3fvcoJr3e5eemz6rBJbJd9U3lO2qFs5SeMLrNkwTvcS90IWI88B5UM=;
+            path=/; expires=Fri, 21-Jul-23 22:16:47 GMT; domain=.transferwise.tech; HttpOnly;
+            Secure; SameSite=None
+        Server:
+          - cloudflare
+        Cf-Ray:
+          - 7ea6a37f1d301891-EWR
+        Alt-Svc:
+          - h3=":443"; ma=86400
+      body:
+        encoding: ASCII-8BIT
+        string: '{"code":"invalid","message":"Invalid request","arguments":["delivery.url:
+          Invalid delivery URL"]}'
+    recorded_at: Fri, 21 Jul 2023 21:46:47 GMT
+recorded_with: VCR 6.2.0

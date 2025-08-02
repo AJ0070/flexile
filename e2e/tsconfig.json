@@ -1,0 +1,12 @@
+{
+  "extends": "../frontend/tsconfig.json",
+  "compilerOptions": {
+    "types": ["node", "@playwright/test"],
+    "baseUrl": ".",
+    "paths": {
+      "@test/*": ["./*"],
+      "@/*": ["../frontend/*"]
+    }
+  },
+  "include": ["./**/*.ts", "../frontend/types.d.ts"]
+}

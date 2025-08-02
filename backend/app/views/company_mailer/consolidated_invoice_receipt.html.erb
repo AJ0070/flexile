@@ -1,0 +1,46 @@
+<h1>
+  <% if @company.is_trusted? %>
+    <%= "🌏 We're sending payments to #{@contractor_count} #{"contractor".pluralize(@contractor_count)} in #{@country_count}#{@country_count > 1 ? " different countries" : " country"}" %>.
+  <% else %>
+    Payment received!
+  <% end %>
+</h1>
+
+<p>
+  <%= @company.is_trusted? ? "We processed your payment and contractors" : "#{@contractor_count} #{"contractor".pluralize(@contractor_count)}" %>
+  should receive their fees on or before <%= @consolidated_invoice.contractor_payments_expected_by.to_fs(:long_date) %>.
+  Keep in mind, some banks may need a little more time.
+</p>
+
+<dl>
+  <dt>Total sent to contractors</dt>
+  <dd>
+    <%= cents_format(@consolidated_invoice.invoice_amount_cents) %>
+  </dd>
+  <dt>Flexile fees</dt>
+  <dd>
+    <%= cents_format(@consolidated_invoice.flexile_fee_cents + @consolidated_invoice.transfer_fee_cents) %>
+  </dd>
+  <dt>Total</dt>
+  <dd>
+    <%= cents_format(@consolidated_invoice.total_cents) %>
+  </dd>
+  <dt>Invoice number</dt>
+  <dd>
+    <%= @consolidated_invoice.invoice_number %>
+  </dd>
+  <dt>Date</dt>
+  <dd>
+    <%= @date %>
+  </dd>
+  <dt>Payment method</dt>
+  <dd>
+    Bank account ending in <%= @bank_account_last_four || "****" %>
+  </dd>
+  <dt>Status</dt>
+  <dd>
+    <%= image_tag asset_path("mailers/check-circle-filled.png"), style: "vertical-align: sub" %> Paid
+  </dd>
+</dl>
+
+<a href="<%= "#{PROTOCOL}://#{DOMAIN}/settings/administrator" %>" class="button outline">Review your settings</a>

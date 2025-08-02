@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.sandbox.transferwise.tech/v2/profiles
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer nonexistent
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Date:
+      - Fri, 24 Mar 2023 13:03:38 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Request-Id:
+      - 27739543-1b7c-964b-9269-8bbdcd1862e2
+      X-Trace-Id:
+      - '000000000000000019cc0622b5d58fb1'
+      Cache-Control:
+      - no-store
+      Pragma:
+      - no-cache
+      Www-Authenticate:
+      - Bearer realm="transferwise", error="invalid_token", error_description="nonexistent"
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - DENY
+      X-Envoy-Upstream-Service-Time:
+      - '10'
+      X-Envoy-Attempt-Count:
+      - '1'
+      Vary:
+      - origin,access-control-request-method,access-control-request-headers,accept-encoding
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=8.8vGisvj7HNJ910OaYFjZX3dlG3jcQ4zvIdrxTtVp0-1679663018-0-ASvWiqMxWG7je2QoYD6CmWGtD1YnZGW2ssWwPBRXmBBarjNVsz751oSlPwlVSKbzTBI/1XomxN8+nMly+gvtyg8=;
+        path=/; expires=Fri, 24-Mar-23 13:33:38 GMT; domain=.transferwise.tech; HttpOnly;
+        Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 7acf1d890c001996-EWR
+      Alt-Svc:
+      - h3=":443"; ma=86400, h3-29=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":"invalid_token","error_description":"nonexistent"}'
+  recorded_at: Fri, 24 Mar 2023 13:03:38 GMT
+recorded_with: VCR 6.1.0

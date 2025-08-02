@@ -1,0 +1,110 @@
+<style>
+  @font-face {
+      font-family: "ABC Whyte";
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: <%= asset_path "ABCWhyte-Regular.woff" %> format("woff");
+  }
+
+  body {
+      font-family: "ABC Whyte", sans-serif;
+  }
+
+  .checkered-line {
+      height: 1rem;
+      background-image: linear-gradient(to right, gray 50%, transparent 50%), linear-gradient(to right, transparent 50%, gray 50%), linear-gradient(to right, gray 50%, transparent 50%);
+      background-size: 1rem 40%, 1rem 20%, 1rem 40%;
+      background-position: 0 0, 0 50%, 0 100%;
+      background-repeat: repeat-x;
+  }
+
+  .certificate-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      height: 100%;
+  }
+
+  .logo-container {
+      display: grid;
+      place-items: center;
+      gap: 0.5rem;
+  }
+
+  .gray-text {
+      color: #6b7280;
+  }
+
+  .certificate-content {
+      flex-grow: 1;
+      padding: 1.25rem;
+      display: grid;
+      gap: 1.25rem;
+      align-content: center;
+  }
+
+  .share-details {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+  }
+
+  .detail-heading {
+      font-size: 1.875rem;
+      line-height: 2.25rem;
+      font-weight: 700;
+  }
+
+  .signature {
+      font-size: 3rem;
+      text-decoration: underline;
+      text-decoration-color: gray;
+      margin-top: 2rem;
+  }
+
+  .text-center {
+      text-align: center;
+  }
+</style>
+<div class="certificate-container">
+  <div class="checkered-line"></div>
+  <div class="logo-container">
+    <%= image_tag company.full_logo.url, style: "height: 100px" %>
+    <small class="gray-text">
+      <%= company.name %> incorporated under the laws of the state of
+      <%= ISO3166::Country[:US].subdivisions[company.registration_state].name %>
+    </small>
+  </div>
+  <div class="checkered-line"></div>
+  <div class="certificate-content">
+    <small class="gray-text"><%= share_holding.issued_at.to_fs(:long_date) %></small>
+    <div>
+      This certifies that <b><%= share_holding.share_holder_name %></b> is the registered owner of
+      <b><%= number_with_delimiter(share_holding.number_of_shares) %></b> shares in <%= company.name %>,
+      transferable only on the books of the Corporation by the holder hereof in person.
+    </div>
+    <div class="share-details">
+      <div>
+        <small class="gray-text">Shareholder</small>
+        <h1 class="detail-heading"><%= share_holding.share_holder_name %></h1>
+      </div>
+      <div>
+        <small class="gray-text">Number of shares</small>
+        <h1 class="detail-heading"><%= number_with_delimiter(share_holding.number_of_shares) %></h1>
+      </div>
+      <div>
+        <small class="gray-text">Share class</small><br>
+        <b><%= share_holding.share_class.name %></b>
+      </div>
+      <div>
+        <small class="gray-text">Issue price</small><br>
+        <b><%= money_format(share_holding.share_price_usd, no_cents_if_whole: false) %></b>
+      </div>
+    </div>
+    <div class="signature"><%= admin_name %></div>
+    <small class="gray-text">Chief Executive Officer</small>
+  </div>
+  <small class="gray-text text-center">Certificate number: <%= share_holding.name %></small>
+  <div class="checkered-line"></div>
+</div>

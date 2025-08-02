@@ -1,0 +1,55 @@
+#!/bin/bash
+
+set -e
+
+function install_if_missing() {
+  local cmd=$1
+  local name=$2
+  local install_cmd=$3
+
+  if command -v "$cmd" &> /dev/null; then
+    return 0
+  fi
+
+  read -p "Would you like to install $name? (y/N) " answer
+  if [ "$answer" = "y" ] || [ "$answer" = "Y" ]; then
+    eval "$install_cmd"
+    return 0
+  fi
+  return 1
+}
+
+echo "🚀 Setting up development environment..."
+
+if install_if_missing "brew" "Homebrew" "curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash"; then
+  brew install postgresql
+  brew services start postgresql
+  psql -c "CREATE USER username WITH LOGIN SUPERUSER PASSWORD 'password';" || true
+else
+  read -p "Please make sure PostgreSQL headers are installed before continuing."
+fi
+
+if install_if_missing "ruby" "Ruby using rbenv" "curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash"; then
+  rbenv install -s $(cat .ruby-version)
+else
+  read -p "Please make sure Ruby is installed before continuing."
+fi
+
+corepack enable
+
+if [ ! -f ".env" ]; then
+    read -p "Would you like to pull environment variables from Vercel? (y/N) " answer
+
+    if [ "$answer" = "y" ] || [ "$answer" = "Y" ]; then
+        pnpx vercel link && pnpx vercel env pull .env
+    else
+      cp .env.example .env
+      echo "A sample .env file has been created. Please fill it in with your own keys."
+    fi
+fi
+
+ln -sf $PWD/.env ./frontend/.env
+
+gem install foreman
+
+echo "✨ Setup complete! You can now start the development server."

@@ -1,0 +1,20 @@
+<h1><%= @has_tax_info_confirmed ? "Review" : "Complete" %> your tax information by <%= @formatted_deadline_date %></h1>
+
+<p>
+  To comply with U.S. tax laws, we need to ensure your tax information is accurate for <%= @tax_year %> tax forms.
+</p>
+<p>
+  <% if @has_tax_info_confirmed %>
+    Please verify that your tax information is up to date. If any details need to be updated, kindly make the changes by <%= @formatted_deadline_date %>.
+  <% else %>
+    Please provide your missing tax information by <%= @formatted_deadline_date %>.
+  <% end %>
+</p>
+
+<%= link_to "#{@has_tax_info_confirmed ? "Review" : "Complete"} tax information",
+            "#{PROTOCOL}://#{DOMAIN}/settings/tax",
+            class: "button" %>
+
+<% unless @has_tax_info_confirmed %>
+  <p>If you need any assistance, please reply to this email.</p>
+<% end %>

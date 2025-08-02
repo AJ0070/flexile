@@ -1,0 +1,20 @@
+<p>Hello <%= @investor.legal_name %>,</p>
+<p><strong><%= @company.display_name %> has declared a new <%= @dividend_round.return_of_capital? ? 'return of capital' : 'dividend distribution' %>.</strong></p>
+
+<div style="background-color: #f8f9fa; padding: 15px; border-radius: 5px; margin: 15px 0;">
+  <p><strong>Dividend Round Details:</strong></p>
+  <p>Total Amount: <strong><%= number_to_currency(@dividend_round.total_amount_in_usd) %></strong></p>
+  <p>Issuance Date: <strong><%= @dividend_round.issuance_date.strftime('%B %d, %Y') %></strong></p>
+  <p>Type: <strong><%= @dividend_round.return_of_capital? ? 'Return of Capital' : 'Dividend' %></strong></p>
+</div>
+
+<p>You can view the details of this dividend round and any actions required by logging into your <%= link_to('investor portal', investor_dividend_round_url(@dividend_round)) %>.</p>
+
+<% if @dividend_round.release_document.present? %>
+  <p><strong>Action Required:</strong> Please review and sign the release agreement to receive your payment.</p>
+  <p><%= link_to('Review and Sign Release', investor_dividend_round_url(@dividend_round), style: 'display: inline-block; padding: 10px 20px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 4px; margin: 10px 0;') %></p>
+<% end %>
+
+<p>If you have any questions about this dividend round, please reply to this email or contact our support team.</p>
+
+<p>Best regards,<br>The <%= @company.name %> Team</p>

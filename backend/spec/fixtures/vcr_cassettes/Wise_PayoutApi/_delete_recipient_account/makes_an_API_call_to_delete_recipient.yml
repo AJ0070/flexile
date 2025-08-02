@@ -1,0 +1,69 @@
+---
+http_interactions:
+  - request:
+      method: delete
+      uri: https://api.sandbox.transferwise.tech/v1/accounts/148565647
+      body:
+        encoding: US-ASCII
+        string: ""
+      headers:
+        Authorization:
+          - Bearer 8e85a0b2-c1bc-4487-9fc9-e286fb9263d9
+        Content-Type:
+          - application/json
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+        Accept:
+          - "*/*"
+        User-Agent:
+          - Ruby
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Date:
+          - Fri, 30 Sep 2022 01:35:05 GMT
+        Content-Length:
+          - "0"
+        Connection:
+          - keep-alive
+        X-Request-Id:
+          - 1827be5e-6eec-9532-9e6d-a04da1b6ec7e
+        X-Trace-Id:
+          - 94652a107aee75b4
+        X-Content-Type-Options:
+          - nosniff
+        X-Xss-Protection:
+          - 1; mode=block
+        Cache-Control:
+          - no-cache, no-store, max-age=0, must-revalidate
+        Pragma:
+          - no-cache
+        Expires:
+          - "0"
+        X-Frame-Options:
+          - DENY
+        X-Envoy-Upstream-Service-Time:
+          - "102"
+        X-Envoy-Attempt-Count:
+          - "1"
+        Vary:
+          - Origin,Access-Control-Request-Method,Access-Control-Request-Headers
+        Cf-Cache-Status:
+          - DYNAMIC
+        Set-Cookie:
+          - __cf_bm=d2tI_2YfADl78wmq1DeVYBU8oWTSlwWlFiDbYvmQ9ps-1664501705-0-AbVLuEWCGyMHyjymPV8kWvSAmQyDShIiq6X3PkMq5yy5wRlIf6FkuSUkNMCrAbZ5cG1t7Ll+6bmpzjCdwX58wuc=;
+            path=/; expires=Fri, 30-Sep-22 02:05:05 GMT; domain=.transferwise.tech; HttpOnly;
+            Secure; SameSite=None
+        Server:
+          - cloudflare
+        Cf-Ray:
+          - 7529384aca13f019-EWR
+        Alt-Svc:
+          - h3=":443"; ma=86400, h3-29=":443"; ma=86400
+      body:
+        encoding: UTF-8
+        string: ""
+    recorded_at: Fri, 30 Sep 2022 01:35:05 GMT
+recorded_with: VCR 6.1.0

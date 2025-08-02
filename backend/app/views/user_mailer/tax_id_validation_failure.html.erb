@@ -1,0 +1,6 @@
+<h1>We couldn't validate your <%= @user.tax_id_name %></h1>
+<p>Since there's a mismatch between the <%= @user.business_entity? ? "business name" : "legal name" %> and <%= @user.tax_id_name %> you provided and your government records, <strong>please note that your payments could experience a tax withholding rate of 24%.</strong></p>
+
+<p>If you think this may be due to a typo or recent changes to your name or legal entity, please update your information in Flexile.</p>
+
+<%= link_to "Review your tax info", @settings_url, class: "button" %>

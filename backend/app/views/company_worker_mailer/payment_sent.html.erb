@@ -1,0 +1,20 @@
+<h1>
+  Your payment of <%= Money.from_amount(@payment.wise_transfer_amount, @payment.wise_transfer_currency).format(with_currency: true, symbol: false, no_cents_if_whole: true) %> is on its way
+</h1>
+<dl>
+  <dt>Invoice ID</dt>
+  <dd>
+    <%= @invoice.invoice_number %>
+  </dd>
+  <dt>Invoice amount</dt>
+  <dd>
+    <%= cents_format(@invoice.total_amount_in_usd_cents, with_currency: true, symbol: false) %>
+  </dd>
+  <dt>Bank account</dt>
+  <dd>
+    ****<%= @payment.recipient_last4 %>
+  </dd>
+</dl>
+<p>Please give your bank up to 2 business days to process the transfer to your account. Keep in mind, some banks may need a little more time.</p>
+
+<p>If you have not received your payment after 4 business days, let us know at <%= ApplicationMailer::SUPPORT_EMAIL %></p>

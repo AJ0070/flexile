@@ -1,0 +1,191 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.stripe.com/v1/payment_intents/pi_3LaEP8FSsGLfTpet1eJw3aVf?expand%5B%5D=latest_charge
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Stripe/v1 RubyBindings/9.2.0
+      Authorization:
+      - Bearer sk_test_51LBic8FSsGLfTpetzIURf8ybimlbadTOyvetEmam8qFXUpT52LDkEquZoGFbyuEiJaGSFfNjSKSAMPLE
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Stripe-Version:
+      - '2023-08-16'
+      X-Stripe-Client-User-Agent:
+      - '{"bindings_version":"9.2.0","lang":"ruby","lang_version":"3.2.2 p53 (2023-03-30)","platform":"arm64-darwin22","engine":"ruby","publisher":"stripe","uname":"Darwin
+        Helens-MBP-M1 22.1.0 Darwin Kernel Version 22.1.0: Sun Oct  9 20:15:09 PDT
+        2022; root:xnu-8792.41.9~2/RELEASE_ARM64_T6000 arm64","hostname":"Helens-MBP-M1"}'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 11 Sep 2023 11:35:00 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '3488'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET,HEAD,PUT,PATCH,POST,DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Request-Id, Stripe-Manage-Version, X-Stripe-External-Auth-Required, X-Stripe-Privileged-Session-Required
+      Access-Control-Max-Age:
+      - '300'
+      Cache-Control:
+      - no-cache, no-store
+      Request-Id:
+      - req_tjBVuErcokS1HZ
+      Stripe-Version:
+      - '2023-08-16'
+      Vary:
+      - Origin
+      X-Stripe-Routing-Context-Priority-Tier:
+      - api-testmode
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "id": "pi_3LaEP8FSsGLfTpet1eJw3aVf",
+          "object": "payment_intent",
+          "amount": 130600,
+          "amount_capturable": 0,
+          "amount_details": {
+            "tip": {}
+          },
+          "amount_received": 130600,
+          "application": null,
+          "application_fee_amount": null,
+          "automatic_payment_methods": null,
+          "canceled_at": null,
+          "cancellation_reason": null,
+          "capture_method": "automatic",
+          "client_secret": "pi_3LaEP8FSsGLfTpet1eJw3aVf_secret_8etXk8OcqBrcohYZsXbUWouPU",
+          "confirmation_method": "automatic",
+          "created": 1661327618,
+          "currency": "usd",
+          "customer": "cus_M2QFeoOFttyzTx",
+          "description": null,
+          "invoice": null,
+          "last_payment_error": null,
+          "latest_charge": {
+            "id": "py_3LaEP8FSsGLfTpet1lxsnPvw",
+            "object": "charge",
+            "amount": 130600,
+            "amount_captured": 130600,
+            "amount_refunded": 0,
+            "application": null,
+            "application_fee": null,
+            "application_fee_amount": null,
+            "balance_transaction": "txn_3LaEP8FSsGLfTpet1nhrnfBm",
+            "billing_details": {
+              "address": {
+                "city": null,
+                "country": null,
+                "line1": null,
+                "line2": null,
+                "postal_code": null,
+                "state": null
+              },
+              "email": "sharang.d+test_email@gmail.com",
+              "name": "Sahil Example",
+              "phone": null
+            },
+            "calculated_statement_descriptor": null,
+            "captured": true,
+            "created": 1661327619,
+            "currency": "usd",
+            "customer": "cus_M2QFeoOFttyzTx",
+            "description": null,
+            "destination": null,
+            "dispute": null,
+            "disputed": false,
+            "failure_balance_transaction": null,
+            "failure_code": null,
+            "failure_message": null,
+            "fraud_details": {},
+            "invoice": null,
+            "livemode": false,
+            "metadata": {},
+            "on_behalf_of": null,
+            "order": null,
+            "outcome": {
+              "network_status": "approved_by_network",
+              "reason": null,
+              "risk_level": "not_assessed",
+              "seller_message": "Payment complete.",
+              "type": "authorized"
+            },
+            "paid": true,
+            "payment_intent": "pi_3LaEP8FSsGLfTpet1eJw3aVf",
+            "payment_method": "pm_1LS2bAFSsGLfTpetCH8rj0EY",
+            "payment_method_details": {
+              "type": "us_bank_account",
+              "us_bank_account": {
+                "account_holder_type": "individual",
+                "account_type": "checking",
+                "bank_name": "STRIPE TEST BANK",
+                "fingerprint": "fyuVQhio0NPi5cGK",
+                "last4": "6789",
+                "routing_number": "110000000"
+              }
+            },
+            "receipt_email": null,
+            "receipt_number": null,
+            "receipt_url": "https://pay.stripe.com/receipts/payment/CAcaFwoVYWNjdF8xTEJpYzhGU3NHTGZUcGV0KOT2-6cGMgZRDZmW03E6LBaS0-QJ4YKOUO64S8biXhV7sM1sju9a_BXLEFd2Bh428lpWuMTeEvgXTYfD",
+            "refunded": false,
+            "review": null,
+            "shipping": null,
+            "source": null,
+            "source_transfer": null,
+            "statement_descriptor": null,
+            "statement_descriptor_suffix": null,
+            "status": "succeeded",
+            "transfer_data": null,
+            "transfer_group": null
+          },
+          "livemode": false,
+          "metadata": {},
+          "next_action": null,
+          "on_behalf_of": null,
+          "payment_method": "pm_1LS2bAFSsGLfTpetCH8rj0EY",
+          "payment_method_options": {
+            "us_bank_account": {
+              "verification_method": "automatic"
+            }
+          },
+          "payment_method_types": [
+            "us_bank_account"
+          ],
+          "processing": null,
+          "receipt_email": null,
+          "review": null,
+          "setup_future_usage": null,
+          "shipping": null,
+          "source": null,
+          "statement_descriptor": null,
+          "statement_descriptor_suffix": null,
+          "status": "succeeded",
+          "transfer_data": null,
+          "transfer_group": null
+        }
+  recorded_at: Mon, 11 Sep 2023 11:35:00 GMT
+recorded_with: VCR 6.2.0

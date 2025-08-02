@@ -1,0 +1,18 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended", ":preserveSemverRanges", "docker:disable", ":label(dependencies)", ":automergeAll"],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": ["before 8am on the first day of the month"]
+  },
+  "minimumReleaseAge": "14 days",
+  "prConcurrentLimit": 3,
+  "packageRules": [
+    { "groupName": "flipper packages", "matchPackageNames": ["/^flipper/"] },
+    { "groupName": "sidekiq", "matchPackageNames": ["/sidekiq/"] },
+    { "matchPackageNames": "rails", "automerge": false }
+  ],
+  "github-actions": {
+    "enabled": false
+  }
+}

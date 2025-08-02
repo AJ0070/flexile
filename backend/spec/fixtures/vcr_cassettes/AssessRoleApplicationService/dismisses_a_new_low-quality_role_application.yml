@@ -1,0 +1,107 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"messages":[{"role":"system","content":"You are a hiring manager at
+        Gumroad and have received a job application\nfor the role of Software engineer.
+        Your job is to assess the application and decide whether to dismiss it.\n\nThe
+        reasons to dismiss the application are:\nincorrect use of English, typos,
+        complete name not given, company names not capitalized correctly, and spam.\n\nThe
+        application may contain some HTML tags, please ignore them.\n\nWould you dismiss
+        the application? Reply with YES or NO.\n"},{"role":"user","content":"Name:
+        Justine Frami DVM\n\n\u003cp\u003eblah blah no try uiasdfoasdfoiasf spam reject
+        me plz\u003c/p\u003e\n"}],"model":"gpt-4o-mini","temperature":0.0,"max_tokens":2}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer sk-flexile-dev-service-account-xSFOAqCbDjT4WwjWBQZkT3BlbkFJVvDog23mxF7mFrJzQdBm
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 07 Aug 2024 05:28:19 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Openai-Organization:
+      - gumroad
+      Openai-Processing-Ms:
+      - '128'
+      Openai-Version:
+      - '2020-10-01'
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains; preload
+      X-Ratelimit-Limit-Requests:
+      - '30000'
+      X-Ratelimit-Limit-Tokens:
+      - '150000000'
+      X-Ratelimit-Remaining-Requests:
+      - '29999'
+      X-Ratelimit-Remaining-Tokens:
+      - '149999859'
+      X-Ratelimit-Reset-Requests:
+      - 2ms
+      X-Ratelimit-Reset-Tokens:
+      - 0s
+      X-Request-Id:
+      - req_71fb1e19a0dc3783e21ffd49d9abbf22
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=.plmFCZaLx.5IskEXM8hWn4JG2okaxf8iVVlMbkWqsY-1723008499-1.0.1.1-4GtIRh79ArxsqmWuRCl.r7SIsRzagrne6pLKMzfLlccayEF6Mnvz4MB2fNfXlB8JseYox.Vm.h4h7bm4LAze7g;
+        path=/; expires=Wed, 07-Aug-24 05:58:19 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=xLYYKMMuA6kUqEEPeS5KGr3NrcpPcNjusKKYpmVuuvk-1723008499443-0.0.1.1-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8af4dcce5b5946c0-BOM
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "chatcmpl-9tTVbqC96aiI2l0NSl7MihbdCt1VJ",
+          "object": "chat.completion",
+          "created": 1723008499,
+          "model": "gpt-4o-mini-2024-07-18",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "YES",
+                "refusal": null
+              },
+              "logprobs": null,
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 133,
+            "completion_tokens": 1,
+            "total_tokens": 134
+          },
+          "system_fingerprint": "fp_48196bc67a"
+        }
+  recorded_at: Wed, 07 Aug 2024 05:28:19 GMT
+recorded_with: VCR 6.2.0

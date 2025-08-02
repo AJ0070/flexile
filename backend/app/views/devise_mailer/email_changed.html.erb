@@ -1,0 +1,12 @@
+<% if @resource.try(:unconfirmed_email?) %>
+  <h1>
+    Your email is being changed to <%= @resource.unconfirmed_email %>.
+  </h1>
+<% else %>
+  <h1>
+    Your email has been changed to <%= @resource.email %>.
+  </h1>
+<% end %>
+<p>
+  If you didn't request this, contact us immediately at <%= ApplicationMailer::SUPPORT_EMAIL %>.
+</p>

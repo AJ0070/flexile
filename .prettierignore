@@ -1,0 +1,6 @@
+frontend/utils/routes.*
+backend
+vendor
+tmp
+frontend/.next
+.github

@@ -1,0 +1,44 @@
+<h1>
+  <%= @company.name %> has approved your invoice. <%= @bank_account.present? ? "Your payment is on its way!" : "" %>
+</h1>
+
+<% if @bank_account.nil? %>
+  <h2>Connect your bank account to receive payment!</h2>
+<% end %>
+<dl>
+  <dt>Client</dt>
+  <dd>
+    <%= @company.name %>
+  </dd>
+  <dt>Invoice ID</dt>
+  <dd>
+    <%= link_to @invoice.invoice_number, "#{PROTOCOL}://#{DOMAIN}/invoices/#{@invoice.external_id}" %>
+  </dd>
+  <% if @payment_descriptions.present? %>
+    <dt>Description</dt>
+    <dd>
+      <% @payment_descriptions.map do |description| %>
+        <%= description %>
+      <% end %>
+    </dd>
+  <% end %>
+  <% if @invoice.equity_amount_in_options > 0 %>
+    <dt>Swapped for equity (not paid in cash)</dt>
+    <dd>
+      <%= cents_format(@invoice.equity_amount_in_cents) %>
+      <%= "(#{number_with_delimiter(@invoice.equity_amount_in_options)} options vested)" %>
+    </dd>
+  <% end %>
+  <dt><%= @invoice.equity_amount_in_options > 0 ? "Net amount in cash" : "Total" %></dt>
+  <dd>
+    <%= cents_format(@invoice.cash_amount_in_cents) %>
+  </dd>
+  <% if @bank_account.present? %>
+    <dt>Bank account</dt>
+    <dd>****<%= @bank_account.last_four_digits %></dd>
+  <% end %>
+</dl>
+
+<% if @bank_account.nil? %>
+  <%= link_to "Connect bank account", "#{PROTOCOL}://#{DOMAIN}/settings/payouts", class: "button" %>
+<% end %>

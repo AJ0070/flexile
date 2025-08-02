@@ -1,0 +1,36 @@
+<h1>
+  The stock buyback for <%= @company.display_name %> has closed
+</h1>
+<p>
+  We're pleased to inform you that the stock buyback for <%= @company.name %> has successfully closed.
+</p>
+<% if @total_number_of_shares.positive? %>
+  <p>Here are the details of your participation:</p>
+<% else %>
+  <p><strong>Your offer was not accepted in this tender offer. The details below reflect this outcome.</strong></p>
+<% end %>
+<dl>
+  <dt>Number of shares sold</dt>
+  <dd>
+    <%= number_with_delimiter(@total_number_of_shares) %>
+  </dd>
+  <dt>Accepted commitment price</dt>
+  <dd>
+    <%= cents_format(@accepted_price_cents) %>
+  </dd>
+  <dt>Total amount received</dt>
+  <dd>
+    <%= cents_format(@total_amount_received) %>
+  </dd>
+  <dt>Implied company valuation</dt>
+  <dd>
+    <!-- TODO (sharang): Update to non hard-coded numbers here after Cooley confirms how the fully diluted shares number should change -->
+    <%= cents_format((9_050_717 - 84_425) * @accepted_price_cents) %>
+  </dd>
+</dl>
+<% if @total_number_of_shares.positive? %>
+  <p>The money will be en route to the bank account you've listed on Flexile in a few days.</p>
+<% end %>
+<p>
+  Thank you for your interest in this tender offer. If you have any questions, please don't hesitate to contact us.
+</p>

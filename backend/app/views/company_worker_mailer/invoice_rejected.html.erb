@@ -1,0 +1,17 @@
+<h1>Your invoice submitted on <%= @invoice.invoice_date.to_fs(:short) %> was rejected.<%= @reason.present? ? " Here's how to fix it:" : "" %></h1>
+<% if @reason.present? %>
+<blockquote>
+  <%= @reason %>
+</blockquote>
+<% end %>
+<p>To get paid, edit your invoice and submit it again.</p>
+<% if @reason.blank? %>
+  <p>Make sure that the following info is correct:</p>
+  <ul>
+    <li>Invoice date</li>
+    <li>Invoice ID</li>
+    <li>Amount billed</li>
+  </ul>
+<% end %>
+
+<%= link_to "Edit your invoice", "#{PROTOCOL}://#{DOMAIN}/invoices/#{@invoice.external_id}/edit", class: "button" %>

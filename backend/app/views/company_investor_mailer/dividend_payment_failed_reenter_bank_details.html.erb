@@ -1,0 +1,7 @@
+<p>Hello <%= @user.name %>,</p>
+<p><strong>We couldn’t complete your <%= cents_format(@net_amount_in_usd_cents, no_cents_if_whole: false) %> distribution from <%= @company.display_name %>.</strong></p>
+<p>There was an issue with your bank account ending in <%= @dividend_payment.recipient_last4 %>, so we couldn’t send your distribution.</p>
+<p>To receive your payment, please log into your Flexile account and <%= link_to("update your bank details", "#{PROTOCOL}://#{DOMAIN}/settings/payouts") %>.</p>
+<p>We’ll try again once your payout method is up to date.</p>
+<p>Thanks,</p>
+<p><b>The Flexile team</b></p>

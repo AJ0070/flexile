@@ -1,0 +1,328 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.stripe.com/v1/payment_intents/pi_3LaEP8FSsGLfTpet1eJw3aVf?expand%5B%5D=latest_charge
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Stripe/v1 RubyBindings/12.5.0
+      Authorization:
+      - Bearer sk_test_51LBic8FSsGLfTpetzIURf8ybimlbadTOyvetEmam8qFXUpT52LDkEquZoGFbyuEiJaGSFfNjSKSAMPLE
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Stripe-Version:
+      - '2024-04-10'
+      X-Stripe-Client-User-Agent:
+      - '{"bindings_version":"12.5.0","lang":"ruby","lang_version":"3.3.4 p94 (2024-07-09)","platform":"arm64-darwin23","engine":"ruby","publisher":"stripe","uname":"Darwin
+        prodigy.local 23.6.0 Darwin Kernel Version 23.6.0: Mon Jul 29 21:14:46 PDT
+        2024; root:xnu-10063.141.2~1/RELEASE_ARM64_T6031 arm64","hostname":"prodigy.local"}'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 23 Sep 2024 23:35:50 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '3626'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET,HEAD,PUT,PATCH,POST,DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Request-Id, Stripe-Manage-Version, Stripe-Should-Retry, X-Stripe-External-Auth-Required,
+        X-Stripe-Privileged-Session-Required
+      Access-Control-Max-Age:
+      - '300'
+      Cache-Control:
+      - no-cache, no-store
+      Content-Security-Policy:
+      - report-uri https://q.stripe.com/csp-report?p=v1%2Fpayment_intents%2F%3Aintent;
+        block-all-mixed-content; default-src 'none'; base-uri 'none'; form-action
+        'none'; frame-ancestors 'none'; img-src 'self'; script-src 'self' 'report-sample';
+        style-src 'self'
+      Cross-Origin-Opener-Policy-Report-Only:
+      - same-origin; report-to="coop"
+      Report-To:
+      - '{"group":"coop","max_age":8640,"endpoints":[{"url":"https://q.stripe.com/coop-report?s=payins-bapi-srv"}],"include_subdomains":true}'
+      Reporting-Endpoints:
+      - coop="https://q.stripe.com/coop-report?s=payins-bapi-srv"
+      Request-Id:
+      - req_79DSniOm4IrafC
+      Stripe-Version:
+      - '2024-04-10'
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Stripe-Priority-Routing-Enabled:
+      - 'true'
+      X-Stripe-Routing-Context-Priority-Tier:
+      - api-testmode
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "id": "pi_3LaEP8FSsGLfTpet1eJw3aVf",
+          "object": "payment_intent",
+          "amount": 130600,
+          "amount_capturable": 0,
+          "amount_details": {
+            "tip": {}
+          },
+          "amount_received": 130600,
+          "application": null,
+          "application_fee_amount": null,
+          "automatic_payment_methods": null,
+          "canceled_at": null,
+          "cancellation_reason": null,
+          "capture_method": "automatic",
+          "client_secret": "pi_3LaEP8FSsGLfTpet1eJw3aVf_secret_8etXk8OcqBrcohYZsXbUWouPU",
+          "confirmation_method": "automatic",
+          "created": 1661327618,
+          "currency": "usd",
+          "customer": "cus_M2QFeoOFttyzTx",
+          "description": null,
+          "invoice": null,
+          "last_payment_error": null,
+          "latest_charge": {
+            "id": "py_3LaEP8FSsGLfTpet1lxsnPvw",
+            "object": "charge",
+            "amount": 130600,
+            "amount_captured": 130600,
+            "amount_refunded": 0,
+            "application": null,
+            "application_fee": null,
+            "application_fee_amount": null,
+            "balance_transaction": "txn_3LaEP8FSsGLfTpet1nhrnfBm",
+            "billing_details": {
+              "address": {
+                "city": null,
+                "country": null,
+                "line1": null,
+                "line2": null,
+                "postal_code": null,
+                "state": null
+              },
+              "email": "sharang.d+test_email@gmail.com",
+              "name": "Sahil Example",
+              "phone": null
+            },
+            "calculated_statement_descriptor": null,
+            "captured": true,
+            "created": 1661327619,
+            "currency": "usd",
+            "customer": "cus_M2QFeoOFttyzTx",
+            "description": null,
+            "destination": null,
+            "dispute": null,
+            "disputed": false,
+            "failure_balance_transaction": null,
+            "failure_code": null,
+            "failure_message": null,
+            "fraud_details": {},
+            "invoice": null,
+            "livemode": false,
+            "metadata": {},
+            "on_behalf_of": null,
+            "order": null,
+            "outcome": {
+              "network_status": "approved_by_network",
+              "reason": null,
+              "risk_level": "not_assessed",
+              "seller_message": "Payment complete.",
+              "type": "authorized"
+            },
+            "paid": true,
+            "payment_intent": "pi_3LaEP8FSsGLfTpet1eJw3aVf",
+            "payment_method": "pm_1LS2bAFSsGLfTpetCH8rj0EY",
+            "payment_method_details": {
+              "type": "us_bank_account",
+              "us_bank_account": {
+                "account_holder_type": "individual",
+                "account_type": "checking",
+                "bank_name": "STRIPE TEST BANK",
+                "fingerprint": "fyuVQhio0NPi5cGK",
+                "last4": "6789",
+                "mandate": "mandate_1LS2bBFSsGLfTpetzyxTIQ8Q",
+                "payment_reference": null,
+                "routing_number": "110000000"
+              }
+            },
+            "receipt_email": null,
+            "receipt_number": null,
+            "receipt_url": "https://pay.stripe.com/receipts/payment/CAcaFwoVYWNjdF8xTEJpYzhGU3NHTGZUcGV0KNb2x7cGMgZwv8NBND46LBbyS-r2Z98K88Cys6ulNjqFcTFp1vuk9qVobdZdJCF8Fe_bZihvijJSV-we",
+            "refunded": false,
+            "review": null,
+            "shipping": null,
+            "source": null,
+            "source_transfer": null,
+            "statement_descriptor": null,
+            "statement_descriptor_suffix": null,
+            "status": "succeeded",
+            "transfer_data": null,
+            "transfer_group": null
+          },
+          "livemode": false,
+          "metadata": {},
+          "next_action": null,
+          "on_behalf_of": null,
+          "payment_method": "pm_1LS2bAFSsGLfTpetCH8rj0EY",
+          "payment_method_configuration_details": null,
+          "payment_method_options": {
+            "us_bank_account": {
+              "verification_method": "automatic"
+            }
+          },
+          "payment_method_types": [
+            "us_bank_account"
+          ],
+          "processing": null,
+          "receipt_email": null,
+          "review": null,
+          "setup_future_usage": null,
+          "shipping": null,
+          "source": null,
+          "statement_descriptor": null,
+          "statement_descriptor_suffix": null,
+          "status": "succeeded",
+          "transfer_data": null,
+          "transfer_group": null
+        }
+  recorded_at: Mon, 23 Sep 2024 23:35:49 GMT
+- request:
+    method: post
+    uri: https://api.stripe.com/v1/payouts
+    body:
+      encoding: UTF-8
+      string: amount=12280&currency=usd&description=Flexile+Consolidated+Invoice+31&statement_descriptor=Flexile&metadata[consolidated_invoice]=31&metadata[consolidated_payment]=31
+    headers:
+      User-Agent:
+      - Stripe/v1 RubyBindings/12.5.0
+      Authorization:
+      - Bearer sk_test_51LBic8FSsGLfTpetzIURf8ybimlbadTOyvetEmam8qFXUpT52LDkEquZoGFbyuEiJaGSFfNjSKSAMPLE
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Stripe-Client-Telemetry:
+      - '{"last_request_metrics":{"request_id":"req_79DSniOm4IrafC","request_duration_ms":212}}'
+      Stripe-Version:
+      - '2024-04-10'
+      X-Stripe-Client-User-Agent:
+      - '{"bindings_version":"12.5.0","lang":"ruby","lang_version":"3.3.4 p94 (2024-07-09)","platform":"arm64-darwin23","engine":"ruby","publisher":"stripe","uname":"Darwin
+        prodigy.local 23.6.0 Darwin Kernel Version 23.6.0: Mon Jul 29 21:14:46 PDT
+        2024; root:xnu-10063.141.2~1/RELEASE_ARM64_T6031 arm64","hostname":"prodigy.local"}'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 23 Sep 2024 23:35:51 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '853'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET,HEAD,PUT,PATCH,POST,DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Request-Id, Stripe-Manage-Version, Stripe-Should-Retry, X-Stripe-External-Auth-Required,
+        X-Stripe-Privileged-Session-Required
+      Access-Control-Max-Age:
+      - '300'
+      Cache-Control:
+      - no-cache, no-store
+      Content-Security-Policy:
+      - report-uri https://q.stripe.com/csp-report?p=v1%2Fpayouts; block-all-mixed-content;
+        default-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none';
+        img-src 'self'; script-src 'self' 'report-sample'; style-src 'self'
+      Cross-Origin-Opener-Policy-Report-Only:
+      - same-origin; report-to="coop"
+      Idempotency-Key:
+      - 75d11da7-da3f-4721-973d-7bdc3dfac241
+      Original-Request:
+      - req_admNz0xReePcUd
+      Report-To:
+      - '{"group":"coop","max_age":8640,"endpoints":[{"url":"https://q.stripe.com/coop-report?s=mms-bapi-srv"}],"include_subdomains":true}'
+      Reporting-Endpoints:
+      - coop="https://q.stripe.com/coop-report?s=mms-bapi-srv"
+      Request-Id:
+      - req_admNz0xReePcUd
+      Stripe-Should-Retry:
+      - 'false'
+      Stripe-Version:
+      - '2024-04-10'
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Stripe-Priority-Routing-Enabled:
+      - 'true'
+      X-Stripe-Routing-Context-Priority-Tier:
+      - api-testmode
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "id": "po_1Q2LnGFSsGLfTpetyuIEsOJz",
+          "object": "payout",
+          "amount": 12280,
+          "application_fee": null,
+          "application_fee_amount": null,
+          "arrival_date": 1727136000,
+          "automatic": false,
+          "balance_transaction": "txn_1Q2LnGFSsGLfTpetXF259bum",
+          "created": 1727134550,
+          "currency": "usd",
+          "description": "Flexile Consolidated Invoice 31",
+          "destination": "ba_1O0sgFFSsGLfTpetXoGG1zfI",
+          "failure_balance_transaction": null,
+          "failure_code": null,
+          "failure_message": null,
+          "livemode": false,
+          "metadata": {
+            "consolidated_invoice": "31",
+            "consolidated_payment": "31"
+          },
+          "method": "standard",
+          "original_payout": null,
+          "reconciliation_status": "not_applicable",
+          "reversed_by": null,
+          "source_balance": null,
+          "source_type": "card",
+          "statement_descriptor": "Flexile",
+          "status": "pending",
+          "type": "bank_account"
+        }
+  recorded_at: Mon, 23 Sep 2024 23:35:50 GMT
+recorded_with: VCR 6.2.0

@@ -1,0 +1,22 @@
+name: Build common setup
+
+runs:
+  using: "composite"
+  steps:
+    - uses: pnpm/action-setup@v2
+
+    - uses: actions/setup-node@v4
+      with:
+        node-version-file: ".node-version"
+        cache: "pnpm"
+
+    - run: pnpm i
+      shell: bash
+
+    - run: cp .env.example .env && ln -s $PWD/.env ./frontend/.env
+      shell: bash
+
+    - uses: ruby/setup-ruby@v1
+      with:
+        working-directory: backend
+        bundler-cache: true # runs "bundle install" and caches installed gems automatically

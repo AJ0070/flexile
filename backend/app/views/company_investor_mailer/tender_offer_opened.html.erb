@@ -1,0 +1,34 @@
+<h1>New stock buyback available</h1>
+
+<p>
+  We're excited to inform you that a new stock buyback has opened for <%= @tender_offer.company.name %>.
+  This is an opportunity for you to potentially sell some or all of your shares.
+</p>
+
+<p>
+  Here are the key details of the tender offer:
+</p>
+
+<dl>
+  <dt>Offer start date</dt>
+  <dd><%= @tender_offer.starts_at.to_fs(:long_date) %></dd>
+  <dt>Offer end date</dt>
+  <dd><%= @tender_offer.ends_at.to_fs(:long_date) %></dd>
+  <dt>Starting (minimum) valuation</dt>
+  <dd><%= money_format(@tender_offer.minimum_valuation) %></dd>
+  <dt>Total offer amount (<b>"Total Gross Proceeds"</b>)</dt>
+  <dd><%= cents_format(@tender_offer.total_amount_in_cents) %></dd>
+</dl>
+
+<hr>
+
+<p>
+  <strong>
+    This offer is time-sensitive and will close on <%= @tender_offer.ends_at.to_fs(:long_date) %>.
+    Make sure to review and submit your bid before the deadline if you wish to participate.
+  </strong>
+</p>
+
+<%= link_to "Learn more & participate",
+            "#{PROTOCOL}://#{DOMAIN}/equity/tender_offers/#{@tender_offer.external_id}",
+            class: "button" %>

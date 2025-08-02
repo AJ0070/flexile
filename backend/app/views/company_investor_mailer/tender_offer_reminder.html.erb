@@ -1,0 +1,36 @@
+<h1>Reminder: Stock buyback closing soon</h1>
+
+<p>
+  This is a friendly reminder that the stock buyback for <%= @tender_offer.company.display_name %> is still open.
+  If you haven't already, this is your opportunity to potentially sell some or all of your shares.
+</p>
+
+<p>
+  To stay informed about our company's progress, you can catch up on our public board meetings <a href="https://youtube.com/playlist?list=PL_DfN-mKCGNuswqERc6sIA8urYAKARc6s&si=BKRcURB-oR9a8cE3">here</a>.
+</p>
+
+<p>
+  Here are the key details of the stock buyback:
+</p>
+
+<dl>
+  <dt>Offer end date</dt>
+  <dd><%= @tender_offer.ends_at.to_fs(:long_date) %></dd>
+  <dt>Starting (minimum) valuation</dt>
+  <dd><%= money_format(@tender_offer.minimum_valuation) %></dd>
+  <dt>Total offer amount (<b>"Total Gross Proceeds"</b>)</dt>
+  <dd><%= cents_format(@tender_offer.total_amount_in_cents) %></dd>
+</dl>
+
+<hr>
+
+<p>
+  <strong>
+    This offer is time-sensitive and will close on <%= @tender_offer.ends_at.to_fs(:long_date) %>.
+    If you wish to participate, please make sure to review and submit your bid before the deadline.
+  </strong>
+</p>
+
+<%= link_to "Review offer & participate",
+            "#{PROTOCOL}://#{DOMAIN}/equity/tender_offers/#{@tender_offer.external_id}",
+            class: "button" %>

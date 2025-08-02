@@ -1,0 +1,69 @@
+---
+http_interactions:
+  - request:
+      method: post
+      uri: https://api.sandbox.transferwise.tech/v1/simulation/balance/topup
+      body:
+        encoding: UTF-8
+        string: '{"profileId":"<WISE_PROFILE_ID>","balanceId":"","currency":"USD","amount":1000}'
+      headers:
+        Authorization:
+          - Bearer 8e85a0b2-c1bc-4487-9fc9-e286fb9263d9
+        Content-Type:
+          - application/json
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+        Accept:
+          - "*/*"
+        User-Agent:
+          - Ruby
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Date:
+          - Fri, 01 Nov 2024 13:23:31 GMT
+        Content-Type:
+          - application/json
+        Transfer-Encoding:
+          - chunked
+        Connection:
+          - keep-alive
+        X-Content-Type-Options:
+          - nosniff
+        X-Xss-Protection:
+          - "0"
+        Expires:
+          - "0"
+        Cache-Control:
+          - no-cache, no-store, max-age=0, must-revalidate
+        Pragma:
+          - no-cache
+        X-Frame-Options:
+          - DENY
+        X-Trace-Id:
+          - b2338ebca99c9f9f
+        X-Envoy-Upstream-Service-Time:
+          - "112"
+        X-Envoy-Attempt-Count:
+          - "1"
+        Vary:
+          - origin,access-control-request-method,access-control-request-headers,accept-encoding
+        Cf-Cache-Status:
+          - DYNAMIC
+        Set-Cookie:
+          - __cf_bm=zP3TwalobTnYhLI9qKOJ0gVIOySPAfyKT94pblVdRZU-1730467411-1.0.1.1-Hp04d5.jQNDkm5FAxonFmtTIXIgbjWhpI_54eFzloVOaYMe5ekKw99FOeQecGpMD9YhkrfKW2O35Y8aViWYRLg;
+            path=/; expires=Fri, 01-Nov-24 13:53:31 GMT; domain=.transferwise.tech; HttpOnly;
+            Secure; SameSite=None
+        Server:
+          - cloudflare
+        Cf-Ray:
+          - 8dbc3325da350f3e-EWR
+        Alt-Svc:
+          - h3=":443"; ma=86400
+      body:
+        encoding: ASCII-8BIT
+        string: '{"transactionId":5509698,"state":"COMPLETED","balancesAfter":[{"id":97347,"value":535555.43,"currency":"USD","cashAmount":{"value":535555.43,"currency":"USD"},"availableAmount":{"value":535555.43,"currency":"USD"},"totalWorth":{"value":535555.43,"currency":"USD"}}]}'
+    recorded_at: Fri, 01 Nov 2024 13:23:31 GMT
+recorded_with: VCR 6.2.0

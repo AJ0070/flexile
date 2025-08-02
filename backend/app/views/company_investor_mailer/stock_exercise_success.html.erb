@@ -1,0 +1,24 @@
+<h1>
+  You now own <%= @ownership_percentage %> of <%= @company.display_name %>!
+</h1>
+<p>
+  Your <%= number_with_delimiter(@share_holding.number_of_shares) %> shares in <%= @company.name %> are now official,
+  and your stock certificate has been issued.
+  <% if @is_new_shareholder %>
+    This gives you a <%= @ownership_percentage %> stake in the company, which means
+    <strong>you're all set for future liquidity events and growth opportunities.</strong>
+  <% else %>
+    Combined with your previously held shares, your total ownership in <%= @company.name %> now amounts to
+    <%= @ownership_percentage %>.
+  <% end %>
+</p>
+<dl>
+  <dt>Cash paid</dt>
+  <dd>
+    <%= cents_format(@share_holding.total_amount_in_cents) %>
+  </dd>
+  <dt>Estimated value of shares</dt>
+  <dd>
+    <%= money_format(@share_holding.number_of_shares * @company.share_price_in_usd) %>
+  </dd>
+</dl>

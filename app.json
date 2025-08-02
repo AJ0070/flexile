@@ -1,0 +1,122 @@
+{
+  "name": "flexile",
+  "scripts": {
+    "postdeploy": "DISABLE_DATABASE_ENVIRONMENT_CHECK=1 bundle exec rake db:schema:load db:seed"
+  },
+  "env": {
+    "APP_BASE": {
+      "required": true,
+      "value": "backend/"
+    },
+    "AWS_ACCESS_KEY_ID": {
+      "required": true
+    },
+    "AWS_REGION": {
+      "required": true
+    },
+    "AWS_SECRET_ACCESS_KEY": {
+      "required": true
+    },
+    "LANG": {
+      "required": true
+    },
+    "RACK_ENV": {
+      "required": true
+    },
+    "RAILS_ENV": {
+      "required": true
+    },
+    "RAILS_LOG_TO_STDOUT": {
+      "required": true
+    },
+    "OPENAI_API_KEY": {
+      "required": true
+    },
+    "RAILS_MASTER_KEY": {
+      "required": true
+    },
+    "RAILS_SERVE_STATIC_FILES": {
+      "required": true
+    },
+    "S3_PRIVATE_BUCKET": {
+      "required": true
+    },
+    "S3_PUBLIC_BUCKET": {
+      "required": true
+    },
+    "SECRET_KEY_BASE": {
+      "required": true
+    },
+    "WISE_API_KEY": {
+      "required": true
+    },
+    "WISE_PROFILE_ID": {
+      "required": true
+    },
+    "BUGSNAG_API_KEY": {
+      "required": true
+    },
+    "BUNDLE_GEMS__CONTRIBSYS__COM": {
+      "required": true
+    },
+    "NODE_OPTIONS": {
+      "required": true
+    },
+    "WEB_CONCURRENCY": {
+      "description": "The number of processes to run.",
+      "value": "1"
+    },
+    "PUPPETEER_EXECUTABLE_PATH": {
+      "description": "The path to the puppeteer executable.",
+      "value": "/app/.apt/usr/bin/google-chrome",
+      "required": true
+    },
+    "PUPPETEER_SKIP_DOWNLOAD": {
+      "description": "Whether to skip the download of puppeteer.",
+      "value": "true",
+      "required": true
+    }
+  },
+  "formation": {
+    "sidekiq": {
+      "quantity": 1
+    },
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+    {
+      "plan": "heroku-postgresql",
+      "as": "DATABASE",
+      "options": {
+        "version": "16"
+      }
+    },
+    {
+      "plan": "heroku-redis",
+      "as": "SIDEKIQ_REDIS",
+      "options": {
+        "version": "7.2"
+      }
+    },
+    {
+      "plan": "heroku-redis",
+      "as": "REDIS",
+      "options": {
+        "version": "7.2"
+      }
+    },
+    {
+      "plan": "memcachedcloud:30",
+      "as": "MEMCACHEDCLOUD"
+    }
+  ],
+  "buildpacks": [
+    { "url": "https://github.com/lstoll/heroku-buildpack-monorepo" },
+    { "url": "heroku/google-chrome" },
+    { "url": "heroku/nodejs" },
+    { "url": "heroku/ruby" }
+  ],
+  "stack": "heroku-22"
+}

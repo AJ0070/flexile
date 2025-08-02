@@ -1,0 +1,16 @@
+<h1>Confirm your tax information</h1>
+
+<p>
+  In alignment with U.S. tax regulations, Flexile is responsible for reporting your earnings and determining
+  the correct withholding rates for dividends.
+</p>
+
+<p>
+  Your current tax details indicate a <%= @withholding_percentage %>% tax rate on dividends.
+  <strong>
+    Please take a moment to confirm if your name, address, and Tax ID are up-to-date. If there's any change,
+    please update it by <%= @by_date.to_fs(:medium) %>.
+  </strong>
+</p>
+
+<%= link_to "Review tax info", "#{PROTOCOL}://#{DOMAIN}/settings/tax", class: "button" %>

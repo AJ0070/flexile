@@ -1,0 +1,10 @@
+diff --git a/index.js b/index.js
+index e480b5cf2285aae782298399c110d5a2bf816deb..81691ebbebf0d3adf4bad5924b57a308dbd92a29 100644
+--- a/index.js
++++ b/index.js
+@@ -1,4 +1,4 @@
+-throw new Error(
++if(process.env.NODE_ENV !== "test") throw new Error(
+   "This module cannot be imported from a Client Component module. " +
+     "It should only be used from a Server Component."
+ );
