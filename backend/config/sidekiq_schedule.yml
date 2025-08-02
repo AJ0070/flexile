@@ -81,3 +81,9 @@ dividend_report_csv_email_job:
   args:
     - - "solson@earlygrowth.com"
       - "howard@antiwork.com"
+
+prepare_daily_dividends:
+  cron: "0 5 * * *" # Runs every day at 5:00 AM
+  class: "PrepareDailyDividendsJob"
+  queue: "default"
+  description: "Marks due dividend rounds as ready for payment."

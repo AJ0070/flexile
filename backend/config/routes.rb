@@ -16,6 +16,16 @@ api_domain_constraint = lambda do |request|
 end
 
 Rails.application.routes.draw do
+  namespace :api do
+    namespace :v1 do
+      resources :dividend_computations, only: [:create, :show] do
+        member do
+          get :details
+          post :finalize
+        end
+      end
+    end
+  end
   namespace :admin, constraints: admin_constraint do
     resources :company_workers
     resources :company_administrators

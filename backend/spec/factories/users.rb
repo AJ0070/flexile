@@ -91,5 +91,19 @@ FactoryBot.define do
         create(:company_lawyer, user:)
       end
     end
+
+    trait :admin do
+      transient do
+        company { nil }
+      end
+      
+      after :create do |user, evaluator|
+        if evaluator.company
+          create(:company_administrator, user:, company: evaluator.company)
+        else
+          create(:company_administrator, user:)
+        end
+      end
+    end
   end
 end
