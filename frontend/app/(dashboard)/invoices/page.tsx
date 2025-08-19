@@ -24,6 +24,7 @@ import Link from "next/link";
 import React, { Fragment, useCallback, useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import CreateInvoiceModal from "@/app/(dashboard)/invoices/CreateInvoiceModal";
 import {
   ApproveButton,
   DeleteModal,
@@ -86,7 +87,9 @@ export default function InvoicesPage() {
   const isMobile = useIsMobile();
   const user = useCurrentUser();
   const company = useCurrentCompany();
+  const trpcUtils = trpc.useUtils();
   const [openModal, setOpenModal] = useState<"approve" | "reject" | "delete" | null>(null);
+  const [openCreate, setOpenCreate] = useState(false);
   const [detailInvoice, setDetailInvoice] = useState<Invoice | null>(null);
   const isActionable = useIsActionable();
   const isPayable = useIsPayable();
@@ -396,10 +399,12 @@ export default function InvoicesPage() {
   return (
     <>
       {isMobile && user.roles.worker ? (
-        <Button variant="floating-action" {...(!canSubmitInvoices ? { disabled: true } : { asChild: true })}>
-          <Link href="/invoices/new" inert={!canSubmitInvoices}>
-            <Plus />
-          </Link>
+        <Button
+          variant="floating-action"
+          disabled={!canSubmitInvoices}
+          onClick={() => canSubmitInvoices && setOpenCreate(true)}
+        >
+          <Plus />
         </Button>
       ) : null}
       <DashboardHeader
@@ -432,11 +437,14 @@ export default function InvoicesPage() {
               ) : null}
             </div>
           ) : user.roles.worker ? (
-            <Button asChild variant="outline" size="small" disabled={!canSubmitInvoices}>
-              <Link href="/invoices/new" inert={!canSubmitInvoices}>
-                <Plus className="size-4" />
-                New invoice
-              </Link>
+            <Button
+              variant="outline"
+              size="small"
+              disabled={!canSubmitInvoices}
+              onClick={() => canSubmitInvoices && setOpenCreate(true)}
+            >
+              <Plus className="size-4" />
+              New invoice
             </Button>
           ) : null
         }
@@ -600,6 +608,14 @@ export default function InvoicesPage() {
           </DialogFooter>
         </DialogContent>
       </Dialog>
+
+      <CreateInvoiceModal
+        open={openCreate}
+        onOpenChange={setOpenCreate}
+        onCreated={() => {
+          void trpcUtils.invoices.list.invalidate({ companyId: company.id });
+        }}
+      />
 
       {detailInvoice ? (
         <TasksModal

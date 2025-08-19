@@ -12,6 +12,37 @@ class Internal::Companies::InvoicesController < Internal::Companies::BaseControl
     render json: InvoicePresenter.new(invoice).new_form_props(contractor: Current.company_worker)
   end
 
+  # Accepts a PDF and returns a best-effort parsed invoice payload for front-end prefill.
+  # For now, this is a minimal implementation that infers invoice number from filename.
+  # Later, this should enqueue a background job to parse with OpenAI and return richer data.
+  def parse_pdf
+    authorize Invoice
+
+    unless params[:file].respond_to?(:original_filename)
+      render json: { error: "file_missing" }, status: :bad_request and return
+    end
+
+    uploaded = params[:file]
+    filename = uploaded.original_filename.to_s
+    io = uploaded.respond_to?(:tempfile) ? uploaded.tempfile : uploaded
+
+    result = InvoicePdfParser.parse(uploaded_io: io, original_filename: filename)
+
+    render json: {
+      invoiceNumber: result.invoice_number,
+      invoiceDate: result.invoice_date.iso8601,
+      notes: result.notes,
+      lineItems: Array(result.line_items).map do |li|
+        {
+          description: li[:description].to_s,
+          quantity: li[:quantity].to_f,
+          hourly: !!li[:hourly],
+          pay_rate_in_subunits: li[:pay_rate_in_subunits].to_i,
+        }
+      end,
+    }
+  end
+
   def create
     authorize Invoice
 
